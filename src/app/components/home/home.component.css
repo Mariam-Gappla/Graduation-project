@@ -1,0 +1,313 @@
+/*landing*/
+.landing{
+    background-image: url("../../../../public/BGHome.png");
+    background-size: cover;  
+    background-position: center; 
+    height: 20%;
+    padding-bottom: 50px;
+}
+.image-line{
+    max-width: 100%;
+    width: 40%;
+}
+.landing-content{
+    color: #327537;
+}
+.landing-content .title{
+    margin-bottom: 0px;
+    font-size: 60px;
+}
+@media (max-width: 341px) {
+    .landing-content .title{
+        margin-bottom: 0px;
+        font-size: 40px;
+    }
+    .landing-content .subtitle{
+        font-size: 20px;
+        margin: 0;
+    }
+}
+.landing-content .subtitle{
+    font-size: 40px;
+    margin: 0;
+}
+.landing-content p{
+    width: 60%;
+    text-align: center;
+    color: #FAF3E0;
+    margin-top: 30px;
+    font-size: 26px;
+}
+.landing-content button{
+    background-color: transparent;
+    height: 60px;
+    width: 200px;
+    color: #FAF3E0;
+    border: 3px solid #FAF3E0;
+    border-radius: 5px;
+    margin-top: 150px;
+    font-size: larger;
+}
+/*services*/
+.services{
+    background-color: #FAF3E0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.services .sevices-heading{
+    text-align: center;
+    color: #327537;
+    margin-top: 100px;
+}
+.services p{
+    font-size: x-large;
+    margin-top: 50px;
+}
+.services-items{
+    background-color: #F5D2D5;
+   padding-top: 40px;
+   padding-bottom: 60px;
+}
+.services-items div div{
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    margin-right: 10px;
+   background-color: bisque;
+   text-align: center;
+   height: 150px;
+   border-radius: 50%;
+   flex-direction: column;
+}
+.services-items div div p{
+    margin-top: 25px;
+}
+/*about*/
+.about{
+    margin: 60px 0;
+}
+.about h1{
+    text-align: start;
+    margin-top: 0;
+}
+.about p{
+    margin-top: 0;
+    font-size: larger;
+    margin-right: 20px;
+}
+.image{
+    display: flex;
+    align-items: center;
+}
+.about .image img{
+height: 300px;
+max-width: 100%;
+}
+/*common services*/
+.common-services div img{
+    max-width: 100%;
+}
+.packages-heading{
+    margin-top: 50px;
+}
+
+
+.package-1{
+    background-color: #F0B9BD;
+    margin-top: 20px;
+    margin-right: 15px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+.package-1 div button{
+    background-color: #474747;
+    border: none;
+    margin-top: 40px;
+    height: 40px;
+    width: 140px;
+    color: #FAF3E0;
+    margin-bottom: 50px;
+}
+.package-1 .price{
+    color: black;
+}
+.price .price-number{
+    font-size: 55px;
+    margin: 0;
+    margin-right: 20px;
+}
+.price .price-currency{
+    font-size: 50px;
+    margin: 0;
+    font-weight: 600;
+}
+@media (max-width: 341px) {
+    .price .price-currency{
+        font-size: 40px;
+        margin: 0;
+     font-weight: 600;
+    } 
+    .price .price-number{
+        font-size: 40px;
+        margin: 0;
+        margin-right: 20px;
+    }
+}
+.package-2{
+background-color: #474747;
+margin-right: 15px;
+color: #FAF3E0;
+}
+.package-2 h5{
+    padding-top: 20px;
+}
+.package-2 div button{
+    background-color: #327537;
+    border: none;
+    margin-top: 40px;
+    height: 40px;
+    width: 140px;
+    color: #FAF3E0;
+    margin-bottom: 50px;
+}
+.package-3{
+    background-color: #F0B9BD;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.package-3 h5{
+    padding-top: 20px;
+}
+.package-3 div button{
+    background-color: #474747;
+    border: none;
+    margin-top: 40px;
+    height: 40px;
+    width: 140px;
+    color: #FAF3E0;
+    margin-bottom: 50px;
+}
+.package-item{
+    display: flex;
+    align-items: center;
+    padding: 0 20px 20px 20px;
+}
+.package-item-1,.package-item-2{
+    border-bottom: 1px solid black;
+    margin-top: 20px;
+}
+
+.package-item p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.package-item img{
+    height:30px;
+    width: 30px;
+    background-color: #327537;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+/*why-choosing*/
+.why-choosing img{
+width: 40%;
+}
+.why-choosing .item-1{
+    background-color: #474747;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.why-choosing .item-2 img{
+    width: 100%;
+}
+.why-choosing .item-3{
+    color: #474747;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.why-choosing .item-4 img{
+    width: 100%;
+}
+.why-choosing .item-5 img{
+    width: 100%;
+}
+.why-choosing .item-6{
+    color: #474747;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.why-choosing .item-7 img{
+    width: 100%;
+}
+.why-choosing .item-8{
+    background-color: #F0B9BD;
+    color: #474747;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.why-choosing .item-1 p,.why-choosing .item-3 p,.why-choosing .item-6 p,.why-choosing .item-8 p{
+    font-size: 4vw;
+}
+/*contact-us*/
+.contact-us{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contact-form{
+background-image: url("../../../../public/contact.png");
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+padding-top: 100px;
+}
+.contact-form form{
+    width: 80%;
+}
+input[type="email"] {
+    border: 2px solid #474747;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: transparent;
+    outline: none;
+  }
+  .contact-form textarea{
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid #474747;
+    outline: none;
+  }
+  .contact-form button{
+    border: none;
+    background-color: #327537;
+    color: #FFFFFF;
+    width: 30%;
+    height: 40px;
+    font-size: 25px;
+    border-radius: 5px;
+    margin-left: 40%;
+    margin-top: 25px;
+   margin-bottom: 50px;
+  }
+
+
+
+
+
+
+

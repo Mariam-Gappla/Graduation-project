@@ -1,0 +1,47 @@
+<div class="sign-up">
+    <div class="signup-content row">
+        <div class="col-sm-6 d-sm-flex d-none">
+            <img src="signup.png">
+        </div>
+        <div class="col-12 col-sm-6  justify-content-center d-flex flex-column align-items-center">
+            <h1>LOGIN</h1>
+            <p class="ms-3">Let's make your dream wedding closer to reality !</p>
+            <form [formGroup]="userLogin" (ngSubmit)="sendData()" class=" col-11 col-md-10 ms-4">
+                <div class="mb-2">
+                    <input type="email" id="FormControlInput2" class="inp" placeholder="Email"
+                        formControlName="email"><br>
+                    <div [hidden]="email?.untouched || email?.valid">
+                        <small [hidden]="!email?.errors?.['required']" class="ms-1">required</small>
+                        <small [hidden]="!email?.errors?.['pattern']" class="ms-1">invalid email</small>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <input type="password" id="FormControlInput3" class="inp" placeholder="password"
+                        formControlName="password"><br>
+                    <div [hidden]="password?.untouched || password?.valid">
+                        <small [hidden]="!password?.errors?.['required']" class="ms-1">required</small>
+                    </div>
+                </div>
+                <div class="forget-content">
+                    <div>
+                        <input type="checkbox">Remmember me
+                    </div>
+                    <div>
+                        <a routerLink="/forgetpassword" class="forget-password">forget password</a>
+                    </div>
+                </div>
+                <div class="havenot-account">
+                        <h5 class="m-0">Don't have an account ?</h5>
+                        <a routerLink="/">SignUp</a>
+                       
+                </div>
+                <div class="button">
+                    <button [disabled]="userLogin.invalid">login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,59 @@
+.sign-up{
+    background-color: #F5D2D5;
+    overflow: hidden;
+}
+.signup-content{
+    background-color: #F5D2D5;
+    height: 100vh;;
+   
+}
+.sign-up img{
+    height: 100vh;
+    width: 100%;
+}
+.inp{
+    width: 90%;
+    padding-left: 10px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #FAF3E0;
+   
+}
+.space{
+    margin-left: 25%;
+}
+.sign-up .button{
+    width: 90%;
+display: flex;
+justify-content: center;
+}
+.sign-up button{
+    width: 20%;
+    height: 40px;
+    min-width: 150px;
+    border-radius: 10px;
+    border: none;
+    background-color: #327537;
+    color: white;
+}
+.forget-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+.forget-password{
+    text-decoration: none;
+    color: #474747;   
+}
+.havenot-account{
+    display: flex;
+    align-items: center;
+    margin: 30px 0px;
+}
+.havenot-account a{
+    text-decoration: none;
+    color: #474747; 
+}
