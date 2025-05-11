@@ -1,0 +1,127 @@
+.payment-container {
+    background: #fffef9;
+    padding: 30px 20px;
+    max-width: 700px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .payment-methods {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .method-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  
+  .method-option img {
+    height: 111px;
+    width: 148px;
+    
+  }
+  
+  .payment-box {
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 20px;
+    background: #fff;
+  }
+  
+  .cash-number {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    margin-bottom: 20px;
+    text-align: right;    
+  }
+  
+  
+  .cash-label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #474747;
+  }
+  .number-box {
+    display: flex;
+    align-items: center;
+    background-color: #fddde6;
+    padding: 10px 16px;
+    border-radius: 6px;
+    gap: 10px;
+  }
+  .number-box span{
+    font-family: 'Actor', sans-serif;
+  }
+  
+  .number-box img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  .number-box span {
+    font-size: 16px;
+    color: #474747;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  form label {
+    color: green;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  form input[type="text"],
+  form input[type="file"] {
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+  }
+  
+  form input[type="file"] {
+    background: #474747;
+    color: white;
+  }
+  
+  form button {
+    margin: 20px auto 0;
+    padding: 10px 30px;
+    background: #327537;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 150px;
+  }
+  button{
+    font-family: 'playfair display', serif;
+    font-weight: 700;
+    font-size: 35px;
+  }
+  @media (max-width: 600px) {
+    .cash-number {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .payment-methods {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  

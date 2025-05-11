@@ -1,0 +1,348 @@
+.profile-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    background: #fffef9;
+  }
+  
+  .profile-info {
+    text-align: center;
+  }
+  .heart-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #474747;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+  
+  .heart-icon img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(100%) sepia(1) saturate(5) hue-rotate(300deg); /* يخليها وردي */
+  }
+  
+  .profile-img {
+    width: 348.51px;
+    height: 315px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ccc;
+  }
+  
+  .name {
+    font-family: 'Actor', sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+    color: #327537;
+    margin-top: 10px;
+    letter-spacing: 0%;
+  }
+
+  
+  .job-icon {
+    font-size: 18px;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .stat {
+    background: #474747;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 281px;
+    height: 130px;
+    color: white;
+    font-family: 'Actor', sans-serif;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 40px;
+  }
+  .stat p{
+    margin-top: 10px;
+  }
+  .stat img{
+    width: 72px;
+    height: 72px;
+  }
+  .icon {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+  
+  /* Section Headings */
+  .section-header {
+    margin: 40px 20px 10px;
+  }
+  
+  .left-title {
+    text-align: left;
+    color: green;
+    margin-bottom: 5px;
+  }
+  
+  .center-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .center-title {
+    color: #222;
+    margin-bottom: 5px;
+  }
+  
+  .underline {
+    height: 2px;
+    background-color: #222;
+    position: relative;
+  }
+  .underlinee {
+    height: 2px;
+    background-color: #222;
+    position: relative;
+    width: 100%;
+  }
+  .left-line {
+    width: 150px;
+    margin-left: 0;
+  }
+  .left-linee {
+    width: 360px;
+    margin-left: 0;
+  }
+  
+  .center-line {
+    width: 150px;
+    margin: 0 auto;
+  }
+  
+  .dott {
+    width: 10px;
+    height: 10px;
+    background-color: #222;
+    border-radius: 50%;
+    position: absolute;
+    top: -4px;
+    right: 0;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #222;
+    border-radius: 50%;
+    position: absolute;
+    top: -4px;
+    left: 0;
+  }
+  .summary-text {
+    padding: 0 20px 20px;
+    line-height: 100%;
+    color: #474747;
+    font-family: 'Actor', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+  }
+  
+  /* WORK Section */
+  .work-section {
+    background: #fddde6;
+    padding: 30px 0;
+    text-align: center;
+    
+  }
+  
+  .carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden; 
+  }
+  
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel img {
+    width: 220px;
+    height: 176px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px; /* المسافة بين الصور */
+  }
+  
+  
+  /* PRICING Section */
+  .pricing-section {
+    background: #fff;
+    padding: 20px;
+  }
+  
+  .pricing-box {
+    background: #fffef9;
+    max-width: 700px;
+    margin: auto;
+    padding: 30px 20px;
+    border-radius: 10px;
+    border: 2px solid green;
+  }
+  
+  .package {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .package-left {
+    background: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 18px;
+    flex: 1;
+    font-family: 'Actor', sans-serif;
+  }
+  
+  .package-right {
+    background: #fddde6;
+    color: #333;
+    padding: 20px 30px;
+    margin-left: 20px; 
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Playfair Display SC', serif;
+    white-space: nowrap;
+  }
+  
+  .book-btn {
+    margin: 20px auto 0;
+    display: block;
+    padding: 12px 30px;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 35px;
+    font-family: 'playfair display', serif;
+    font-weight: 900;
+  }
+  
+  
+  .main{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Playfair Display SC', serif;
+    color: #327537;
+  }
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 576px) {
+    .profile-img {
+      width: 220px;
+      height: 220px;
+    }
+  
+    .name {
+      font-size: 24px;
+    }
+  
+    .stats {
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+  
+    .stat {
+      width: 90%;
+      height: auto;
+      padding: 15px;
+      font-size: 16px;
+    }
+  
+    .stat img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .summary-text {
+      font-size: 18px;
+      text-align: center;
+    }
+  
+    .carousel-images {
+      padding: 0 10px;
+    }
+  
+    .carousel img {
+      width: 180px;
+      height: 140px;
+    }
+  
+    .pricing-box {
+      padding: 20px 15px;
+    }
+  
+    .package {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .package-left, .package-right {
+      width: 100%;
+      text-align: center;
+      margin: 0 0 10px 0;
+    }
+  
+    .package-right {
+      margin-left: 0;
+    }
+  
+    .book-btn {
+      width: 100%;
+    }
+  
+    .left-linee,
+    .left-line {
+      width: 100%;
+    }
+  
+    .main {
+      font-size: 24px;
+    }
+  }
+  
+  @media (min-width: 577px) and (max-width: 991px) {
+    .stat {
+      width: 45%;
+    }
+  
+    .carousel img {
+      width: 200px;
+      height: 160px;
+    }
+  
+    .package-left {
+      font-size: 17px;
+    }
+  
+    .package-right {
+      font-size: 18px;
+    }
+  }
+  
