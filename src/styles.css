@@ -1,4 +1,15 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+:root {
+  --main-color: #327537;
+  --secondary-color: #5a9a5a;
+  --background-color: #F5D2D5;
+  --text-color: #ffffff;
+}
+
 html, body {
     width: 100%;
     ;
+    font-family: 'Actor', sans-serif;
   }

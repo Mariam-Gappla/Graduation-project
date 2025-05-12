@@ -5,6 +5,7 @@ export const routes: Routes = [
  {path:"home",loadComponent:()=>import('../app/components/home/home.component').then(m => m.HomeComponent)},
  {path:"login",loadComponent:()=>import('../app/components/login/login.component').then(m=>m.LoginComponent)},
  {path:"",loadComponent:()=>import('../app/components/signup/signup.component').then(m=>m.SignupComponent)},
+ {path:"/vendors",loadComponent:()=>import('../app/components/vendors/vendors.component').then(m=>m.VendorsComponent)},
  {path:"b-details",loadComponent:()=>import('../app/components/b-details/b-details.component').then(b=>b.BDetailsComponent)},
  {path:"booking",loadComponent:()=>import('../app/components/booking/booking.component').then(b=>b.BookingComponent)},
  {path:"details",loadComponent:()=>import('../app/components/details/details.component').then(d=>d.DetailsComponent)},
