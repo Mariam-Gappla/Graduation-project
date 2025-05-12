@@ -1,9 +1,9 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-vendors',
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   templateUrl: './vendors.component.html',
   styleUrl: './vendors.component.css'
 })
@@ -15,7 +15,7 @@ cards = [
     experience: 2,
     clients: 15,
     likes: 50,
-    bestVendor:0
+    bestVendor:1
   },
   {
     image: 'photo.jpg',
