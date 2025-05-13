@@ -1,11 +1,21 @@
-.header-background{
-    background-color: #F5D2D5;
+.navbar {
+  background-color: #F5D2D5 !important;
 }
-.logo-img{
-    width: 60px;
-    height: 60px;
-     
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
 }
-.links-color{
-    color: #327537;
+
+.nav-link {
+  color: #327537 !important;
+  font-size: 1.2rem;
+  font-family: 'Actor', sans-serif;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #1e4f23 !important; /* Darker green on hover */
+  text-decoration: underline;
 }

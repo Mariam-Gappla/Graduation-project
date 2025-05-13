@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   standalone:true
+
 })
 export class HeaderComponent {
 isclick:boolean=false;
