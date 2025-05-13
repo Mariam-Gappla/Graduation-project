@@ -2,8 +2,9 @@
     <div>
         <img src="Logo.png" class="logo-img">
     </div>
-    <div class="w-100 d-flex align-items-center justify-content-end mt-3">
-        <ul class="list-unstyled d-flex">
+    <div class="w-100 align-items-end  mt-3 d-flex flex-column">
+        <i class="fas fa-bars fixed-menu d-md-none d-flex me-3" (click)="clicked()"></i>
+        <ul class="list-unstyled d-md-flex d-none">
             <li class="ml me-3">
                 <a href="#" class="text-decoration-none links-color">HOME</a>
             </li>
@@ -17,5 +18,22 @@
                 <a  href="#" class="text-decoration-none links-color">CONTACT</a>
             </li>
         </ul>
+        @if(isclick==true)
+        {
+            <ul class="list-unstyled d-flex flex-column">
+                <li class="ml me-3">
+                    <a href="#" class="text-decoration-none links-color">HOME</a>
+                </li>
+                <li class="me-3">
+                    <a href="#" class="text-decoration-none links-color">ABOUT</a>
+                </li>
+                <li class="me-3">
+                    <a href="#" class="text-decoration-none links-color">SERVICES</a>
+                </li>
+                <li class="me-3">
+                    <a  href="#" class="text-decoration-none links-color">CONTACT</a>
+                </li>
+            </ul>
+        }
     </div>
 </div>

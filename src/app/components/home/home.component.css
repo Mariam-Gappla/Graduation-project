@@ -105,15 +105,50 @@
 height: 300px;
 max-width: 100%;
 }
-/*common services*/
+/*common vendors*/
+.vendors{
+    background-color: #474747;
+    width: 100%;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+.vendors button{
+    background-color: #F0B9BD;
+    width: 50%;
+    height: 40px;
+    border-radius: 10px;
+    width: 60%;
+}
+.vendors div p{
+    background-color: #327537;
+    border: 1px solid #F0B9BD;
+    border-radius: 10px;
+    width: 90%;
+    font-size:medium;
+   margin-left: 20px;
+   color: #FAF3E0;
+}
+.common-services{
+    width: 100%;
+}
 .common-services div img{
     max-width: 100%;
 }
 .packages-heading{
     margin-top: 50px;
 }
-
-
+.left-arrow,.right-arrow{
+    margin-top: -30px;
+   padding: 0;
+   width: fit-content;
+}
+.right-arrow img{
+   float: left;
+   margin-left: 10px;
+}
+.left-arrow img{
+float: right;
+}
 .package-1{
     background-color: #F0B9BD;
     margin-top: 20px;

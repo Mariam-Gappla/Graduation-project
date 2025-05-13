@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   standalone:true
 })
 export class HeaderComponent {
-
+isclick:boolean=false;
+clicked()
+{
+  this.isclick=!this.isclick;
+}
 }

@@ -11,7 +11,7 @@
     <h1 class="sevices-heading">OUR SERVICES</h1>
     <img src="Line1.png" class="image-line">
     <p>Enjoy all your wedding services in one place !</p>
-
+    <!--services-->
     <div class="services-items w-100 row justify-content-center gy-5">
         <div class="col">
             <div>
@@ -69,11 +69,32 @@
             </div>
         </div>
     </div>
-    <!--common services-->
+    <!--common vendors-->
     <div class="common-services">
         <div class="text-center">
             <h1>MOST COMMON VENDORS</h1>
             <img src="Line1.png" class="image-line">
+        </div>
+        <div class="vendors">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-1 left-arrow" (click)="Previous()">
+                        <img src="left_arrow.png">
+                    </div>
+                    @for (item of commonvendors.slice(start,end); track item.id) {
+                        <div class="col">
+                            <img [src]="item.image">
+                            <div class="text-center">
+                                <p class="mt-2">{{item.category}}</p>
+                                <button>Book Now</button>
+                            </div>
+                        </div>
+                      }     
+                    <div class="col-1 right-arrow" (click)="Next()">
+                        <img src="right_arrow.png">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!--packages-->
