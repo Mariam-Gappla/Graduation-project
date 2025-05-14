@@ -7,9 +7,9 @@
           <img src="hert1.png" alt="heart">
         </span>
       </h2>
-      
-      
-  
+
+
+
       <div class="stats mb-5">
         <div class="stat "><img src="pepole.png" alt=""><p >20 Client</p></div>
         <div class="stat"><img src="heart.png" alt=""><p>1545 Likes</p></div>
@@ -17,66 +17,93 @@
         <div class="stat"><img src="tag.png" alt=""><p>Photography</p></div>
       </div>
     </div>
-  
+
     <!-- SUMMARY SECTION -->
     <div class="section-header">
-      <h3 class="left-title main">SUMMARY</h3>
-      <div class="underline left-line"><span class="dot"></span></div>
+      <h3 class="left-title main summary-heading">SUMMARY</h3>
+    <div class="line-container-header">
+      <div class="circle"></div>
+    </div>
     </div>
     <p class="summary-text">
       I am Mohamed Ahmed a passionate professional photographer with 3 years of experience in photography field, work under pressure and bl bla bla...
     </p>
-  
+
     <!-- WORK SECTION -->
     <div class="section-header center-header ">
         <h3 class="center-title main">WORK</h3>
-        <div class="underline center-line"><span class="dott"></span></div>
+        <div class="work-line-container">
+      <div class="circle"></div>
+    </div>
       </div>
     <div class="work-section">
-      
+
         <div class="carousel">
             <!-- <button class="carousel-btn left"></button> -->
-            
+
             <div class="carousel-images ">
               <img src="1.jpg" alt="Work" style="margin-left: 20px;" />
               <img src="2.jpg" alt="Work" />
               <img src="3.jpg" alt="Work" />
               <img src="1.jpg" alt="Work" />
             </div>
-          
+
             <!-- <button class="carousel-btn right"></button>  -->
           </div>
     </div>
-  
+
     <!-- SERVICES SECTION -->
     <div class="section-header">
       <h3 class="left-title main">SERVICES AND PRICING</h3>
-      <div class="underlinee left-linee"><span class="dot"></span></div>
+      <div class="service-line-container">
+      <div class="circle"></div>
     </div>
-  
+    </div>
+
     <div class="pricing-section">
         <div class="pricing-box">
-          <div class="package">
-            <div class="package-left">Half day session + Limited photos</div>
-            <div class="package-right">3500 EGP</div>
-          </div>
-          <div class="package">
-            <div class="package-left">Half day session + Unlimited photos</div>
-            <div class="package-right">4200 EGP</div>
-          </div>
-          <div class="package">
-            <div class="package-left">Full day session + Limited photos</div>
-            <div class="package-right">5000 EGP</div>
-          </div>
-          <div class="package">
-            <div class="package-left">Full day session + Unlimited photos</div>
-            <div class="package-right">6000 EGP</div>
+          <div class="package" *ngFor="let pkg of pricingPackages; let i = index">
+            <div class="package-left">{{pkg.title}}</div>
+            <div class="package-right">{{pkg.price}}</div>
           </div>
         </div>
-      
+
         <button class="book-btn">BOOK NOW</button>
       </div>
-      
-      
+      <section class="review-section">
+  <h2 class="review-header">User Reviews</h2>
+  <div class="line-container">
+      <div class="circle"></div>
+    </div>
+  <div class="review-container">
+
+    <div class="review-box">
+      <div class="review-rating">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">☆</span>
+      </div>
+      <p class="review-content">
+        This service was incredibly fast and helpful. I will definitely use it again!
+      </p>
+      <div class="review-user">
+        — <strong>Ahmed Khaled</strong>
+      </div>
+    </div>
+
+    <div class="review-box">
+      <div class="review-rating">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="review-content">
+        Amazing experience! Highly recommend this to anyone needing quick assistance.
+      </p>
+      <div class="review-user">
+        — <strong>Fatma Youssef</strong>
+      </div>
+    </div>
+
   </div>
-  
+</section>
+
+
+
+  </div>

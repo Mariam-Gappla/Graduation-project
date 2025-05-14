@@ -1,0 +1,63 @@
+<div class="vendors-page container">
+  <!-- Dropdown Row -->
+  <div class="dropdown-group">
+    <div class="">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Select Price
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Low to High</a></li>
+          <li><a class="dropdown-item" href="#">High to Low</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Ordered By
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Popularity</a></li>
+          <li><a class="dropdown-item" href="#">Newest</a></li>
+          <li><a class="dropdown-item" href="#">Rating</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Title -->
+  <h2 class="page-title">
+    Browse between over 1,532 professional photographers
+  </h2>
+  <div class="line-container">
+    <div class="circle"></div>
+  </div>
+
+  <!-- Card Grid -->
+  <div class="row g-4">
+    <div class="col-12 col-sm-6 col-lg-4" *ngFor="let card of cards">
+      <div class="card h-100">
+        <div class="img-box">
+          <img [src]="card.image" class="card-img-top" alt="..." />
+        </div>
+        <div class="card-body">
+          <div class="likes">
+            <i class="fa-solid fa-heart"></i>
+            <span>{{ card.likes }}</span>
+          </div>
+          <div class="info"><p>{{ card.name }}</p></div>
+          <hr />
+          <div class="info"><p>{{ card.experience }} years experience</p></div>
+          <hr />
+          <div class="info"><p>{{ card.clients }} Clients</p></div>
+          <button class="show">SHOW DETAILS</button>
+        </div>
+        <div class="best-vendor-padge" *ngIf="card.bestVendor == 1">
+          <p>BEST VENDOR</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
