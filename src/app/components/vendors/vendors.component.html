@@ -36,28 +36,44 @@
 
   <!-- Card Grid -->
   <div class="row g-4">
-    <div class="col-12 col-sm-6 col-lg-4" *ngFor="let card of cards">
+    @for(item of vendors; track item._id)
+    {
+    <div class="col-12 col-sm-6 col-lg-4">
       <div class="card h-100">
         <div class="img-box">
-          <img [src]="card.image" class="card-img-top" alt="..." />
+         <img [src]="'http://localhost:3000/' + item.profileImage" alt="..." />
         </div>
         <div class="card-body">
           <div class="likes">
             <i class="fa-solid fa-heart"></i>
-            <span>{{ card.likes }}</span>
+            <span>{{ item.likes }}</span>
           </div>
-          <div class="info"><p>{{ card.name }}</p></div>
+          <div class="info">
+            <p>{{ item.title }}</p>
+          </div>
           <hr />
-          <div class="info"><p>{{ card.experience }} years experience</p></div>
+          <div class="info">
+            <p>{{ item.exprience }} years experience</p>
+          </div>
           <hr />
-          <div class="info"><p>{{ card.clients }} Clients</p></div>
-          <button class="show">SHOW DETAILS</button>
+          <div class="info">
+            <p>{{item.packages?.orders?.length ?? "No clients"}}</p>
+          </div>
+          <button class="show">
+            <a [routerLink]="['/vendor',item._id]">
+              SHOW DETAILS
+            </a>
+          </button>
         </div>
-        <div class="best-vendor-padge" *ngIf="card.bestVendor == 1">
+        @if(item.packages?.orders?.length>10)
+        {
+          <div class="best-vendor-padge">
           <p>BEST VENDOR</p>
         </div>
+        }
 
       </div>
     </div>
+    }
   </div>
 </div>

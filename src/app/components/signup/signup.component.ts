@@ -47,16 +47,15 @@ this.UserService.getAllUsers().subscribe((res)=>{
 })
 }
 sendData(){
-  console.log(this.userRegister.value);
   this.UserService.registeruser(this.userRegister.value).subscribe(
     (res)=>{
-      if(res.status==200)
+      console.log(res)
+      if(res)
       {
-        localStorage.setItem('token',res.data.token);
         alert("Resgistration successfully")
         this.route.navigate(['/login']);
       }
-    console.log(res);
+   
   },
   (err)=>{
     alert(err.error.message);

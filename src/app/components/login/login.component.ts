@@ -6,44 +6,37 @@ import { UserService } from '../../services/userservices/user.service';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule,RouterModule,HttpClientModule],
-  providers:[UserService],
+  imports: [ReactiveFormsModule, RouterModule, HttpClientModule],
+  providers: [UserService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  userLogin:FormGroup;
-constructor(private fb:FormBuilder,private userservice:UserService,private route:Router){
-  this.userLogin=this.fb.group({
-  email:['',[Validators.required]],
-  password:['',[Validators.required]],
-  })
-}
-get email()
-{
-  return this.userLogin.get('email');
-}
-get password()
-{
-  return this.userLogin.get('password');
-}
-sendData()
-{
-  const token=localStorage.getItem('token');
-  if(!token)
-  {
-    alert("please register first");
-    this.route.navigate(['/']);
-    return;
+  userLogin: FormGroup;
+  constructor(private fb: FormBuilder, private userservice: UserService, private route: Router) {
+    this.userLogin = this.fb.group({
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    })
   }
-this.userservice.loginUser(this.userLogin.value).subscribe(
-  (res)=>{
- alert("Login sucessfully");
- this.route.navigate(['/home']);
-},
-(err)=>{
-  alert(err.error.message);
-}
-);
-}
+  get email() {
+    return this.userLogin.get('email');
+  }
+  get password() {
+    return this.userLogin.get('password');
+  }
+  sendData() {
+    this.userservice.loginUser(this.userLogin.value).subscribe(
+          (res) => {
+            console.log(res.data.token)
+            localStorage.setItem('token',res.data.token)
+            alert("Login sucessfully");
+            this.route.navigate(['/home']);
+          },
+          (err) => {
+            alert(err.error.message);
+          }
+        );
+
+  }
 }

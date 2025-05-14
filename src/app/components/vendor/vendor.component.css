@@ -51,23 +51,40 @@
     font-size: 30px;
   }
   .work-gallery {
+   width: 100%;
     background-color: #fddde6;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 15px;
     border-radius: 6px;
+    gap: 7px;
     height: 299px;
   }
-  
+  .work-gallery .right{
+    padding-left: 0.5%;
+  }
+  .work-gallery .left{
+    padding-right: 0.5%;
+  }
   .work-gallery img {
-    width: 290.59px;
+   width: 30%;
     height: 176px;
     object-fit: cover;
     border-radius: 8px;
   }
-  
+ @media (max-width: 948px) {
+  .work-gallery img {
+    width: 45%;
+  }
+}
+
+/* موبايل: صورة واحدة */
+@media (max-width: 767px) {
+  .work-gallery img {
+    width: 80%;
+  }
+}
+
   .arrow {
     background: none;
     border: none;
@@ -75,25 +92,12 @@
     color: #327537;
     cursor: pointer;
   }
+  
   strong{
     font-family: 'playfair display', serif;
     font-weight: 700;
     font-size: 30px;
     color: #F5D2D5;
   }
-  @media (max-width: 768px) {
-    .info-row {
-      flex-direction: column;
-      gap: 8px;
-    }
   
-    .work-gallery {
-      flex-wrap: wrap;
-    }
-  
-    .work-gallery img {
-      width: 100px;
-      height: 80px;
-    }
-  }
   

@@ -1,36 +1,44 @@
 <div class="profile-container">
-    <div class="profile-card">
-      <div class="profile-image">
-        <img src="photo.jpg" alt="Provider Image">
-      </div>
-      <div class="profile-info">
-        <div class="info-row">
-          <div><strong>NAME :</strong> Mohamed Ahmed</div>
-          <div><strong>CATEGORY :</strong> Photography</div>
-        </div>
-        <div class="info-row">
-          <div><strong>NUMBER OF CLIENTS :</strong> 10</div>
-          <div><strong>APPROVED BOOKINGS :</strong> 8</div>
-        </div>
-        <div class="info-row">
-          <div><strong>REFUSED BOOKINGS :</strong> 2</div>
-          <div><strong>LIKES :</strong> 1,545</div>
-        </div>
-        <div class="info-row">
-          <div><strong>ADDITION DATE :</strong> 15 / 10 / 2025</div>
-        </div>
-        <div class="info-row">
-          <div><strong>WORK :</strong></div>
-        </div>
-      </div>
-  
-      <div class="work-gallery">
-        <button class="arrow left"><i class="fa-solid fa-arrow-left"></i></button>
-        <img src="1.jpg" alt="Work 1">
-        <img src="2.jpg" alt="Work 2">
-        <img src="3.jpg" alt="Work 3">
-        <button class="arrow right"><i class="fa-solid fa-arrow-right"></i></button>
-      </div>
+  <div class="profile-card">
+    <div class="profile-image">
+      <img [src]="'http://localhost:3000/' + vendor?.profileImage" alt="Provider Image">
     </div>
+    <div class="profile-info">
+      <div class="info-row">
+        <div><strong>NAME :</strong>{{vendor?.title}}</div>
+        <div><strong>CATEGORY :</strong>{{vendor?.category}}</div>
+      </div>
+      <div class="info-row">
+        <div><strong>NUMBER OF CLIENTS :</strong>{{vendor?.packages?.orders?.length ?? 0}}</div>
+        <div><strong>APPROVED BOOKINGS :</strong> 8</div>
+      </div>
+      <div class="info-row">
+        <div><strong>REFUSED BOOKINGS :</strong> 2</div>
+        <div><strong>LIKES :</strong>{{vendor?.likes}}</div>
+      </div>
+      <div class="info-row">
+        <div><strong>ADDITION DATE :</strong>{{vendor?.createdAt|date: 'yyyy-MM-dd'}}</div>
+      </div>
+      <div class="info-row">
+        <div><strong>WORK :</strong></div>
+      </div>
+    </div> 
+      <div class="work-gallery">
+         <button class="arrow left" (click)="prev()"><i class="fa-solid fa-arrow-left"></i></button>
+       
+        @for(img of vendor?.serviceImage.slice(start,end);track img)
+        {
+           
+            <img [src]="'http://localhost:3000/' + img" alt="Work 1">
+           
+        }
+         <button class="arrow right" (click)="next()"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+      
+      
+      
+      
+      
+
   </div>
-  
+</div>
