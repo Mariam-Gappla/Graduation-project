@@ -1,9 +1,16 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #FAF3E0;
+  padding: 30px 15px;
+  font-family: var(--font-family);
+}
 .profile-container {
     max-width: 1000px;
     margin: auto;
     padding: 20px;
     font-family: 'Segoe UI', sans-serif;
-    background: #fffef9;
+    background-color: #FAF3E0;
   }
 
   .profile-info {
@@ -89,6 +96,21 @@
     margin: 40px 20px 10px;
   }
 
+<<<<<<< HEAD
+=======
+  .section-header .line-container-header {
+  margin: 20px 0px 30px;
+  position: relative;
+  width: 170px;
+  height: 3px;
+  background-color: black;
+}
+
+
+
+
+
+>>>>>>> 5a034a969b8798e7199f8ad14f68a87aa3657f07
   .left-title {
     text-align: left;
     color: green;
@@ -103,6 +125,7 @@
   .center-title {
     color: #222;
     margin-bottom: 5px;
+    text-align: start;
   }
 
   .underline {
@@ -164,7 +187,17 @@
     text-align: center;
 
   }
+<<<<<<< HEAD
 
+=======
+.work-line-container {
+  margin: 10px 0 30px;
+  position: relative;
+  width: 120px;
+  height: 3px;
+  background-color: black;
+}
+>>>>>>> 5a034a969b8798e7199f8ad14f68a87aa3657f07
   .carousel {
     position: relative;
     width: 100%;
@@ -187,12 +220,23 @@
 
   /* PRICING Section */
   .pricing-section {
-    background: #fff;
+    background: #FAF3E0;
     padding: 20px;
   }
+<<<<<<< HEAD
 
+=======
+.service-line-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  width: 400px;
+  height: 3px;
+  background-color: black;
+}
+>>>>>>> 5a034a969b8798e7199f8ad14f68a87aa3657f07
   .pricing-box {
-    background: #fffef9;
+    background: #FAF3E0;
     max-width: 700px;
     margin: auto;
     padding: 30px 20px;
@@ -229,12 +273,16 @@
     white-space: nowrap;
   }
 
+<<<<<<< HEAD
   .packages .book-btn {
+=======
+  .book-btn {
+>>>>>>> 5a034a969b8798e7199f8ad14f68a87aa3657f07
     margin: 20px auto 0;
     display: block;
-    padding: 12px 30px;
-    background: green;
-    color: white;
+    padding: 12px 24px;
+    background: #327537;
+    color: #F5D2D5;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -242,6 +290,13 @@
     font-family: 'playfair display', serif;
     font-weight: 900;
   }
+<<<<<<< HEAD
+=======
+  .book-btn:hover {
+    background: #5a9a5a;
+
+  }
+>>>>>>> 5a034a969b8798e7199f8ad14f68a87aa3657f07
 
 
   .main{
@@ -250,9 +305,106 @@
     font-family: 'Playfair Display SC', serif;
     color: #327537;
   }
+
+
+.review-section {
+  padding: 40px 20px;
+  background-color: transparent;
+}
+
+.review-header {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: #327537;
+}
+.line-container {
+  margin: 10px 0px 20px;
+  position: relative;
+  width: 300px;
+  height: 3px;
+  background-color: black;
+}
+.review-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center; /* centers content horizontally */
+}
+
+.review-box {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  width: 100%;
+  max-width: 800px; /* Limit width on large screens */
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.review-box:hover {
+  transform: translateY(-5px);
+}
+
+.review-rating {
+  margin-bottom: 12px;
+}
+
+.star {
+  color: #ffc107;
+  font-size: 1.2rem;
+  margin-right: 2px;
+}
+
+.star.half {
+  color: #e4e5e9;
+}
+
+.review-content {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+.review-box {
+  width: 100%;
+  border-radius: 0;
+  max-width: none;
+}
+.review-user {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #777;
+  font-style: italic;
+}
+.circle {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 13px;
+  height: 13px;
+  background-color: black;
+  border-radius: 50%;
+  animation: moveCircle 3s infinite alternate ease-in-out;
+}
+@keyframes moveCircle {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 20px);
+  }
+}
 /* ========== RESPONSIVE DESIGN ========== */
 
 @media (max-width: 576px) {
+  .service-line-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  width: 220px;
+  height: 3px;
+  background-color: black;
+}
     .profile-img {
       width: 220px;
       height: 220px;
@@ -266,24 +418,47 @@
       flex-direction: column;
       gap: 15px;
       align-items: center;
+      justify-content: center;
+      align-items: center;
     }
 
     .stat {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
       width: 90%;
       height: auto;
-      padding: 15px;
+      padding: 4px;
       font-size: 16px;
+
     }
 
     .stat img {
-      width: 50px;
-      height: 50px;
+      width: 20px;
+      height: 20px;
+      margin-right: 20px;
+      margin-left: 12px;
     }
 
+<<<<<<< HEAD
+=======
+    .summary-heading{
+      text-align: start;
+    }
+
+
+>>>>>>> 5a034a969b8798e7199f8ad14f68a87aa3657f07
     .summary-text {
       font-size: 18px;
-      text-align: center;
+      text-align: left;
     }
+<<<<<<< HEAD
+=======
+    .center-title{
+      text-align: start;
+    }
+>>>>>>> 5a034a969b8798e7199f8ad14f68a87aa3657f07
 
     .carousel-images {
       padding: 0 10px;

@@ -1,45 +1,81 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #FAF3E0;
+  padding: 30px 15px;
+  font-family: var(--font-family);
+}
 .title-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 40px;
     position: relative;
   }
-  
+
   .title-with-line {
     color: #327537;
     font-weight: 700;
     font-size: 40px;
     font-family: 'Playfair Display SC', serif;
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     display: inline-block;
     text-align: center;
   }
-  
-  
-  .title-with-line::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
+
+.line-container {
+  margin: 0px 0px;
+  position: relative;
+  width: 390px;
+  height: 4px;
+  background-color: black;
+}
+
+.line-container .circle {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  animation: moveCircle 3s infinite alternate ease-in-out;
+}
+
+@keyframes moveCircle {
+  0% {
     left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: black;
   }
-  
-  /* الدائرة */
-  .title-with-line::before {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    background-color: black;
-    border-radius: 50%;
+  100% {
+    left: calc(100% - 20px);
   }
-  
+}
+
+input, select, textarea {
+  font-family: "Actor", sans-serif;
+  font-weight: 400;
+  background-color: transparent;
+  border: 2px solid #474747;
+  padding: 8px;
+  outline: none; /* Removes the default focus outline */
+  transition: all 0.3s ease-in-out; /* Smooth transition for focus state */
+}
+
+/* Focused state */
+input:focus, select:focus, textarea:focus {
+  border: 2px solid #327537; /* Change the border color to match your theme */
+  background-color: #e8f6e5; /* Light background color for focus effect */
+  box-shadow: 0 0 5px rgba(50, 117, 55, 0.5); /* Adding a subtle shadow */
+}
+
+/* Optional: for select elements, you can add a custom appearance */
+select:focus {
+  border-color: #327537;
+  background-color: #e8f6e5;
+}
+
   /* نصوص */
   .main {
     color: #327537;
@@ -47,24 +83,27 @@
     font-size: 30px;
     font-family: 'Actor', sans-serif;
   }
-  
+
   /* زر */
   .confirm-button {
     background-color: #327537;
     color: white;
     width: 100%;
-    max-width: 484px;
+    max-width: 400px;
     height: 120px;
-    border-radius: 5px;
+    border-radius: 12px;
     padding: 10px 20px;
+  }.confirm-button:hover {
+    background-color: #5a9a5a;
+
   }
-  
+
   .confirm-button span {
     font-size: 30px;
     font-weight: 700;
     font-family: 'Playfair Display SC', serif;
   }
-  
+
   /* التنبيه */
   .discount {
     background-color: #F5D2D5;
@@ -74,33 +113,59 @@
     margin: 0 auto;
     max-width: 80%;
   }
-  
+
   .discount span {
     color: #327537;
     font-weight: 400;
     font-size: 24px;
     font-family: 'Actor', sans-serif;
   }
-  
+.border-top p span{
+  color: #474747;
+  font-family: 'Actor', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  margin-left: 24px;
+}
+.border-top p strong{
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 700;
+}
   /* Responsive */
   @media (max-width: 768px) {
+    .title-with-line{
+      padding: 0;
+    }
+    .line-container {
+  width: 280px;
+  height: 3px;
+}
+
+.line-container .circle {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+}
     .main {
       font-size: 22px;
     }
-  
+
     .confirm-button {
       height: auto;
       padding: 15px;
     }
-  
+
     .confirm-button span {
       font-size: 22px;
     }
-  
+
     .discount span {
       font-size: 18px;
     }
-  
+
     .title-with-line {
       font-size: 28px;
     }
