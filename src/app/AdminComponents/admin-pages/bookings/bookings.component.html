@@ -1,0 +1,57 @@
+<div class="btns">
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Status
+  </button>
+  <ul class="dropdown-menu">
+    @for(status of statuses; track status){
+      <li><a class="dropdown-item" href="#">{{status}}</a></li>
+    }
+
+  </ul>
+</div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Payment
+  </button>
+  <ul class="dropdown-menu">
+    @for(p of Payments; track p){
+      <li><a class="dropdown-item" href="#">{{p}}</a></li>
+    }
+
+  </ul>
+</div>
+</div>
+<div class="table-responsive">
+
+<table style="width: 100%; border-collapse: collapse;" border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Category</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Service</th>
+      <th>Price</th>
+      <th>Payment</th>
+      <th>Action</th>
+      <th>Deposit</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(booking of bookings; track booking){
+      <tr>
+        <td>{{ booking.id }}</td>
+        <td>{{ booking.category }}</td>
+        <td>{{ booking.date }}</td>
+        <td>{{ booking.status }}</td>
+        <td>{{ booking.service }}</td>
+        <td>{{ booking.price }}</td>
+        <td>{{ booking.payment }}</td>
+        <td><button></button></td>
+        <td>{{ booking.deposit }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
+</div>

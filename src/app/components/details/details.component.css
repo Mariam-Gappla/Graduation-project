@@ -96,21 +96,6 @@
     margin: 40px 20px 10px;
   }
 
-<<<<<<< HEAD
-=======
-  .section-header .line-container-header {
-  margin: 20px 0px 30px;
-  position: relative;
-  width: 170px;
-  height: 3px;
-  background-color: black;
-}
-
-
-
-
-
->>>>>>> 5a034a969b8798e7199f8ad14f68a87aa3657f07
   .left-title {
     text-align: left;
     color: green;
@@ -187,17 +172,6 @@
     text-align: center;
 
   }
-<<<<<<< HEAD
-
-=======
-.work-line-container {
-  margin: 10px 0 30px;
-  position: relative;
-  width: 120px;
-  height: 3px;
-  background-color: black;
-}
->>>>>>> 5a034a969b8798e7199f8ad14f68a87aa3657f07
   .carousel {
     position: relative;
     width: 100%;
@@ -223,18 +197,6 @@
     background: #FAF3E0;
     padding: 20px;
   }
-<<<<<<< HEAD
-
-=======
-.service-line-container {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  position: relative;
-  width: 400px;
-  height: 3px;
-  background-color: black;
-}
->>>>>>> 5a034a969b8798e7199f8ad14f68a87aa3657f07
   .pricing-box {
     background: #FAF3E0;
     max-width: 700px;
@@ -273,11 +235,7 @@
     white-space: nowrap;
   }
 
-<<<<<<< HEAD
   .packages .book-btn {
-=======
-  .book-btn {
->>>>>>> 5a034a969b8798e7199f8ad14f68a87aa3657f07
     margin: 20px auto 0;
     display: block;
     padding: 12px 24px;
@@ -290,13 +248,6 @@
     font-family: 'playfair display', serif;
     font-weight: 900;
   }
-<<<<<<< HEAD
-=======
-  .book-btn:hover {
-    background: #5a9a5a;
-
-  }
->>>>>>> 5a034a969b8798e7199f8ad14f68a87aa3657f07
 
 
   .main{
@@ -441,24 +392,10 @@
       margin-left: 12px;
     }
 
-<<<<<<< HEAD
-=======
-    .summary-heading{
-      text-align: start;
-    }
-
-
->>>>>>> 5a034a969b8798e7199f8ad14f68a87aa3657f07
     .summary-text {
       font-size: 18px;
       text-align: left;
     }
-<<<<<<< HEAD
-=======
-    .center-title{
-      text-align: start;
-    }
->>>>>>> 5a034a969b8798e7199f8ad14f68a87aa3657f07
 
     .carousel-images {
       padding: 0 10px;
