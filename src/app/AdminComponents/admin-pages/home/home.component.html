@@ -1,0 +1,67 @@
+<div class="home-container">
+  <!-- Top Half -->
+  <div class="top-half">
+    <div class="box">
+      <img src="pepole.png" alt="">
+      <div class="info">
+        <span>6,258</span>
+        <span>User</span>
+      </div>
+    </div>
+    <div class="box">
+      <img src="user.png" alt="">
+      <div class="info">
+        <span>6,258</span>
+        <span>Bride</span>
+      </div>
+    </div>
+    <div class="box">
+      <img src="supplier.png" alt="">
+      <div class="info">
+        <span>6,258</span>
+        <span>Vendor</span>
+      </div>
+    </div>
+    <div class="box">
+      <img src="rating.png" alt="">
+      <div class="info">
+        <span>6,258</span>
+        <span>Service</span>
+      </div>
+    </div>
+    <div class="box">
+      <img src="time.png" alt="">
+      <div class="info">
+        <span>6,258</span>
+        <span>Booking</span>
+      </div>
+    </div>
+    <div class="box">
+      <img src="tag.png" alt="">
+      <div class="info">
+        <span>6,258</span>
+        <span>Confirmed</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Half -->
+  <div class="bottom-half">
+    <div class="bottom-box">Bottom Box 1</div>
+    <div class="bottom-box">
+      <div class="heading">
+        <p>Recent Bookings Confirmed</p>
+      </div>
+      <div class="bookings">
+        @for(b of bookings; track b){
+        <div class="booking">
+        <div class="col">{{ b.name }}</div>
+        <div class="col">{{ b.date }}</div>
+        <div class="col"><span>{{ b.price }} EGP</span></div>
+      </div>
+    }
+
+      </div>
+    </div>
+  </div>
+</div>

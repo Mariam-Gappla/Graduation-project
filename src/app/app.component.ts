@@ -6,26 +6,27 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { errorContext } from 'rxjs/internal/util/errorContext';
 import { ErrorComponent } from './components/error/error.component';
+import { AdminComponentComponent } from './AdminComponents/admin-component/admin-component.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,HeaderComponent,FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
- check:boolean=false;
- constructor(){
-}
-checkcompnent(component:any){
-if(component instanceof LoginComponent || component instanceof SignupComponent || component instanceof ErrorComponent)
-{
-  this.check=true;
-}
-else
-{
-  this.check=false;
-}
-
-}
+  check: boolean = false;
+  constructor() {}
+  checkcompnent(component: any) {
+    if (
+      component instanceof LoginComponent ||
+      component instanceof SignupComponent ||
+      component instanceof ErrorComponent ||
+      component instanceof AdminComponentComponent
+    ) {
+      this.check = true;
+    } else {
+      this.check = false;
+    }
+  }
 }

@@ -1,0 +1,44 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Status
+  </button>
+  <ul class="dropdown-menu">
+    @for(status of statuses; track status){
+      <li><a class="dropdown-item" href="#">{{status}}</a></li>
+    }
+
+  </ul>
+</div>
+<div class="table-responsive">
+
+<table style="width: 100%; border-collapse: collapse;" border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Category</th>
+      <th>Experience</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(service of services; track service){
+      <tr>
+        <td>{{ service.id }}</td>
+        <td>{{ service.category }}</td>
+        <td>{{ service.experience }}</td>
+        <td [ngClass]="{
+          'status-accepted': service.status === 'Accepted',
+          'status-refuces': service.status === 'Refused',
+          'status-pending': service.status === 'Pending'
+        }">
+  {{ service.status }}
+</td>
+        <td class="text-right">
+          <button pButton type="button" icon="pi pi-ellipsis-h" class="p-button-secondary p-button-icon-only">Show Details</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+</div>

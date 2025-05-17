@@ -1,0 +1,28 @@
+<div class="table-responsive">
+
+<table style="width: 100%; border-collapse: collapse;" border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Bookings</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(user of users; track user){
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td>{{ user.bookings }}</td>
+        <td><button class="stop-btn">Stop</button><button class="delete-btn">Delete</button></td>
+
+      </tr>
+    }
+  </tbody>
+</table>
+</div>

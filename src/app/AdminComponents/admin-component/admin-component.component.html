@@ -1,0 +1,127 @@
+<!-- Always-visible Icon Sidebar -->
+<div class="iconsnav position-fixed h-100 sidebar-iconbar d-none d-md-flex flex-column align-items-center py-3"
+     style="background-color: #F5D2D5;">
+
+  <!-- Logo Image -->
+  <div class="closed-nav-img">
+    <img src="zaffanav.png" alt="Logo">
+  </div>
+
+  <!-- Tab Icons -->
+  <div class="tabs">
+    <!-- Open Sidebar Arrow -->
+    <a class="nav-link text-dark open-icon" href="#" title="Open Menu" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+      <i class="bi bi-caret-right"></i>
+    </a>
+
+    <!-- Navigation Icons -->
+    <a class="nav-link text-dark my-3" href="#" title="Home">
+      <i class="fa-solid fa-house fs-3"></i>
+    </a>
+    <a class="nav-link text-dark my-3" href="#" title="Service">
+      <i class="fa-solid fa-gear fs-3"></i>
+    </a>
+    <a class="nav-link text-dark my-3" href="#" title="Booking">
+      <i class="fa-solid fa-calendar-days fs-3"></i>
+    </a>
+    <a class="nav-link text-dark my-3" href="#" title="Users">
+      <i class="fa-solid fa-users fs-3"></i>
+    </a>
+    <a class="nav-link text-dark my-3" href="#" title="Reviews">
+      <i class="fa-solid fa-star-half-stroke fs-3"></i>
+    </a>
+  </div>
+</div>
+<button
+  class="mobile-sidebar-toggle"
+  data-bs-toggle="offcanvas"
+  data-bs-target="#sidebarMenu"
+  aria-label="Toggle sidebar"
+>
+  <i class="bi bi-caret-right"></i>
+</button>
+<!-- Expandable Offcanvas Sidebar -->
+<div class="offcanvas offcanvas-start custom-sidebar" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarLabel">
+  <div class="offcanvas-header d-block text-center position-relative">
+    <img src="zaffanav.png" alt="" class="img-fluid">
+    <!-- Close Sidebar Button -->
+    <button type="button" class="close-icon hide" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="bi bi-caret-left "></i>
+    </button>
+  </div>
+
+  <div class="offcanvas-body d-flex flex-column justify-content-start custom-scrollbar">
+    <ul class="nav flex-column w-100">
+      <li class="nav-item">
+        <a href="#" data-target="home" title="Home">
+          <div>
+            <i class="fa-solid fa-house"></i>
+            <span>HOME</span>
+          </div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="" href="#" data-target="service" title="Service">
+          <div>
+            <i class="fa-solid fa-gear"></i>
+            <span>SERVICES</span>
+          </div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="" href="#" data-target="booking" title="Booking">
+          <div>
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>BOOKING</span>
+          </div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a  href="#" data-target="users" title="Users">
+          <div>
+            <i class="fa-solid fa-users"></i>
+            <span>USERS</span>
+          </div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" data-target="reviews" title="Reviews">
+          <div>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <span>REVIEWS</span>
+          </div>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<div class="main-content">
+
+  <div id="home" class="tab-content active">
+    <app-home></app-home>
+  </div>
+
+  <div id="service" class="tab-content" style="display:none;">
+    <app-services></app-services>
+  </div>
+
+  <div id="booking" class="tab-content" style="display:none;">
+    <app-bookings></app-bookings>
+  </div>
+
+  <div id="users" class="tab-content" style="display:none;">
+    <app-users></app-users>
+  </div>
+
+  <div id="reviews" class="tab-content" style="display:none;">
+    <app-reviews></app-reviews>
+  </div>
+
+  <div id="statistics" class="tab-content" style="display:none;">
+    <app-statistics></app-statistics>
+  </div>
+
+</div>
+

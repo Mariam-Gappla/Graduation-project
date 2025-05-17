@@ -1,0 +1,79 @@
+<div class="reviews-page">
+  <h1 class="page-title">Review Details</h1>
+
+  @for(review of reviews; track review){
+  <div class="review-container">
+    <!-- Section 1: Profile Info -->
+    <div class="profile-section">
+      <img [src]="review.profileImg" alt="Profile Image" class="profile-img" />
+      <div class="profile-details">
+        <h2>{{ review.name }}</h2>
+        <div class="info">
+          <span>{{ review.job }}</span>
+          <span>{{ review.experience }} Years</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Section 2: Summary -->
+    <div class="section summary-section">
+      <h3 class="section-title">Summary</h3>
+      <p>{{ review.summary }}</p>
+    </div>
+    <hr>
+
+    <!-- Section 3: Services -->
+    <div class="section service-section">
+      <h3 class="section-title">Services</h3>
+      <div class="service row gx-5">
+        @for(service of review.services; track service){
+        <div class="col-12 col-lg-6 mb-3 info">
+          <span>{{ service.service }}</span>
+          <span>{{ service.price }}</span>
+        </div>
+        }
+      </div>
+    </div>
+    <hr>
+
+    <!-- Section 4: Additional Info -->
+  <p-carousel
+    [value]="review.images"
+    [numVisible]="4"
+    [numScroll]="3"
+    [circular]="false"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template let-image #item>
+            <img
+              [src]="image"
+              alt="Service image"
+              class="p-img"
+            />
+    </ng-template>
+  </p-carousel>
+    <hr>
+
+
+    <!-- Section 5: Address -->
+    <div class="section">
+      <h3 class="section-title">Address</h3>
+      <p>123 Auto Street, Car City, 45678</p>
+    </div>
+    <hr>
+
+    <!-- Section 6: Contact Info -->
+    <div class="section">
+      <h3 class="section-title">Contact Info</h3>
+      <p>Phone: (123) 456-7890<br />Email: john.doeexample.com</p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="action-buttons">
+      <button class="accept-btn">Accept</button>
+      <button class="refuse-btn">Refuse</button>
+    </div>
+  </div>
+  }
+</div>
