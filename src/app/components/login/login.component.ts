@@ -27,16 +27,17 @@ export class LoginComponent {
   }
   sendData() {
     this.userservice.loginUser(this.userLogin.value).subscribe(
-          (res) => {
-            console.log(res.data.token)
-            localStorage.setItem('token',res.data.token)
-            alert("Login sucessfully");
-            this.route.navigate(['/home']);
-          },
-          (err) => {
-            alert(err.error.message);
-          }
-        );
+      (res) => {
+
+        console.log('Response:', res);
+        localStorage.setItem('token',res.data.token)
+         localStorage.setItem('id',res.data._id)
+        this.route.navigate(['/home'])
+      },
+      (err) => {
+        alert(err.error.message);
+      }
+    );
 
   }
 }

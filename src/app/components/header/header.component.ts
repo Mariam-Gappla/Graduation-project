@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   standalone:true
@@ -10,6 +11,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 isclick:boolean=false;
+id:any
+constructor(){
+  this.id=localStorage.getItem('id')
+}
 clicked()
 {
   this.isclick=!this.isclick;

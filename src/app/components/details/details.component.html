@@ -1,8 +1,8 @@
 <div class="profile-container">
     <div class="profile-info">
-      <img src="photographer.jpg" alt="Photographer" class="profile-img" />
+      <img [src]= "'http://localhost:3000/' + vendor?.profileImage"alt="Photographer" class="profile-img" />
       <h2 class="name mb-5">
-        Mohamed Ahmed
+       {{vendor?.title}}
         <span class="heart-icon">
           <img src="hert1.png" alt="heart">
         </span>
@@ -11,10 +11,10 @@
 
 
       <div class="stats mb-5">
-        <div class="stat "><img src="pepole.png" alt=""><p >20 Client</p></div>
-        <div class="stat"><img src="heart.png" alt=""><p>1545 Likes</p></div>
-        <div class="stat"><img src="suitcase.png" alt=""><p>3 Years experience</p></div>
-        <div class="stat"><img src="tag.png" alt=""><p>Photography</p></div>
+        <div class="stat "><img src="pepole.png" alt=""><p >{{vendor?.packages?.orders?.length ?? 0}} Client</p></div>
+        <div class="stat"><img src="heart.png" alt=""><p>{{vendor?.likes}} Likes</p></div>
+        <div class="stat"><img src="suitcase.png" alt=""><p>{{vendor?.experience ?? 0}} Years experience</p></div>
+        <div class="stat"><img src="tag.png" alt=""><p>{{vendor?.category}}</p></div>
       </div>
     </div>
 
@@ -26,7 +26,7 @@
     </div>
     </div>
     <p class="summary-text">
-      I am Mohamed Ahmed a passionate professional photographer with 3 years of experience in photography field, work under pressure and bl bla bla...
+      {{vendor?.serviceDetails}}
     </p>
 
     <!-- WORK SECTION -->
@@ -39,16 +39,15 @@
     <div class="work-section">
 
         <div class="carousel">
-            <!-- <button class="carousel-btn left"></button> -->
-
+          <button class="arrow left" (click)="prev()"><i class="fa-solid fa-arrow-left"></i></button>
             <div class="carousel-images ">
-              <img src="1.jpg" alt="Work" style="margin-left: 20px;" />
-              <img src="2.jpg" alt="Work" />
-              <img src="3.jpg" alt="Work" />
-              <img src="1.jpg" alt="Work" />
+              @for(img of vendor?.serviceImage;track img)
+              {
+                <img [src]="'http://localhost:3000/' + img" alt="Work 1">
+              }
             </div>
 
-            <!-- <button class="carousel-btn right"></button>  -->
+            <button class="arrow right" (click)="next()"><i class="fa-solid fa-arrow-right"></i></button>
           </div>
     </div>
 
@@ -62,13 +61,26 @@
 
     <div class="pricing-section">
         <div class="pricing-box">
-          <div class="package" *ngFor="let pkg of pricingPackages; let i = index">
-            <div class="package-left">{{pkg.title}}</div>
-            <div class="package-right">{{pkg.price}}</div>
+          <div class="package">
+            @if(vendor?.packages.length!=0)
+            {
+              @for(pkg of vendor?.packages;track pkg)
+              {
+                <div class="package-left">{{pkg.title}}</div>
+                <div class="package-right">{{pkg.price}}</div>
+              }
+            }
+            @else
+            {
+               <div class="package-left">No packages</div>
+            }
           </div>
+           @if(vendor?.packages.length!=0)
+           {
+             <button class="book-btn">BOOK NOW</button>
+           }
+           
         </div>
-
-        <button class="book-btn">BOOK NOW</button>
       </div>
       <section class="review-section">
   <h2 class="review-header">User Reviews</h2>

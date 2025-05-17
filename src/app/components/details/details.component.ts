@@ -1,51 +1,63 @@
-import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
-
+import { Component,OnInit } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { VendorsService } from '../../services/vendors/vendors.service';
+import { ActivatedRoute } from '@angular/router';
+import { DatePipe, NgFor } from '@angular/common';
 @Component({
   selector: 'app-details',
-  imports: [NgFor],
+  imports: [HttpClientModule],
+  providers:[VendorsService],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })
 export class DetailsComponent {
-  pricingPackages = [
-  {
-    title: "Half day session + Limited photos",
-    price: "3500 EGP"
-  },
-  {
-    title: "Half day session + Unlimited photos",
-    price: "4200 EGP"
-  },
-  {
-    title: "Full day session + Limited photos",
-    price: "5000 EGP"
-  },
-  {
-    title: "Full day session + Unlimited photos",
-    price: "6000 EGP"
+  vendor:any;
+    start:any=0;
+    end:any;
+  constructor(private vendorservice:VendorsService,private route:ActivatedRoute){
+    window.addEventListener("resize",()=>{
+      this.changeWidth()
+    })
   }
-];
-reviews = [
-  {
-    name: 'Sarah Ali',
-    date: 'March 2025',
-    comment: 'Amazing work! Very professional and creative.',
-    image: 'user1.jpg'
-  },
-  {
-    name: 'Ahmed Mostafa',
-    date: 'January 2025',
-    comment: 'Highly recommend. Made the whole session fun!',
-    image: 'user2.jpg'
-  },
-  {
-    name: 'Laila Kamal',
-    date: 'December 2024',
-    comment: 'Great experience and beautiful photos!',
-    image: 'user3.jpg'
+  
+  changeWidth(): void {
+    const width = window.innerWidth;
+  
+    if (width < 768) {
+      this.end = this.start + 2; // موبايل
+    } else if (width < 992) {
+      this.end = this.start + 3; // تابلت
+    } else {
+      this.end = this.start + 4; // كمبيوتر
+    }
   }
-];
+  next():void{
+    
+      if(this.end<this.vendor?.serviceImage.length)
+      {
+          this.start++;
+          this.changeWidth();
+      }
+    
+  
+  }
+  prev():void{
+    if(this.start > 0)
+    {
+      this.start--;
+      this.changeWidth()
+    }
+  
+  }
+  ngOnInit(): void {
+    this.changeWidth();
+    const id=this.route.snapshot.paramMap.get("vendorId");
+    this.vendorservice.getVendorById(id).subscribe((res)=>{
+  
+      this.vendor=res.data[0];
+      
+    })
+  }
 
 
 }

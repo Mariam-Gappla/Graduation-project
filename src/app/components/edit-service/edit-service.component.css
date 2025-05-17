@@ -26,7 +26,17 @@
     font-weight: 500;
     color: #444;
   }
-  
+  .uploaded-files{
+   padding: 0;
+    
+  }
+  .uploaded-files li{
+    list-style-type: none;
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: #3f3f3f;
+    color: white;
+  }
   .form-section {
     background-color: #f9c9d2;
     padding: 20px;

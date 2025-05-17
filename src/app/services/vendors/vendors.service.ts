@@ -21,4 +21,16 @@ export class VendorsService {
   {
     return this.httpclient.get(`http://localhost:3000/services/${id}`,{headers:this.headers})
   }
+  addservice(service: FormData): Observable<any> {
+  return this.httpclient.post("http://localhost:3000/services/add", service, {
+    headers: new HttpHeaders({
+      'Authorization': `Bearer ${this.token}`
+      // لا تضف Content-Type هنا
+    })
+  });
+}
+deleteService(id:any):Observable<any>
+{
+  return this.httpclient.delete(`http://localhost:3000/services/${id}`,{headers:this.headers})
+}
 }
