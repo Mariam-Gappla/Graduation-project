@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-b-details',
-  imports: [ReactiveFormsModule],
+  standalone: true, // This is required if you're using standalone components
+  imports: [CommonModule, ReactiveFormsModule], // 👈 Add CommonModule here
   templateUrl: './b-details.component.html',
   styleUrl: './b-details.component.css'
 })
@@ -23,11 +25,27 @@ export class BDetailsComponent {
   onSubmit() {
     if (this.bookingForm.valid) {
       console.log(this.bookingForm.value);
-      // send to API or show confirmation
     } else {
       alert('Please fill in all required fields');
     }
   }
+
+  getServiceLabel(service: string): string {
+    switch (service) {
+      case 'full': return 'Full Day Session + Unlimited Images';
+      case 'half': return 'Half Day Session';
+      default: return '';
+    }
+  }
+
+  getPrice(service: string): number {
+    switch (service) {
+      case 'full': return 6000;
+      case 'half': return 3500;
+      default: return 0;
+    }
+  }
+
   get bookingDate() {
     return this.bookingForm.get('bookingDate');
   }
@@ -43,5 +61,4 @@ export class BDetailsComponent {
   get notes() {
     return this.bookingForm.get('notes');
   }
-
 }

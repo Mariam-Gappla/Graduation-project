@@ -1,59 +1,252 @@
-.sign-up{
-    background-color: #F5D2D5;
-    overflow: hidden;
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #FAF3E0;
+  padding: 20px;
+  font-family: var(--font-family);
+  box-sizing: border-box;
 }
-.signup-content{
-    background-color: #F5D2D5;
-    height: 100vh;;
-   
+
+.sign-up {
+  background-color: #F5D2D5;
+  overflow: hidden;
+  margin: 20px auto;
+  border-radius: 24px;
+  max-width: 960px;
 }
-.sign-up img{
-    height: 100vh;
-    width: 100%;
+
+.signup-content {
+  background-color: #F5D2D5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
-.inp{
+
+@media (min-width: 768px) {
+  .signup-content {
+    flex-direction: row;
+    height: auto; /* Remove fixed height */
+    align-items: stretch;
+  }
+}
+
+.sign-up h1 {
+  color: #327537;
+  font-family: 'Playfair Display SC', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .sign-up h1 {
+    text-align: left;
+    font-size: 3rem;
+    margin-top: 0;
+  }
+}
+
+.sign-up p {
+  font-family: 'actor', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #474747;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .sign-up p {
+    font-size: 1.2rem;
+    text-align: left;
+    margin-bottom: 38px;
+  }
+}
+
+.sign-up img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 24px 0 0 24px;
+}
+
+@media (max-width: 767px) {
+  .sign-up img {
+    display: none;
+  }
+}
+
+.inp {
+  width: 100%;
+  padding: 12px 24px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #FAF3E0;
+  font-family: 'Almarai', sans-serif;
+  font-size: 1rem;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 576px) {
+  .inp {
     width: 90%;
-    padding-left: 10px;
-    height: 40px;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    background-color: #FAF3E0;
-   
+  }
 }
-.space{
-    margin-left: 25%;
+
+.space {
+  margin-left: 10px;
 }
-.sign-up .button{
+
+.sign-up .button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (min-width: 576px) {
+  .sign-up .button {
+    justify-content: flex-start;
+  }
+}
+
+.sign-up button {
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: #327537;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'actor', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  width: 80%;
+  min-width: 150px;
+}
+
+@media (min-width: 576px) {
+  .sign-up button {
+    font-size: 1.6rem;
+    width: auto;
+    padding: 8px 42px;
+  }
+}
+
+.sign-up button:disabled {
+  background-color: #8bb88b;
+  cursor: not-allowed;
+}
+
+.sign-up button:not(:disabled):hover {
+  background-color: #245423;
+}
+
+.forget-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+}
+
+@media (min-width: 576px) {
+  .forget-content {
     width: 90%;
-display: flex;
-justify-content: center;
+  }
 }
-.sign-up button{
-    width: 20%;
-    height: 40px;
-    min-width: 150px;
-    border-radius: 10px;
-    border: none;
-    background-color: #327537;
-    color: white;
+
+.forget-password {
+  text-decoration: none;
+  color: #474747;
+  font-size: 0.9rem;
 }
-.forget-content{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
+
+.havenot-account {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the "Don't have an account?" section */
+  margin: 20px 0;
+  font-size: 0.9rem;
 }
-.forget-password{
-    text-decoration: none;
-    color: #474747;   
-}
-.havenot-account{
-    display: flex;
-    align-items: center;
+
+@media (min-width: 576px) {
+  .havenot-account {
+    justify-content: flex-start; /* Align to the left on wider screens */
     margin: 30px 0px;
+    font-size: 1rem;
+  }
 }
-.havenot-account a{
-    text-decoration: none;
-    color: #474747; 
+
+.havenot-account h5 {
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+
+.havenot-account a {
+  text-decoration: none;
+  color: #327537;
+  font-weight: 600;
+}
+
+.col-12,
+.col-sm-6 {
+  padding: 0;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.d-sm-flex {
+  /* Display as flex on small screens and up */
+}
+
+.d-none {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .d-sm-flex {
+    display: flex;
+  }
+  .d-none {
+    display: block;
+  }
+}
+
+.ms-3 {
+  margin-left: 1rem;
+}
+
+.ms-4 {
+  margin-left: 1.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.ms-1 {
+  margin-left: 0.25rem;
 }

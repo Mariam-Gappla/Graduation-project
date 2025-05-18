@@ -1,4 +1,5 @@
-<div class="container my-5 p-4 rounded">
+<div class="booking-details">
+  <div class="container rounded">
     <div class="title-wrapper text-center">
       <h3 class="title-with-line">BOOKING DETAILS</h3>
       <div class="line-container">
@@ -48,15 +49,16 @@
         <textarea class="form-control" rows="4" formControlName="notes" placeholder="Write any additional notes"></textarea>
       </div>
 
-      <div class="border-top pt-3">
-        <p><strong class="main">SERVICE:</strong> <span> Full Day Session + Unlimited Images</span> </p>
-        <p><strong class="main">DATE:</strong> <span> 10 Oct 2025</span></p>
-        <p><strong class="main">PRICE:</strong> <span> 6000 EGP</span></p>
-      </div>
+      <div class="border-top pt-3" *ngIf="bookingForm.valid">
+  <p><strong class="main">SERVICE:</strong> <span>{{ getServiceLabel(bookingForm.value.service) }}</span></p>
+  <p><strong class="main">DATE:</strong> <span>{{ bookingForm.value.bookingDate | date:'dd MMM yyyy' }}</span></p>
+  <p><strong class="main">PRICE:</strong> <span>{{ getPrice(bookingForm.value.service) }} EGP</span></p>
+</div>
 
-      <div class="alert alert-danger mt-3 discount text-center">
+
+      <!-- <div class="alert alert-danger mt-3 discount text-center">
         <span>A deposit of 30% must be paid within 3 days of the booking date after vendor confirmation.</span>
-      </div>
+      </div> -->
 
       <div class="d-flex justify-content-center mt-4">
         <button class="btn btn-success confirm-button" type="submit">
@@ -65,3 +67,5 @@
       </div>
     </form>
   </div>
+
+</div>
