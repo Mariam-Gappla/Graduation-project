@@ -21,4 +21,8 @@ export class UserService {
   updatePassword(user: any, id: any): Observable<any> {
     return this.httpclient.patch(`http://localhost:3000/users/${id}`, user);
   }
+  getServiceById(serviceId: string): Observable<any> {
+    return this.httpclient.get(`http://localhost:3000/services/${serviceId}`);
+  }
+
 }

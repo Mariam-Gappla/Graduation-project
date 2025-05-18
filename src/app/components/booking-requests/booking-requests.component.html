@@ -1,0 +1,64 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">BOOKING REQUESTS</h2>
+
+  <div class="line-container">
+    <div class="circle"></div>
+  </div>
+
+  <div class="dropdown mb-3">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      {{ selectedFilter === 'all' ? 'All Requests' : selectedFilter | titlecase }}
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" (click)="selectedFilter = 'all'">All Requests</a></li>
+      <li><a class="dropdown-item" (click)="selectedFilter = 'approved'">Approved</a></li>
+      <li><a class="dropdown-item" (click)="selectedFilter = 'pending'">Pending</a></li>
+      <li><a class="dropdown-item" (click)="selectedFilter = 'refused'">Refused</a></li>
+    </ul>
+  </div>
+
+  <div *ngIf="filteredRequests.length > 0; else noRequests">
+    <div class="table-wrapper">
+      <div class="table-header">
+        <span class="th">Client</span>
+        <span class="th">Date</span>
+        <span class="th">Category</span>
+        <span class="th">Service</span>
+        <span class="th">Price</span>
+        <span class="th">Payment</span>
+        <span class="th">Status</span>
+        <span class="th actions-field">Actions</span>
+      </div>
+      <div class="table-body">
+        <div class="tr" *ngFor="let request of filteredRequests">
+          <span class="td">{{ request.client }}</span>
+          <span class="td">{{ request.date | date }}</span>
+          <span class="td">{{ request.category }}</span>
+          <span class="td">{{ request.service }}</span>
+          <span class="td">{{ request.price}} EGP</span>
+          <span class="td">{{ request.payment }}</span>
+          <span class="td">{{ request.status }}</span>
+          <span class="td actions">
+            <button
+              class="approve-btn"
+              (click)="updateStatus(request, 'approved')"
+            >
+              Approve
+            </button>
+            <button
+              class="refuse-btn"
+              (click)="updateStatus(request, 'refused')"
+            >
+              Refuse
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noRequests>
+    <div class="alert alert-info">There are no booking requests.</div>
+  </ng-template>
+</div>
+

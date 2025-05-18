@@ -214,9 +214,6 @@
   align-items: center;
 }
 
-.d-sm-flex {
-  /* Display as flex on small screens and up */
-}
 
 .d-none {
   display: none;

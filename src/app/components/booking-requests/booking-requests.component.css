@@ -1,0 +1,216 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #FAF3E0;
+  padding: 30px 15px;
+  font-family: var(--font-family);
+  box-sizing: border-box;
+}
+
+h2 {
+  color: #327537;
+  font-family: 'playfair display SC', serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+.line-container {
+  margin: 0 auto 64px;
+  position: relative;
+  width: 400px;
+  height: 3px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.line-container .circle {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 13px;
+  height: 13px;
+  background-color: rgb(22, 22, 22);
+  border-radius: 50%;
+  animation: moveCircle 3s infinite alternate ease-in-out;
+}
+
+@keyframes moveCircle {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 20px);
+  }
+}
+
+.dropdown-toggle{
+  background-color: #474747;
+  font-family: 'actor' sans-serif;
+  color: #FAF3E0;
+  font-size: 1.2rem;
+  margin-bottom: 64px;
+}
+
+
+  .table-wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .table-header,
+  .tr {
+    display: flex;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .table-header {
+    background-color: #F5D2D5;
+    font-family: 'playfair display SC', serif;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #FAF3E0;
+  }
+
+  .table-body .tr {
+    background-color: #474747;
+    color: #FFFFFF;
+    font-family: 'actor', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden; /* To contain the border-radius */
+  }
+
+  .th,
+  .td {
+    flex: 1;
+    padding: 18px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .actions {
+    justify-content: space-around;
+  }
+
+  /* Style for the first and last cells to match border-radius */
+  .table-body .tr > span:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+  .table-body .tr > span:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+  button.approve-btn, button.refuse-btn {
+    font-family: 'actor', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 4px 8px;
+    color: white;
+    margin: 0 4px;
+    width: 131px;
+    height: 40px;
+    border: none;
+    transition: all 0.3s ease;
+  }
+.approve-btn{
+  background-color: #327537;
+
+  cursor: pointer;
+}
+.refuse-btn{
+  background-color: #FF0000;
+  cursor: pointer;
+}
+.approve-btn:hover{
+  background-color: #46944b;
+
+  cursor: pointer;
+}
+.refuse-btn:hover{
+  background-color: #ff3535;
+  cursor: pointer;
+}
+
+.actions-field{
+  padding: 0 90px;
+  text-align: center;
+}
+/* Responsive Enhancements */
+@media (max-width: 992px) {
+  .table-header,
+  .table-body .tr {
+    font-size: 1.05rem;
+  }
+
+  .td,
+  .th {
+    padding: 14px 6px;
+  }
+
+  button.approve-btn,
+  button.refuse-btn {
+    font-size: 1rem;
+    padding: 6px 10px;
+    width: auto;
+    min-width: 90px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .table-header,
+  .table-body .tr {
+    min-width: 700px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .dropdown-toggle {
+    font-size: 1rem;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .line-container {
+    width: 90%;
+  }
+
+  .dropdown-toggle {
+    font-size: 0.95rem;
+  }
+
+  .td,
+  .th {
+    font-size: 0.95rem;
+    padding: 10px 4px;
+  }
+
+  button.approve-btn,
+  button.refuse-btn {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    min-width: 80px;
+  }
+  .actions-field{
+  padding: 0 50px;
+  text-align: center;
+}
+}

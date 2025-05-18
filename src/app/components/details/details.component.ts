@@ -1,8 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { VendorsService } from '../../services/vendors/vendors.service';
-import { ActivatedRoute } from '@angular/router';
-import { DatePipe, NgFor } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-details',
   imports: [HttpClientModule],
@@ -14,15 +13,15 @@ export class DetailsComponent {
   vendor:any;
     start:any=0;
     end:any;
-  constructor(private vendorservice:VendorsService,private route:ActivatedRoute){
+  constructor(private vendorservice:VendorsService,private route:ActivatedRoute, private router : Router){
     window.addEventListener("resize",()=>{
       this.changeWidth()
     })
   }
-  
+
   changeWidth(): void {
     const width = window.innerWidth;
-  
+
     if (width < 768) {
       this.end = this.start + 2; // موبايل
     } else if (width < 992) {
@@ -32,14 +31,14 @@ export class DetailsComponent {
     }
   }
   next():void{
-    
+
       if(this.end<this.vendor?.serviceImage.length)
       {
           this.start++;
           this.changeWidth();
       }
-    
-  
+
+
   }
   prev():void{
     if(this.start > 0)
@@ -47,18 +46,28 @@ export class DetailsComponent {
       this.start--;
       this.changeWidth()
     }
-  
+
   }
   ngOnInit(): void {
     this.changeWidth();
     const id=this.route.snapshot.paramMap.get("vendorId");
     this.vendorservice.getVendorById(id).subscribe((res)=>{
-  
+
       this.vendor=res.data[0];
       console.log(this.vendor);
-      
-    })
-  }
 
+    })
+
+  }
+bookNow(): void {
+    // Assuming your booking page route is '/booking' and you want to pass the vendor's ID
+    const vendorId = this.route.snapshot.paramMap.get('vendorId');
+    if (vendorId) {
+      this.router.navigate(['/b-details'], { queryParams: { vendorId: vendorId } });
+    } else {
+      console.error('Vendor ID not found.');
+      // Optionally handle the error, e.g., show a message to the user
+    }
+  }
 
 }
