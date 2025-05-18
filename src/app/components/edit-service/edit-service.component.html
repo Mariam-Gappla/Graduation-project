@@ -27,12 +27,12 @@
 
     <div class="form-group">
       <label>Years of experience :</label>
-      <input type="text" value="4" [(ngModel)]="serviceData.experience"/>
+      <input type="text" value="4" [(ngModel)]="serviceData.exprience"/>
     </div>
 
     <div class="form-group">
       <label>Summary about service :</label>
-      <textarea rows="4" [(ngModel)]="serviceData.Summary">
+      <textarea rows="4" [(ngModel)]="serviceData.serviceDetails">
   I am Mohamed Ahmed a professional photographer, have experience in photography field more than 4 years enable me work with thousands of clients from all over Egypt in many celebrates as weddings,birthdays,engagments and more.
         </textarea>
     </div>
@@ -80,15 +80,15 @@
 
       <div class="form-group">
         <label>Address (Optional) :</label>
-        <input type="text" [(ngModel)]="serviceData.address" />
+        <input type="text" [(ngModel)]="serviceData.Address" />
       </div>
 
       <div class="form-group contact-info">
         <label>Contact info :</label>
         <div class="contact-fields">
           <input type="text" value="01359632145" [(ngModel)]="serviceData.phone" />
-          <input type="text" value="www.facebook.com" [(ngModel)]="serviceData.facebook" />
-          <input type="text" value="www.instagram.com" [(ngModel)]="serviceData.instagram"/>
+          <input type="text" value="www.facebook.com" [(ngModel)]="serviceData.facebookLink" />
+          <input type="text" value="www.instagram.com" [(ngModel)]="serviceData.instgrameLink"/>
         </div>
       </div>
 

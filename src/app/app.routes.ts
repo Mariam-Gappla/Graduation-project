@@ -14,5 +14,6 @@ export const routes: Routes = [
  {path:"editservice/:id",loadComponent:()=>import('../app/components/edit-service/edit-service.component').then(e=>e.EditServiceComponent)},
  {path:"forgetpassword",loadComponent:()=>import('../app/components/forget-password/forget-password.component').then(m=>m.ForgetPasswordComponent)},
  {path:"admin",loadComponent:()=>import('../app/AdminComponents/admin-component/admin-component.component').then(m=>m.AdminComponentComponent)},
+ {path:"vendorservices/:id",loadComponent:()=>import('../app/components/vendorservices/vendorservices.component').then(m=>m.VendorservicesComponent)},
  {path:"**",loadComponent:()=>import('../app/components/error/error.component').then(m=>m.ErrorComponent)},
 ];

@@ -19,7 +19,7 @@ export class VendorsService {
   }
   getVendorById(id:any):Observable<any>
   {
-    return this.httpclient.get(`http://localhost:3000/services/${id}`,{headers:this.headers})
+    return this.httpclient.get(`http://localhost:3000/services/packages/${id}`,{headers:this.headers})
   }
   addservice(service: FormData): Observable<any> {
   return this.httpclient.post("http://localhost:3000/services/add", service, {
@@ -32,5 +32,8 @@ export class VendorsService {
 deleteService(id:any):Observable<any>
 {
   return this.httpclient.delete(`http://localhost:3000/services/${id}`,{headers:this.headers})
+}
+getServicesByVendorId(vendorId:any):Observable<any>{
+  return this.httpclient.get(`http://localhost:3000/services/${vendorId}`,{headers:this.headers})
 }
 }

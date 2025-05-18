@@ -14,16 +14,16 @@ import { error } from 'jquery';
   templateUrl: './edit-service.component.html',
   styleUrl: './edit-service.component.css'
 })
-export class EditServiceComponent {
+export class EditServiceComponent implements OnInit{
   serviceData = {
     title: '',
     category: '',
-    experience: '',
-    Summary: '',
+    exprience: '',
+    serviceDetails: '',
     phone: '',
-    facebook: '',
-    instagram: '',
-    address: ''
+    facebookLink: '',
+    instgrameLink: '',
+    Address: ''
   };
   fileInputs = [{ uploaded: false }];
   servicefields: any;
@@ -78,15 +78,15 @@ export class EditServiceComponent {
     const formData1 = new FormData();
     formData1.append('title', this.serviceData.title);
     formData1.append('category', this.serviceData.category);
-    formData1.append('exprience', this.serviceData.experience);
-    formData1.append('serviceDetails', this.serviceData.Summary);
+    formData1.append('exprience', this.serviceData.exprience);
+    formData1.append('serviceDetails', this.serviceData.serviceDetails);
     formData1.append('phone', this.serviceData.phone);
-    formData1.append('facebookLink', this.serviceData.facebook);
-    formData1.append('instgrameLink', this.serviceData.instagram);
+    formData1.append('facebookLink', this.serviceData.facebookLink);
+    formData1.append('instgrameLink', this.serviceData.instgrameLink);
     if (this.profileImage) {
       formData1.append('image', this.profileImage);
     }
-    formData1.append('address', this.serviceData.address);
+    formData1.append('address', this.serviceData.Address);
     // إضافة كل الملفات
     this.selectedFiles.forEach((file, index) => {
       formData1.append('serviceimages', file); // ممكن تغير key لو الباك إند طالب اسم تاني
@@ -111,13 +111,20 @@ export class EditServiceComponent {
         console.log(error.error.message)
       }
     )
-    for (const [key, value] of formData1.entries()) {
-      console.log(`${key}:`, value);
+   
+
+
+
+
+
+  }
+  ngOnInit(): void {
+    const id=this.route.snapshot.paramMap.get('id');
+    if (id){
+      this.vendorservice.getVendorById(id).subscribe((res)=>{
+        this.serviceData=res.data[0];
+        console.log(this.serviceData);
+      })
     }
-
-
-
-
-
   }
 }

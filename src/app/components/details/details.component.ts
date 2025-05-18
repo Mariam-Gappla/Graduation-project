@@ -55,6 +55,7 @@ export class DetailsComponent {
     this.vendorservice.getVendorById(id).subscribe((res)=>{
   
       this.vendor=res.data[0];
+      console.log(this.vendor);
       
     })
   }

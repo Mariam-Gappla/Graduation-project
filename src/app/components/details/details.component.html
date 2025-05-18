@@ -1,121 +1,133 @@
 <div class="profile-container">
-    <div class="profile-info">
-      <img [src]= "'http://localhost:3000/' + vendor?.profileImage"alt="Photographer" class="profile-img" />
-      <h2 class="name mb-5">
-       {{vendor?.title}}
-        <span class="heart-icon">
-          <img src="hert1.png" alt="heart">
-        </span>
-      </h2>
+  <div class="profile-info">
+    <img [src]="'http://localhost:3000/' + vendor?.profileImage" alt="Photographer" class="profile-img" />
+    <h2 class="name mb-5">
+      {{vendor?.title}}
+      <span class="heart-icon">
+        <img src="hert1.png" alt="heart">
+      </span>
+    </h2>
 
 
 
-      <div class="stats mb-5">
-        <div class="stat "><img src="pepole.png" alt=""><p >{{vendor?.packages?.orders?.length ?? 0}} Client</p></div>
-        <div class="stat"><img src="heart.png" alt=""><p>{{vendor?.likes}} Likes</p></div>
-        <div class="stat"><img src="suitcase.png" alt=""><p>{{vendor?.experience ?? 0}} Years experience</p></div>
-        <div class="stat"><img src="tag.png" alt=""><p>{{vendor?.category}}</p></div>
+    <div class="stats mb-5">
+      <div class="stat "><img src="pepole.png" alt="">
+        <p>{{vendor?.packages?.orders?.length ?? 0}} Client</p>
+      </div>
+      <div class="stat"><img src="heart.png" alt="">
+        <p>{{vendor?.likes}} Likes</p>
+      </div>
+      <div class="stat"><img src="suitcase.png" alt="">
+        <p>{{vendor?.exprience ?? 0}} Years experience</p>
+      </div>
+      <div class="stat"><img src="tag.png" alt="">
+        <p>{{vendor?.category}}</p>
       </div>
     </div>
+  </div>
 
-    <!-- SUMMARY SECTION -->
-    <div class="section-header">
-      <h3 class="left-title main summary-heading">SUMMARY</h3>
+  <!-- SUMMARY SECTION -->
+  <div class="section-header">
+    <h3 class="left-title main summary-heading">SUMMARY</h3>
     <div class="line-container-header">
       <div class="circle"></div>
     </div>
-    </div>
-    <p class="summary-text">
-      {{vendor?.serviceDetails}}
-    </p>
+  </div>
+  <p class="summary-text">
+    {{vendor?.serviceDetails}}
+  </p>
 
-    <!-- WORK SECTION -->
-    <div class="section-header center-header ">
-        <h3 class="center-title main">WORK</h3>
-        <div class="work-line-container">
+  <!-- WORK SECTION -->
+  <div class="section-header center-header ">
+    <h3 class="center-title main">WORK</h3>
+    <div class="work-line-container">
       <div class="circle"></div>
     </div>
+  </div>
+  <div class="work-section">
+
+    <div class="carousel">
+      <button class="arrow left" (click)="prev()"><i class="fa-solid fa-arrow-left"></i></button>
+      <div class="carousel-images ">
+        @for(img of vendor?.serviceImage;track img)
+        {
+        <img [src]="'http://localhost:3000/' + img" alt="Work 1">
+        }
       </div>
-    <div class="work-section">
 
-        <div class="carousel">
-          <button class="arrow left" (click)="prev()"><i class="fa-solid fa-arrow-left"></i></button>
-            <div class="carousel-images ">
-              @for(img of vendor?.serviceImage;track img)
-              {
-                <img [src]="'http://localhost:3000/' + img" alt="Work 1">
-              }
-            </div>
-
-            <button class="arrow right" (click)="next()"><i class="fa-solid fa-arrow-right"></i></button>
-          </div>
+      <button class="arrow right" (click)="next()"><i class="fa-solid fa-arrow-right"></i></button>
     </div>
+  </div>
 
-    <!-- SERVICES SECTION -->
-    <div class="section-header">
-      <h3 class="left-title main">SERVICES AND PRICING</h3>
-      <div class="service-line-container">
+  <!-- SERVICES SECTION -->
+  <div class="section-header">
+    <h3 class="left-title main">SERVICES AND PRICING</h3>
+    <div class="service-line-container">
       <div class="circle"></div>
     </div>
-    </div>
+  </div>
 
-    <div class="pricing-section">
-        <div class="pricing-box">
-          <div class="package">
-            @if(vendor?.packages.length!=0)
-            {
-              @for(pkg of vendor?.packages;track pkg)
-              {
-                <div class="package-left">{{pkg.title}}</div>
-                <div class="package-right">{{pkg.price}}</div>
-              }
-            }
-            @else
-            {
-               <div class="package-left">No packages</div>
-            }
-          </div>
-           @if(vendor?.packages.length!=0)
-           {
-             <button class="book-btn">BOOK NOW</button>
-           }
-           
+  <div class="pricing-section">
+    <div class="pricing-box">
+
+      @if(vendor?.packages.length!=0)
+      {
+      @for(pkg of vendor?.packages;track pkg)
+      {
+      <div class="package">
+        <div class="package-left">{{pkg.title}}</div>
+        <div class="package-right">{{pkg.price}}</div>
+      </div>
+      }
+      }
+      @else
+      {
+      <div class="package-left">No packages</div>
+      }
+
+      @if(vendor?.packages.length!=0)
+      {
+      <button class="book-btn">BOOK NOW</button>
+      }
+
+    </div>
+  </div>
+  <section class="review-section">
+    <h2 class="review-header">User Reviews</h2>
+    <div class="line-container">
+      <div class="circle"></div>
+    </div>
+    <div class="review-container">
+
+      <div class="review-box">
+        <div class="review-rating">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+            class="star">★</span><span class="star half">☆</span>
+        </div>
+        <p class="review-content">
+          This service was incredibly fast and helpful. I will definitely use it again!
+        </p>
+        <div class="review-user">
+          — <strong>Ahmed Khaled</strong>
         </div>
       </div>
-      <section class="review-section">
-  <h2 class="review-header">User Reviews</h2>
-  <div class="line-container">
-      <div class="circle"></div>
+
+      <div class="review-box">
+        <div class="review-rating">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+            class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-content">
+          Amazing experience! Highly recommend this to anyone needing quick assistance.
+        </p>
+        <div class="review-user">
+          — <strong>Fatma Youssef</strong>
+        </div>
+      </div>
+
     </div>
-  <div class="review-container">
-
-    <div class="review-box">
-      <div class="review-rating">
-        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">☆</span>
-      </div>
-      <p class="review-content">
-        This service was incredibly fast and helpful. I will definitely use it again!
-      </p>
-      <div class="review-user">
-        — <strong>Ahmed Khaled</strong>
-      </div>
-    </div>
-
-    <div class="review-box">
-      <div class="review-rating">
-        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-      </div>
-      <p class="review-content">
-        Amazing experience! Highly recommend this to anyone needing quick assistance.
-      </p>
-      <div class="review-user">
-        — <strong>Fatma Youssef</strong>
-      </div>
-    </div>
-
-  </div>
-</section>
+  </section>
 
 
 
-  </div>
+</div>

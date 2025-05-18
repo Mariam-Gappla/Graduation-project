@@ -1,0 +1,30 @@
+<div class="service">
+    <div class="container">
+        <h1>Services</h1>
+        <div class="btn-container">
+            <button class="button">
+                <a class="nav-link" routerLink="/editservice" href="#">add services</a>
+            </button>
+        </div>
+        <div class="row" dir="rtl">
+            <div *ngFor="let service of vendorservice" class="col-3">
+                <div class="service-card"
+                    [style.backgroundImage]="'url(http://localhost:3000/' + service.profileImage + ')'">
+                    <div class="card">
+                        {{ service.category }}
+                    </div>
+                </div>
+                <div class="card-icons">
+                    <div class="icon-left" (click)="deleteService(service)">
+                        <fa-icon [icon]="faTrash" class="big-icon"></fa-icon>
+                    </div>
+                    <a [routerLink]="['/editservice',service._id]">
+                        <div>
+                            <fa-icon [icon]="faEdit" class="big-icon"></fa-icon>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
