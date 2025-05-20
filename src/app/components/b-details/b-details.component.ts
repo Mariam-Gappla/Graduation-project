@@ -19,6 +19,9 @@ export class BDetailsComponent implements OnInit {
   serviceId: string | null = null;
   vendor: any;
 
+  // Add available payment methods
+  payments: string[] = ['Cash', 'Credit Card', 'Bank Transfer', 'Mobile Payment'];
+
   constructor(
     private vendorservice: VendorsService,
     private fb: FormBuilder,
@@ -27,7 +30,7 @@ export class BDetailsComponent implements OnInit {
   ) {
     this.bookingForm = this.fb.group({
       bookingDate: ['', Validators.required],
-      service: ['', Validators.required], // package ID
+      service: ['', Validators.required],
       name: ['', Validators.required],
       payment: ['', Validators.required],
       notes: [''],
@@ -57,8 +60,7 @@ export class BDetailsComponent implements OnInit {
 
   onSubmit(): void {
     if (this.bookingForm.valid) {
-      const userId = localStorage.getItem('id'); // ✅ get user ID
-      console.log('User ID:', userId);
+      const userId = localStorage.getItem('id');
       if (!userId) {
         alert('User ID not found. Please log in again.');
         return;
@@ -71,6 +73,7 @@ export class BDetailsComponent implements OnInit {
         notes: this.bookingForm.value.notes,
         packageId: this.bookingForm.value.service,
         userId: userId,
+        method: this.bookingForm.value.payment, // Added payment method
       };
 
       console.log('Order Data being sent:', orderData);
@@ -101,6 +104,7 @@ export class BDetailsComponent implements OnInit {
     return selectedPackage ? +selectedPackage.price : 0;
   }
 
+  // Getter methods
   get bookingDate() {
     return this.bookingForm.get('bookingDate');
   }

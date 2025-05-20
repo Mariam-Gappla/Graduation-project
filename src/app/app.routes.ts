@@ -16,5 +16,6 @@ export const routes: Routes = [
  {path:"admin",loadComponent:()=>import('../app/AdminComponents/admin-component/admin-component.component').then(m=>m.AdminComponentComponent)},
  {path:"orderrequest",loadComponent:()=>import('../app/components/booking-requests/booking-requests.component').then(m=>m.BookingRequestsComponent)},
  {path:"vendorservices/:id",loadComponent:()=>import('../app/components/vendorservices/vendorservices.component').then(m=>m.VendorservicesComponent)},
+ {path:"myorders",loadComponent:()=>import('../app/components/my-orders/my-orders.component').then(m=>m.MyOrdersComponent)},
  {path:"**",loadComponent:()=>import('../app/components/error/error.component').then(m=>m.ErrorComponent)},
 ];

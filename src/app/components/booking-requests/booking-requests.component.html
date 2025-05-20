@@ -6,18 +6,18 @@
   </div>
 
   <div class="dropdown mb-3">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      {{ selectedFilter === 'all' ? 'All Requests' : selectedFilter | titlecase }}
-    </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" (click)="selectedFilter = 'all'">All Requests</a></li>
-      <li><a class="dropdown-item" (click)="selectedFilter = 'approved'">Approved</a></li>
-      <li><a class="dropdown-item" (click)="selectedFilter = 'pending'">Pending</a></li>
-      <li><a class="dropdown-item" (click)="selectedFilter = 'refused'">Refused</a></li>
-    </ul>
-  </div>
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    {{ selectedFilter === 'all' ? 'All Requests' : selectedFilter | titlecase }}
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" (click)="onFilterChange('all')">All Requests</a></li>
+    <li><a class="dropdown-item" (click)="onFilterChange('confirmed')">confirmed</a></li>
+    <li><a class="dropdown-item" (click)="onFilterChange('pending')">Pending</a></li>
+    <li><a class="dropdown-item" (click)="onFilterChange('refused')">Refused</a></li>
+  </ul>
+</div>
 
-  <div *ngIf="filteredRequests.length > 0; else noRequests">
+  <div *ngIf="requests.length > 0; else noRequests">
     <div class="table-wrapper">
       <div class="table-header">
         <span class="th">Client</span>
@@ -26,32 +26,65 @@
         <span class="th">Service</span>
         <span class="th">Price</span>
         <span class="th">Payment</span>
-        <span class="th">Status</span>
+        <span class="th">Method</span>
         <span class="th actions-field">Actions</span>
       </div>
       <div class="table-body">
-        <div class="tr" *ngFor="let request of filteredRequests">
+        <div class="tr" *ngFor="let request of requests">
           <span class="td">{{ request.client }}</span>
           <span class="td">{{ request.date | date }}</span>
           <span class="td">{{ request.category }}</span>
           <span class="td">{{ request.service }}</span>
           <span class="td">{{ request.price}} EGP</span>
           <span class="td">{{ request.payment }}</span>
-          <span class="td">{{ request.status }}</span>
-          <span class="td actions">
-            <button
-              class="approve-btn"
-              (click)="updateStatus(request, 'approved')"
-            >
-              Approve
-            </button>
-            <button
-              class="refuse-btn"
-              (click)="updateStatus(request, 'refused')"
-            >
-              Refuse
-            </button>
-          </span>
+          <span class="td">{{ request.method }}</span>
+         <span class="td actions">
+  <!-- If status is pending -->
+  <ng-container *ngIf="request.status === 'pending'; else notPending">
+    <button class="approve-btn" (click)="updateStatus(request, 'confirmed')">
+      Approve
+    </button>
+    <button class="refuse-btn" (click)="updateStatus(request, 'refused')">
+      Refuse
+    </button>
+  </ng-container>
+
+  <!-- If status is confirmed -->
+  <ng-template #notPending>
+    <ng-container *ngIf="request.status === 'confirmed'; else notConfirmed">
+
+      <!-- If payment method is cash -->
+      <ng-container *ngIf="request.method === 'cash'; else waitingDeposit">
+        <button class="confirmed-btn" [disabled]>
+          Confirmed
+        </button>
+      </ng-container>
+
+      <!-- If payment method is visa -->
+      <ng-template #waitingDeposit>
+        <button class="waiting-btn" >
+          Waiting for deposit
+        </button>
+      </ng-template>
+
+    </ng-container>
+
+    <!-- If status is refused -->
+    <ng-template #notConfirmed>
+      <ng-container *ngIf="request.status === 'refused'; else noActions">
+        <button class="refused-btn" [disabled]>
+          Refused
+        </button>
+      </ng-container>
+    </ng-template>
+  </ng-template>
+
+  <!-- If no actions available -->
+  <ng-template #noActions>
+    <span class="status">No actions available</span>
+  </ng-template>
+</span>
+
         </div>
       </div>
     </div>

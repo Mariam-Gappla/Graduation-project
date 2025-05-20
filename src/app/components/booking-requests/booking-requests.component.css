@@ -106,7 +106,7 @@ h2 {
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
   }
-  button.approve-btn, button.refuse-btn {
+  button.approve-btn, button.refuse-btn, .confirmed-btn, .refused-btn, .waiting-btn {
     font-family: 'actor', sans-serif;
     font-size: 1.2rem;
     font-weight: 400;
@@ -126,6 +126,21 @@ h2 {
 .refuse-btn{
   background-color: #FF0000;
   cursor: pointer;
+}
+.confirmed-btn{
+  background-color: #383892;
+  cursor: not-allowed;
+  width: 270px;
+}
+.waiting-btn{
+  background-color: #CCCC4F;
+  cursor: not-allowed;
+  width: 270px;
+}
+.refused-btn{
+  background-color: #d74949;
+  cursor: not-allowed;
+  width: 270px;
 }
 .approve-btn:hover{
   background-color: #46944b;
