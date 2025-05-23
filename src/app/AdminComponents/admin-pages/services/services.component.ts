@@ -1,13 +1,20 @@
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { VendorsService } from '../../../services/vendors/vendors.service';
 
 @Component({
   selector: 'app-services',
-  imports: [NgClass],
+  imports: [NgClass,HttpClientModule,RouterModule],
+  providers:[VendorsService],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })
-export class ServicesComponent {
+export class ServicesComponent implements OnInit {
+  vendorsservices:any;
+  constructor(private vendorservices:VendorsService){}
+  
   services = [
     { id: 1, category: 'Mechanic', experience: '5 years', status: 'Accepted' },
     { id: 2, category: 'Tow Truck', experience: '3 years', status: 'Refused' },
@@ -33,5 +40,13 @@ export class ServicesComponent {
 
   onStatusChange(status: string) {
     this.selectedStatus = status;
+  }
+  ngOnInit(): void {
+    this.vendorservices.getAllServices().subscribe((data:any)=>{
+      this.vendorsservices=data.data;
+      console.log(data.data)
+    })
+
+   
   }
 }

@@ -1,4 +1,4 @@
-<div class="landing">
+<div class="landing" id="landing">
     <div class="d-flex flex-column align-items-center pt-5 landing-content">
         <p class="title">Handle the details</p>
         <p class="subtitle">Enjoy the moment</p>
@@ -8,56 +8,26 @@
     </div>
 </div>
 <div class="services">
-    <h1 class="sevices-heading">OUR SERVICES</h1>
-    <img src="Line1.png" class="image-line">
-    <p>Enjoy all your wedding services in one place !</p>
+    <div class="services" id="services">
+        <h1 class="sevices-heading">OUR SERVICES</h1>
+        <img src="Line1.png" class="image-line">
+        <p>Enjoy all your wedding services in one place !</p>
 
-    <div class="services-items w-100 row justify-content-center gy-5">
-        <div class="col">
-            <div>
-                <a [routerLink]="['/vendors','Photography']">
-                    <img src="camera.png">
-                </a>
-                <p>Photography</p>
+        <div class="services-items w-100 row justify-content-center gy-4 mt-4">
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center" *ngFor="let item of services">
+                <div class="mb-4">
+                    <a [routerLink]="['/vendors', item.title]">
+                        <img [src]="item.image" class="img-fluid mb-2" alt="{{ item.title }}">
+                    </a>
+                    <p>{{ item.title }}</p>
+                </div>
             </div>
         </div>
-        <div class="col">
-            <div>
-                <a [routerLink]="['/vendors','Halls']">
-                    <img src="wedding-ceremony.png">
-                </a>
-                <p>Halls</p>
-            </div>
-        </div>
-        <div class="col">
-            <div>
-               <a [routerLink]="['/vendors','Groom Suits']">
-                 <img src="wedding-suit.png">
-               </a>
-                <p>Groom Suits</p>
-            </div>
-        </div>
-        <div class="col">
-            <div>
-                <a [routerLink]="['/vendors','Bride Dresses']">
-                    <img src="wedding-dress.png">
-                </a>
-                <p>Bride Dresses</p>
-            </div>
-        </div>
-        <div class="col">
-            <div>
-                <a [routerLink]="['/vendors','Cars']">
-                    <img src="wedding-car.png">
-                </a>
-                <p>Cars</p>
-            </div>
-        </div>
-
     </div>
-     <!--about-->
+
+    <!--about-->
     <div class="container">
-        <div class="about row">
+        <div class="about row" id="about">
             <div class="col-12 col-md-6">
                 <h1>ABOUT</h1>
                 <img src="Line1.png" class="image-line">
@@ -75,7 +45,7 @@
                 </p>
             </div>
             <div class="col-12 image col-md-6">
-                <img src="about.png">
+                <img src="about.jpg">
             </div>
         </div>
     </div>
@@ -85,149 +55,83 @@
             <h1>MOST COMMON VENDORS</h1>
             <img src="Line1.png" class="image-line">
         </div>
-    </div>
-    <!--packages-->
-    <div class="packages container">
-        <div class="mb-5">
-            <h1 class="packages-heading">PACKAGES FOR YOU</h1>
-            <img src="Line1.png" class="image-line">
+        <div class="d-flex align-items-center justify-content-center mb-4 mt-5">
+            <button class="arrow left btn btn-outline-dark ms-5" (click)="prev()">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-6 col-lg-4 mb-3" *ngFor="let product of productsToshow">
+                        <div class="text-center">
+                            <img [src]="product.image" class="img-fluid mb-2" [alt]="product.category">
+                            <h5 class="card-title">{{ product.category }}</h5>
+                            <button>BOOK NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="arrow right btn btn-outline-dark me-5" (click)="next()">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
         </div>
-        <div class="row mb-5">
-            <div class="col package-1">
-                <h5>start from</h5>
-                <div class="d-flex align-items-center ms-3 price">
-                    <p class="price-number">10,000</p>
-                    <p class="price-currency">EGP</p>
-                </div>
-                <div class="package-item package-item-1">
-                    <img src="Check.png">
-                    <p>Half day session</p>
 
+
+        <!--why choosing zaffa-->
+        <div class="why-choosing container">
+            <div class="text-center mb-5">
+                <h1>WHY CHOOSING ZAFFA ?</h1>
+                <img src="Line1.png" class="image-line">
+            </div>
+            <div class="row">
+                <div class="col-3 item-1">
+                    <p class="m-0">Flexible</p>
+                    <p class="m-0">Budgeting</p>
                 </div>
-                <div class="package-item package-item-2">
-                    <img src="Check.png">
-                    <p>Half day session</p>
+                <div class="col-3 p-0 item-2">
+                    <img src="img 2.png">
                 </div>
-                <div class="package-item">
-                    <img src="Check.png">
-                    <p>Half day session</p>
+                <div class="col-3 p-0 item-3">
+                    <p class="m-0">+5000</p>
+                    <p class="m-0">Vendor</p>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <button>Book Now</button>
+                <div class="col-3 p-0 item-4">
+                    <img src="img 4.png">
+                </div>
+                <div class="col-3 p-0 item-5">
+                    <img src="img 1.png">
+                </div>
+                <div class="col-3 p-0 item-6">
+                    <p class="m-0">Varied</p>
+                    <p class="m-0">Options</p>
+                </div>
+                <div class="col-3 p-0 item-7">
+                    <img src="img 3.png">
+                </div>
+                <div class="col-3 p-0 item-8">
+                    <p class="m-0">Easy</p>
+                    <p class="m-0">Booking</p>
                 </div>
             </div>
-            <div class="col package-2">
-                <h5>start from</h5>
-                <div class="d-flex align-items-center ms-3 price">
-                    <p class="price-number">10,000</p>
-                    <p class="price-currency">EGP</p>
-                </div>
-                <div class="package-item package-item-1">
-                    <img src="Check.png">
-                    <p>Half day session</p>
 
-                </div>
-                <div class="package-item package-item-2">
-                    <img src="Check.png">
-                    <p>Half day session</p>
-                </div>
-                <div class="package-item package-item-2">
-                    <img src="Check.png">
-                    <p>Half day session</p>
-                </div>
-                <div class="package-item">
-                    <img src="Check.png">
-                    <p>Half day session</p>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <button>Book Now</button>
-                </div>
+        </div>
+        <!--contact us-->
+        <div class="contact-us mb-5" id="contact">
+            <div class="text-center mt-5">
+                <h1>CONTACT US</h1>
+                <img src="Line1.png" class="image-line">
+                <p class="m-0">Have questions or need assistance? We're here to help you</p>
             </div>
-            <div class="col package-3">
-                <h5>start from</h5>
-                <div class="d-flex align-items-center ms-3 price">
-                    <p class="price-number">10,000</p>
-                    <p class="price-currency">EGP</p>
-                </div>
-                <div class="package-item package-item-1">
-                    <img src="Check.png">
-                    <p>Half day session</p>
+            <div class="contact-form">
+                <form>
+                    <input type="email" placeholder="Enter your Email"><br>
+                    <textarea placeholder="Enter your message" rows="4"></textarea><br>
+                    <button>send</button>
+                </form>
+            </div>
 
-                </div>
-                <div class="package-item package-item-2">
-                    <img src="Check.png">
-                    <p>Half day session</p>
-                </div>
-                <div class="package-item package-item-2">
-                    <img src="Check.png">
-                    <p>Half day session</p>
-                </div>
-                <div class="package-item package-item-2">
-                    <img src="Check.png">
-                    <p>Half day session</p>
-                </div>
-                <div class="package-item">
-                    <img src="Check.png">
-                    <p>Half day session</p>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <button>Book Now</button>
-                </div>
-            </div>
         </div>
     </div>
-    <!--why choosing zaffa-->
-    <div class="why-choosing container">
-        <div class="text-center mb-5">
-            <h1>WHY CHOOSING ZAFFA ?</h1>
-            <img src="Line1.png" class="image-line">
-        </div>
-        <div class="row">
-            <div class="col-3 item-1">
-                <p class="m-0">Flexible</p>
-                <p class="m-0">Budgeting</p>
-            </div>
-            <div class="col-3 p-0 item-2">
-                <img src="img 2.png">
-            </div>
-            <div class="col-3 p-0 item-3">
-                <p class="m-0">+5000</p>
-                <p class="m-0">Vendor</p>
-            </div>
-            <div class="col-3 p-0 item-4">
-                <img src="img 4.png">
-            </div>
-            <div class="col-3 p-0 item-5">
-                <img src="img 1.png">
-            </div>
-            <div class="col-3 p-0 item-6">
-                <p class="m-0">Varied</p>
-                <p class="m-0">Options</p>
-            </div>
-            <div class="col-3 p-0 item-7">
-                <img src="img 3.png">
-            </div>
-            <div class="col-3 p-0 item-8">
-                <p class="m-0">Easy</p>
-                <p class="m-0">Booking</p>
-            </div>
-        </div>
 
-    </div>
-    <!--contact us-->
-    <div class="contact-us mb-5">
-        <div class="text-center mt-5">
-            <h1>CONTACT US</h1>
-            <img src="Line1.png" class="image-line">
-            <p class="m-0">Have questions or need assistance? We're here to help you</p>
-        </div>
-        <div class="contact-form">
-            <form>
-                <input type="email" placeholder="Enter your Email"><br>
-                <textarea placeholder="Enter your message" rows="4"></textarea><br>
-                <button>send</button>
-            </form>
-        </div>
-
-    </div>
 </div>

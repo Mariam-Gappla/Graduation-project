@@ -11,6 +11,7 @@
 .nav-link {
   color: #327537 !important;
   font-size: 1.2rem;
+  cursor: pointer;
   font-family: 'Actor', sans-serif;
   transition: color 0.3s ease, text-decoration 0.3s ease;
 }

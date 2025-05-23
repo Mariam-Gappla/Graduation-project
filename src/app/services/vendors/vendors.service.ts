@@ -36,4 +36,17 @@ deleteService(id:any):Observable<any>
 getServicesByVendorId(vendorId:any):Observable<any>{
   return this.httpclient.get(`http://localhost:3000/services/${vendorId}`,{headers:this.headers})
 }
+editService(id:any,service:any):Observable<any>
+{
+  return this.httpclient.patch(`http://localhost:3000/services/${id}`,service,{
+    headers: new HttpHeaders({
+      'Authorization': `Bearer ${this.token}`
+      // لا تضف Content-Type هنا
+    })
+  });
+}
+getAllServices():Observable<any>
+{
+  return this.httpclient.get("http://localhost:3000/services/all",{headers:this.headers});
+}
 }

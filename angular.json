@@ -30,15 +30,14 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "node_modules/swiper/swiper-bundle.min.css",
               "node_modules/animate.css/animate.min.css",
               "https://cdn.jsdelivr.net/npm/primeicons@6.0.1/primeicons.css",
               "https://cdn.jsdelivr.net/npm/primeng@14.0.0/resources/themes/lara-light-indigo/theme.css",
               "https://cdn.jsdelivr.net/npm/primeng@14.0.0/resources/primeng.min.css",
               "node_modules/slick-carousel/slick/slick.css",
               "node_modules/slick-carousel/slick/slick-theme.css",
-              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-              "node_modules/swiper/swiper-bundle.min.css"
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
+             
 
             ],
             "scripts": [

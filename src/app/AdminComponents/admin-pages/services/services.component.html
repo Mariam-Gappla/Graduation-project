@@ -15,6 +15,7 @@
   <thead>
     <tr>
       <th>ID</th>
+      <th>Name</th>
       <th>Category</th>
       <th>Experience</th>
       <th>Status</th>
@@ -22,11 +23,12 @@
     </tr>
   </thead>
   <tbody>
-    @for(service of services; track service){
+    @for(service of vendorsservices; track service){
       <tr>
         <td>{{ service.id }}</td>
+        <td>{{ service.title }}</td>
         <td>{{ service.category }}</td>
-        <td>{{ service.experience }}</td>
+        <td>{{ service.exprience}}</td>
         <td [ngClass]="{
           'status-accepted': service.status === 'Accepted',
           'status-refuces': service.status === 'Refused',
@@ -35,7 +37,7 @@
   {{ service.status }}
 </td>
         <td class="text-right">
-          <button pButton type="button" icon="pi pi-ellipsis-h" class="p-button-secondary p-button-icon-only">Show Details</button>
+          <a [routerLink]="['/admin/vendor',service.id]">Show Details</a>
         </td>
       </tr>
     }
