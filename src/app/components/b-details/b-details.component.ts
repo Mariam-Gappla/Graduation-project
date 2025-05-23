@@ -53,7 +53,7 @@ export class BDetailsComponent implements OnInit {
     if (this.serviceId) {
       this.vendorservice.getVendorById(this.serviceId).subscribe((res) => {
         this.vendor = res.data[0];
-        console.log('Vendor Details:', this.vendor);
+        // console.log('Vendor Details:', this.vendor);
       });
     }
   }
@@ -75,6 +75,7 @@ export class BDetailsComponent implements OnInit {
         userId: userId,
         method: this.bookingForm.value.payment, // Added payment method
       };
+
 
       console.log('Order Data being sent:', orderData);
 
