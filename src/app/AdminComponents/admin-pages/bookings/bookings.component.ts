@@ -1,15 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { OrderService } from '../../../services/Order/order.service';
+import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-bookings',
-  imports: [],
+  imports: [HttpClientModule, DatePipe],
+  providers: [OrderService],
   templateUrl: './bookings.component.html',
   styleUrl: './bookings.component.css'
 })
-export class BookingsComponent {
+export class BookingsComponent implements OnInit {
   statuses = ['waiting', 'accepted', 'refuces']
-  Payments = ['visa', 'credit card']
-  bookings = [
+  Payments = ['visa', 'cash']
+  bookings: any[] = [];
+  constructor(private orderService: OrderService) {}
+  ngOnInit(): void {
+    this.orderService.getAllOrders().subscribe((res: any) => {
+      this.bookings = res.data;
+      console.log(this.bookings);
+    });
+  }
+
+
+  bookings2 = [
     {
       id: 1,
       category: 'Car Repair',

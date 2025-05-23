@@ -39,15 +39,15 @@
     </tr>
   </thead>
   <tbody>
-    @for(booking of bookings; track booking){
-      <tr>
-        <td>{{ booking.id }}</td>
-        <td>{{ booking.category }}</td>
-        <td>{{ booking.date }}</td>
+   @for (booking of bookings; track booking; let i = $index) {
+    <tr>
+      <td>{{ i + 1 }}</td> <!-- Display index starting from 1 -->
+        <td>{{ booking.package.serviceId.category }}</td>
+        <td>{{ booking.date |date}}</td>
         <td>{{ booking.status }}</td>
-        <td>{{ booking.service }}</td>
-        <td>{{ booking.price }}</td>
-        <td>{{ booking.payment }}</td>
+        <td>{{ booking.package.serviceId.title }}</td>
+        <td>{{ booking.package.price }}</td>
+        <td>{{ booking.method }}</td>
         <td><button></button></td>
         <td>{{ booking.deposit }}</td>
       </tr>
