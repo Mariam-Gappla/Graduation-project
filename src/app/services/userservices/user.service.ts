@@ -26,17 +26,17 @@ export class UserService {
   updatePassword(user: any, id: any): Observable<any> {
     return this.httpclient.patch(`http://localhost:3000/users/${id}`, user);
   }
-<<<<<<< HEAD
   getUserByRole(role: string): Observable<any>{
     return this.httpclient.get(`http://localhost:3000/users/role?role=${role}`,{headers:this.headers});
   }
   getUserById(id:any):Observable<any>{
     return this.httpclient.delete(`http://localhost:3000/users/${id}`,{headers:this.headers});
   }
-=======
   getServiceById(serviceId: string): Observable<any> {
     return this.httpclient.get(`http://localhost:3000/services/${serviceId}`);
   }
 
->>>>>>> 8e39c4daedf9a41b22d887a04dcdebc448e83bb4
+  getUserGrowth(): Observable<any> {
+    return this.httpclient.get("http://localhost:3000/users/growth", { headers: this.headers });
+  }
 }
