@@ -1,62 +1,94 @@
-<div class="container my-5 p-4 rounded">
+<div class="booking-details">
+  <div class="container rounded">
     <div class="title-wrapper text-center">
       <h3 class="title-with-line">BOOKING DETAILS</h3>
       <div class="line-container">
-      <div class="circle"></div>
-    </div>
+        <div class="circle"></div>
+      </div>
     </div>
 
     <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
-        <div class="row mb-3 justify-content-center">
-            <div class="col-md-4">
-              <label class="main">Booking Date:</label>
-              <input type="date" class="form-control w-100" formControlName="bookingDate" />
-              <div>
-                <small [hidden]="bookingDate?.untouched||bookingDate?.invalid">required</small>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <label class="main">Select Service:</label>
-              <select class="form-control w-100" formControlName="service">
-                <option value="" disabled>Select service</option>
-                <option value="full" >Full Day Session + Unlimited Images</option>
-                <option value="half" >Half Day Session</option>
-              </select>
-            </div>
+      <div class="row mb-3 justify-content-center">
+        <div class="col-md-4">
+          <label class="main">Booking Date:</label>
+          <input
+            type="date"
+            class="form-control w-100"
+            formControlName="bookingDate"
+          />
+          <div>
+            <small [hidden]="bookingDate?.untouched || bookingDate?.invalid"
+              >required</small
+            >
           </div>
-
+        </div>
+        <div class="col-md-4">
+          <label class="main">Select Service:</label>
+          <select class="form-control w-100" formControlName="service">
+            <option value="" disabled>Select service</option>
+            @for(pkg of vendor?.packages; track pkg){
+            <option [value]="pkg._id">{{ pkg.title }}</option>
+            }
+          </select>
+        </div>
+      </div>
 
       <div class="mb-3">
         <label class="main">Full Name:</label>
-        <input type="text" class="form-control" formControlName="name" placeholder="Enter your full name" />
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          placeholder="Enter your full name"
+        />
         <div>
-          <small [hidden]="name?.touched||name?.valid" class="alert alert-danger mt-5">required</small>
-          </div>
+          <small
+            [hidden]="name?.touched || name?.valid"
+            class="alert alert-danger mt-5"
+            >required</small
+          >
+        </div>
       </div>
 
       <div class="mb-3">
         <label class="main">Payment Method:</label>
         <select class="form-control" formControlName="payment">
           <option value="" disabled>-- Select Method --</option>
-          <option value="cash" >Cash</option>
+          <option value="cash">Cash</option>
           <option value="Visa">Visa</option>
         </select>
       </div>
 
       <div class="mb-3">
         <label class="main">Notes:</label>
-        <textarea class="form-control" rows="4" formControlName="notes" placeholder="Write any additional notes"></textarea>
+        <textarea
+          class="form-control"
+          rows="4"
+          formControlName="notes"
+          placeholder="Write any additional notes"
+        ></textarea>
       </div>
 
-      <div class="border-top pt-3">
-        <p><strong class="main">SERVICE:</strong> <span> Full Day Session + Unlimited Images</span> </p>
-        <p><strong class="main">DATE:</strong> <span> 10 Oct 2025</span></p>
-        <p><strong class="main">PRICE:</strong> <span> 6000 EGP</span></p>
+      <div class="border-top pt-3" *ngIf="bookingForm.valid">
+        <p>
+          <strong class="main">SERVICE:</strong>
+          <span>{{ getSelectedPackageTitle() }}</span>
+        </p>
+        <p>
+          <strong class="main">DATE:</strong>
+          <span>{{
+            bookingForm.value.bookingDate | date : "dd MMM yyyy"
+          }}</span>
+        </p>
+        <p>
+          <strong class="main">PRICE:</strong>
+          <span>{{ getSelectedPackagePrice() }} EGP</span>
+        </p>
       </div>
 
-      <div class="alert alert-danger mt-3 discount text-center">
+      <!-- <div class="alert alert-danger mt-3 discount text-center">
         <span>A deposit of 30% must be paid within 3 days of the booking date after vendor confirmation.</span>
-      </div>
+      </div> -->
 
       <div class="d-flex justify-content-center mt-4">
         <button class="btn btn-success confirm-button" type="submit">
@@ -65,3 +97,4 @@
       </div>
     </form>
   </div>
+</div>

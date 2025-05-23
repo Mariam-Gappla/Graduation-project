@@ -7,10 +7,11 @@
 }
 
 .page-title {
+  max-width: 800px; /* Limit max width for larger screens */
+  margin: 0 auto;
   font-family: 'Playfair Display SC', serif;
   color: #327537;
   font-size: 28px; /* Slightly smaller on mobile */
-  margin-bottom: 16px; /* Reduced margin */
   text-align: center;
   font-weight: bold;
 }
@@ -20,10 +21,11 @@
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   position: relative;
   border-radius: 16px;
-  margin: 24px;
-
+  margin: 16px auto; /* Center horizontally */
+  max-width: 800px; /* Add max-width */
+  width: 100%; /* Ensure it doesn't exceed screen width */
+  box-sizing: border-box; /* Include padding and borders in width */
 }
-
 .section {
   padding: 0;
   margin: 20px;
@@ -129,32 +131,31 @@ hr{
 
 .action-buttons {
   display: flex;
-  flex-direction: column; /* Stack buttons on small screens */
-  justify-content: center;
   align-items: stretch; /* Stretch buttons to full width */
   gap: 10px; /* Reduced gap */
   margin-top: 20px; /* Reduced margin */
+  flex-direction: row;
 }
 
 .action-buttons button {
-  padding: 10px 16px;
+  padding: 8px 44px;
   font-size: 14px; /* Smaller button text */
   cursor: pointer;
-  width: 100%; /* Full width buttons on small screens */
   box-sizing: border-box; /* Include padding in width */
-  margin: 24px 8px;
   color: #fff;
   border-radius: 0;
   border: 0;
   font-family: 'Playfair Display SC', serif;
   font-size: 28px; /* Slightly smaller on mobile */
-  margin-bottom: 16px; /* Reduced margin */
+  margin: 16px 24px; /* Reduced margin */
   text-align: center;
   font-weight: bold;
+  border-radius: 12px;
 }
 
 .accept-btn {
   background-color: #008000;
+
 
 }
 
@@ -208,14 +209,16 @@ hr{
 
   .action-buttons {
     flex-direction: column;
-    gap: 8px;
-    margin-top: 16px;
+    gap: 0px;
+    margin: 0px 12px; /* Reduced margin */
+
   }
 
   .action-buttons button {
     width: 100%;
     font-size: 20px;
-    margin: 8px 0;
+    margin: 8px auto;
+    padding: 8px 4px;
   }
 }
 
@@ -277,5 +280,6 @@ hr{
 @media (min-width: 1200px) {
   .action-buttons {
     justify-content: center;
+
   }
 }
