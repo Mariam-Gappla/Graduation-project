@@ -14,7 +14,13 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 export class VendorsComponent implements OnInit{
   vendors:any;
 constructor(private vendorservice:VendorsService,private route:ActivatedRoute){}
-category:any
+category:any;
+sort(order:any){
+  console.log(order)
+  this.vendorservice.sortServicesByPrice(order).subscribe((res)=>{
+    this.vendors=res.data;
+  })
+}
 ngOnInit(): void {
 this.category=this.route.snapshot.paramMap.get('category')
 console.log(this.category)

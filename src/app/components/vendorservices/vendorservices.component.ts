@@ -37,8 +37,5 @@ return this.vendorservices.deleteService(service._id).subscribe((res)=>{
   })
 })
 }
-editService(service:any)
-{
 
-}
 }

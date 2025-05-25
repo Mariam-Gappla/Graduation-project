@@ -14,12 +14,12 @@
   <tbody>
     @for(user of users; track user){
       <tr>
-        <td>{{ user.id }}</td>
-        <td>{{ user.name }}</td>
+        <td>{{ user._id }}</td>
+        <td>{{ user.username }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.role }}</td>
-        <td>{{ user.bookings }}</td>
-        <td><button class="stop-btn">Stop</button><button class="delete-btn">Delete</button></td>
+        <td>{{ user.orders?.length || 0 }}</td>
+        <td><button class="delete-btn" (click)="deleteUser(user._id)">Delete</button></td>
 
       </tr>
     }

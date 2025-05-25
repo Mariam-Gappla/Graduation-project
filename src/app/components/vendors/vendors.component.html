@@ -7,8 +7,8 @@
           Select Price
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Low to High</a></li>
-          <li><a class="dropdown-item" href="#">High to Low</a></li>
+          <li (click)="sort('asc')"><a class="dropdown-item">Low to High</a></li>
+          <li (click)="sort('desc')"><a class="dropdown-item">High to Low</a></li>
         </ul>
       </div>
     </div>
