@@ -2,7 +2,7 @@
   display: block;
   min-height: 100vh;
   background-color: #FAF3E0;
-  padding: 30px 15px;
+  padding: 30px 15px; /* Consistent padding, can be adjusted further */
   font-family: var(--font-family);
 }
 
@@ -10,13 +10,14 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding: 20px;
+  padding: 20px; /* Default padding */
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 auto; /* Center content horizontally */
   width: 100%;
+  max-width: 1300px; /* Optional: Max width for very large screens */
 }
 
-/* Top Half */
+/* Top Half - Stat Boxes */
 .top-half {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -36,10 +37,19 @@
   font-size: 18px;
   color: #FAF3E0;
   padding: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+}
+
+.box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .box img {
   width: 50px;
+  height: 50px; /* Ensure consistent height for images */
+  object-fit: contain; /* Prevent distortion */
 }
 
 .box .info {
@@ -53,17 +63,20 @@
   color: #FAF3E0;
   font-weight: 400;
   font-family: 'Actor', sans-serif;
+  font-size: 1.1em; /* Adjust relative to parent font-size */
 }
 
-/* Bottom Half */
+/* Bottom Half - Charts and Bookings */
 .bottom-half {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center; /* Center items if they don't fill the row */
 }
 
 .bottom-box {
-  flex: 1 1 300px;
+  flex: 1 1 calc(50% - 10px); /* Adjust to fit two boxes per row on larger screens */
+  min-width: 300px; /* Ensure minimum width for stacking */
   background-color: #474747;
   border-radius: 8px;
   display: flex;
@@ -73,6 +86,7 @@
   color: #327537;
   padding: 0;
   box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .bottom-box .heading {
@@ -99,7 +113,7 @@
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  max-height: 300px;
+  max-height: 300px; /* Keep max-height for scrollability */
   padding: 0 12px;
   margin: 0 12px 12px;
   width: calc(100% - 24px);
@@ -117,7 +131,9 @@
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 8px;
-  gap: 12px;
+  gap: 10px; /* Slightly reduced gap for better fit */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for individual bookings */
 }
 
 .booking .col {
@@ -127,9 +143,12 @@
   font-weight: 400;
   font-size: 16px;
   color: #474747;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  /* Removed white-space: nowrap; overflow: hidden; text-overflow: ellipsis; for better mobile wrap */
+}
+
+.booking:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .booking .col span {
@@ -143,16 +162,91 @@
   border-radius: 10px;
   padding: 0 8px;
   box-sizing: border-box;
+  margin: 0 auto; /* Center the span horizontally if it takes full width */
+}
+
+#chart {
+  color: white;
+  width: 100%; /* Ensure chart takes full width of its container */
+  height: auto; /* Allow height to adjust */
 }
 
 /* Responsive Styles */
 
 /* Mobile devices (up to 767px) */
 @media (max-width: 767px) {
+  .home-container {
+    padding: 15px; /* Slightly less padding on small screens */
+  }
+
   .top-half {
-    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Allow smaller boxes */
     gap: 15px;
     margin-bottom: 30px;
+  }
+
+  .box {
+    height: 90px; /* Slightly smaller height */
+    font-size: 15px;
+    padding: 8px;
+  }
+
+  .box img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .box .info span {
+    font-size: 0.9em;
+  }
+
+  .bottom-half {
+    flex-direction: column; /* Stack bottom boxes */
+  }
+
+  .bottom-box {
+    flex: 1 1 100%; /* Take full width */
+    min-width: unset; /* Remove min-width to allow shrinking */
+  }
+
+  .bottom-box .heading p {
+    font-size: 18px;
+  }
+
+  .bookings {
+    max-height: 250px; /* Adjust max height for smaller screens */
+  }
+
+  .booking {
+    flex-direction: column; /* Stack booking columns */
+    align-items: flex-start;
+    gap: 5px; /* Smaller gap between stacked items */
+  }
+
+  .booking .col {
+    width: 100%;
+    text-align: left;
+    white-space: normal; /* Allow text to wrap for readability */
+    font-size: 14px;
+  }
+
+  .booking .col span {
+    width: 100%; /* Span takes full width when stacked */
+    justify-content: center; /* Center content of the span */
+    margin: 5px 0 0 0; /* Add top margin when stacked */
+  }
+}
+
+/* Tablet devices (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .home-container {
+    padding: 25px;
+  }
+
+  .top-half {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Adjust for more columns or slightly larger boxes */
+    gap: 18px;
+    margin-bottom: 35px;
   }
 
   .box {
@@ -160,54 +254,22 @@
     font-size: 16px;
   }
 
-  .box img {
-    width: 40px;
-  }
-
-  .bottom-half {
-    flex-direction: column;
-  }
-
-  .bottom-box .heading p {
-    font-size: 18px;
-  }
-
-  .booking {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .booking .col {
-    width: 100%;
-    text-align: left;
-    white-space: normal;
-    font-size: 14px;
-  }
-
-  .booking .col span {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-/* Tablet devices (768px to 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-  .top-half {
-    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-    gap: 18px;
-    margin-bottom: 35px;
-  }
-
-  .box {
-    height: 110px;
-    font-size: 17px;
-  }
-
   .bottom-box {
-    flex: 1 1 45%;
+    flex: 1 1 calc(50% - 10px); /* Maintain two columns for tablets */
   }
 
   .booking .col {
     font-size: 15px;
+  }
+}
+
+/* Larger Tablets/Small Desktops (992px to 1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .top-half {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Slightly larger boxes on bigger screens */
+  }
+
+  .bottom-box {
+    flex: 1 1 calc(50% - 10px); /* Stick to two columns */
   }
 }

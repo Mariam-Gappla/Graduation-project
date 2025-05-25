@@ -2,44 +2,44 @@
   <!-- Top Half -->
   <div class="top-half">
     <div class="box">
-      <img src="pepole.png" alt="">
+      <img src="pepole.png" alt="" />
       <div class="info">
-        <span>{{users}}</span>
+        <span>{{ users }}</span>
         <span>User</span>
       </div>
     </div>
     <div class="box">
-      <img src="user.png" alt="">
+      <img src="user.png" alt="" />
       <div class="info">
-        <span>{{brides}}</span>
+        <span>{{ brides }}</span>
         <span>Bride</span>
       </div>
     </div>
     <div class="box">
-      <img src="supplier.png" alt="">
+      <img src="supplier.png" alt="" />
       <div class="info">
-        <span>{{vendors}}</span>
+        <span>{{ vendors }}</span>
         <span>Vendor</span>
       </div>
     </div>
     <div class="box">
-      <img src="rating.png" alt="">
+      <img src="rating.png" alt="" />
       <div class="info">
-        <span>{{services}}</span>
+        <span>{{ services }}</span>
         <span>Service</span>
       </div>
     </div>
     <div class="box">
-      <img src="time.png" alt="">
+      <img src="time.png" alt="" />
       <div class="info">
-        <span>6,258</span>
+        <span>{{ bookingsCount }}</span>
         <span>Booking</span>
       </div>
     </div>
     <div class="box">
-      <img src="tag.png" alt="">
+      <img src="tag.png" alt="" />
       <div class="info">
-        <span>6,258</span>
+        <span>{{ cBookingsCount }}</span>
         <span>Confirmed</span>
       </div>
     </div>
@@ -47,7 +47,25 @@
 
   <!-- Bottom Half -->
   <div class="bottom-half">
-    <div class="bottom-box">Bottom Box 1</div>
+    <div class="bottom-box">
+  @if(chartOptions){
+    <div id="chart">
+    <apx-chart
+  #chart
+  [series]="chartOptions.series"
+  [chart]="chartOptions.chart"
+  [xaxis]="chartOptions.xaxis"
+  [yaxis]="chartOptions.yaxis || []"
+  [dataLabels]="chartOptions.dataLabels"
+  [stroke]="chartOptions.stroke"
+  [title]="chartOptions.title"
+  [grid]="chartOptions.grid">
+</apx-chart>
+  </div>
+  }
+</div>
+
+
     <div class="bottom-box">
       <div class="heading">
         <p>Recent Bookings Confirmed</p>
@@ -55,12 +73,13 @@
       <div class="bookings">
         @for(b of bookings; track b){
         <div class="booking">
-        <div class="col">{{ b.name }}</div>
-        <div class="col">{{ b.date }}</div>
-        <div class="col"><span>{{ b.price }} EGP</span></div>
-      </div>
-    }
-
+          <div class="col">{{ b.full_name }}</div>
+          <div class="col">{{ b.date }}</div>
+          <div class="col">
+            <span>{{ b.price }} EGP</span>
+          </div>
+        </div>
+        }
       </div>
     </div>
   </div>

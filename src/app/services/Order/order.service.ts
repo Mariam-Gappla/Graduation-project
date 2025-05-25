@@ -43,6 +43,14 @@ export class OrderService {
 
     return this.httpclient.get<OrderResponse>(this.baseUrl, { headers });
   }
+  getAllConfirmedOrders(): Observable<OrderResponse> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    });
+
+    return this.httpclient.get<OrderResponse>(`${this.baseUrl}confirmed/`, { headers });
+  }
 
   getOrdersByVendorId(vendorId: string): Observable<OrderResponse> {
     const token = localStorage.getItem('token');
