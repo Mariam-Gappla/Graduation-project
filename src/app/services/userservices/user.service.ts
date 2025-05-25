@@ -38,4 +38,11 @@ export class UserService {
   deleteUserById(id:any):Observable<any>{
     return this.httpclient.delete(`http://localhost:3000/users/${id}`,{headers:this.headers});
   }
+  getServiceById(serviceId: string): Observable<any> {
+    return this.httpclient.get(`http://localhost:3000/services/${serviceId}`);
+  }
+
+  getUserGrowth(): Observable<any> {
+    return this.httpclient.get("http://localhost:3000/users/growth", { headers: this.headers });
+  }
 }

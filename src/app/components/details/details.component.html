@@ -7,7 +7,7 @@
     />
     <h2 class="name mb-5">
       {{ vendor?.title }}
-      <span class="heart-icon">
+      <span class="heart-icon" (click)="toggleHeart()">
         <img src="hert1.png" alt="heart" />
       </span>
     </h2>
@@ -19,7 +19,7 @@
       </div>
       <div class="stat">
         <img src="heart.png" alt="" />
-        <p>{{ vendor?.likes }} Likes</p>
+        <p>{{ vendor?.likes?.length }} Likes</p>
       </div>
       <div class="stat">
         <img src="suitcase.png" alt="" />

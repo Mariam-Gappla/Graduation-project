@@ -21,6 +21,18 @@ sort(order:any){
     this.vendors=res.data;
   })
 }
+sortByLikes()
+{
+  this.vendorservice.sortServicesByLikes().subscribe((res)=>{
+    this.vendors=res.data;
+  })
+}
+sortByNewest()
+{
+  this.vendorservice.sortServicesByNewest().subscribe((res)=>{
+    this.vendors=res.data;
+  })
+}
 ngOnInit(): void {
 this.category=this.route.snapshot.paramMap.get('category')
 console.log(this.category)
