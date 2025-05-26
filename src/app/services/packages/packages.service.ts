@@ -16,4 +16,9 @@ addPackage(id:any,data:any):Observable<any>
 {
  return this.httpclient.post(`http://localhost:3000/packages/add/${id}`,data,{headers:this.headers})
 }
+LowestByCategory(category:string):Observable<any>
+{
+  return this.httpclient.get(`http://localhost:3000/packages/lowest-by-category/${category}`,{headers:this.headers})
 }
+}
+

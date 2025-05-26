@@ -52,7 +52,7 @@ export class ReviewService {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
-    console.log('headers', token);
+    // console.log('headers', token);
     return this.httpclient.get<ReviewResponse>(`${this.baseUrl}top-rated/category`, { headers });
   }
 }

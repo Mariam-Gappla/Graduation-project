@@ -45,4 +45,7 @@ export class UserService {
   getUserGrowth(): Observable<any> {
     return this.httpclient.get("http://localhost:3000/users/growth", { headers: this.headers });
   }
+  getRoleByUserId(userId: any): Observable<any> {
+    return this.httpclient.get(`http://localhost:3000/users/role/${userId}`, { headers: this.headers });
+  }
 }

@@ -12,7 +12,7 @@
       <img src="user.png" alt="" />
       <div class="info">
         <span>{{ brides }}</span>
-        <span>Bride</span>
+        <span>Brides&Grooms</span>
       </div>
     </div>
     <div class="box">
@@ -74,7 +74,7 @@
         @for(b of bookings; track b){
         <div class="booking">
           <div class="col">{{ b.full_name }}</div>
-          <div class="col">{{ b.date }}</div>
+          <div class="col">{{ b.date | date }}</div>
           <div class="col">
             <span>{{ b.price }} EGP</span>
           </div>

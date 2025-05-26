@@ -13,7 +13,7 @@ import {
   NgApexchartsModule
 } from "ng-apexcharts";
 
-import { ChartConfiguration, ChartType, ChartData } from 'chart.js'; // Note: Chart.js imports are present but NgApexchartsModule is used for the line chart.
+import { ChartConfiguration, ChartType } from 'chart.js'; // Note: Chart.js imports are present but NgApexchartsModule is used for the line chart.
 import { UserService } from '../../../services/userservices/user.service';
 import { VendorsService } from '../../../services/vendors/vendors.service';
 import { OrderService } from '../../../services/Order/order.service';

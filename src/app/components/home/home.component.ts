@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag'; // For the product inventory status
@@ -28,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     WhyChoosingUsComponent,
     ContactComponent,
     HttpClientModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [ReviewService],
   templateUrl: './home.component.html',
@@ -46,11 +46,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   this.reviewService.getTopRatedVendorsWithTopServiceByCategory().subscribe({
     next: (response) => {
-      console.log('Response:', response);
+      // console.log('Response:', response);
       if (Array.isArray(response)) {
         this.topRatedVendors = response;
         this.changeWidth(); // ✅ Call after assigning data
-        console.log('Top Rated Vendors:', this.topRatedVendors);
+        // console.log('Top Rated Vendors:', this.topRatedVendors);
       } else {
         console.error('Unexpected response format:', response);
       }

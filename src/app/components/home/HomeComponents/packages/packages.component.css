@@ -51,6 +51,24 @@
   margin: 0 15px;
   cursor: pointer;
   transition: transform 0.3s ease;
+  box-shadow: 0 4px 20px #47474796;
+  animation: pulseEffect 2s ease-in-out infinite;
+animation-delay: 6s;
+  animation-iteration-count: infinite;
+}
+@keyframes pulseEffect {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px #47474796;
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 6px 30px #474747aa;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px #47474796;
+  }
 }
 
 .package-card:hover {

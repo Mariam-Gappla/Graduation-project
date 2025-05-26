@@ -9,20 +9,22 @@
 
       <div class="row gy-5 justify-content-center">
         <div
+        [routerLink]="['/details', pkg.service._id]"
           class="col-12 col-sm-12 col-md-6 col-lg-4 package-card"
-          *ngFor="let pkg of packages; let i = index"
+          *ngFor="let pkg of pcgs; let i = index"
           [ngClass]="{ 'second-item': i === 1 }"
+
         >
           <p class="start-text">Start from</p>
-          <p class="price">{{ pkg.price }} EGP</p>
+          <p class="price">{{ pkg.minPrice }} EGP</p>
 
           <div class="package-items-scroll">
-            <div class="package-item" *ngFor="let item of pkg.items">
+            <div class="package-item" *ngFor="let item of pkg.packages">
               <div class="package-item-inner">
                 <div class="check">
                   <i class="fa-solid fa-check"></i>
                 </div>
-                <p>{{ item }}</p>
+                <p>{{ item.title }}</p>
               </div>
               <hr />
             </div>
