@@ -7,8 +7,8 @@
           Select Price
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Low to High</a></li>
-          <li><a class="dropdown-item" href="#">High to Low</a></li>
+          <li (click)="sort('asc')"><a class="dropdown-item">Low to High</a></li>
+          <li (click)="sort('desc')"><a class="dropdown-item">High to Low</a></li>
         </ul>
       </div>
     </div>
@@ -18,8 +18,8 @@
           Ordered By
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="#">Popularity</a></li>
-          <li><a class="dropdown-item" href="#">Newest</a></li>
+          <li (click)="sortByLikes()"><a class="dropdown-item">Popularity</a></li>
+          <li (click)="sortByNewest()"><a class="dropdown-item">Newest</a></li>
           <li><a class="dropdown-item" href="#">Rating</a></li>
         </ul>
       </div>
@@ -46,7 +46,7 @@
         <div class="card-body">
           <div class="likes">
             <i class="fa-solid fa-heart"></i>
-            <span>{{ item.likes }}</span>
+            <span>{{ item.likes?.length }}</span>
           </div>
           <div class="info">
             <p>{{ item.title }}</p>

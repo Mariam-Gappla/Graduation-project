@@ -47,6 +47,21 @@ editService(id:any,service:any):Observable<any>
 }
 getAllServices():Observable<any>
 {
-  return this.httpclient.get("http://localhost:3000/services/all",{headers:this.headers});
+  return this.httpclient.get(`http://localhost:3000/services/all`,{headers:this.headers});
+}
+getAllServicesAndPackages(): Observable<any>{
+  return this.httpclient.get(`http://localhost:3000/services/servicespackages`, { headers: this.headers });
+}
+sortServicesByPrice(order:any): Observable<any>{
+  return this.httpclient.get(`http://localhost:3000/services/sort?sortBy=${order}`, { headers: this.headers })
+}
+sortServicesByLikes(): Observable<any>{
+  return this.httpclient.get("http://localhost:3000/services/sortlikes", { headers: this.headers });
+}
+sortServicesByNewest(): Observable<any>{
+  return this.httpclient.get("http://localhost:3000/services/sortnewest", { headers: this.headers });
+}
+addLikeToService(id:any,userId:any): Observable<any>{
+  return this.httpclient.patch(`http://localhost:3000/services/like/${id}`,userId,{ headers: this.headers } );
 }
 }

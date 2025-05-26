@@ -130,5 +130,24 @@ getStarsArray(rate: number): number[] {
 trackReview(index: number, review: any): any {
   return review._id || index;
 }
+toggleHeart()
+{
+  console.log("toggle")
+  this.vendorservice.addLikeToService(this.vendor._id, {"userId": this.userId}).subscribe((res)=>{
+    console.log(res);
+     const id = this.route.snapshot.paramMap.get('vendorId');
+   this.vendorservice.getVendorById(id).subscribe((res) => {
+      this.vendor = res.data[0];
+      console.log(this.vendor.vendorId);
+    this.reviewService.getReviewsByVendorId(this.vendor.vendorId).subscribe((res) => {
+      this.reviews = res;
+console.log('Full Review Response Keys:', this.reviews);
+    });
+    });
+  });
+ 
+
+  
+}
 
 }

@@ -32,6 +32,12 @@ export class UserService {
   getUserById(id:any):Observable<any>{
     return this.httpclient.delete(`http://localhost:3000/users/${id}`,{headers:this.headers});
   }
+  getUserAndOrders():Observable<any>{
+    return this.httpclient.get(`http://localhost:3000/users/userorders`,{headers:this.headers});
+  }
+  deleteUserById(id:any):Observable<any>{
+    return this.httpclient.delete(`http://localhost:3000/users/${id}`,{headers:this.headers});
+  }
   getServiceById(serviceId: string): Observable<any> {
     return this.httpclient.get(`http://localhost:3000/services/${serviceId}`);
   }

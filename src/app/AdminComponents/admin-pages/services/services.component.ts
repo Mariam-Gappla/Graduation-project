@@ -1,46 +1,50 @@
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { NgClass } from '@angular/common';
+import { NgClass, NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { VendorsService } from '../../../services/vendors/vendors.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-services',
-  imports: [NgClass,HttpClientModule,RouterModule],
+  imports: [NgClass,HttpClientModule,RouterModule,FormsModule,NgFor],
   providers:[VendorsService],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })
 export class ServicesComponent implements OnInit {
   vendorsservices:any;
+  selectedStatus: string='All'
   constructor(private vendorservices:VendorsService){}
   
-  services = [
-    { id: 1, category: 'Mechanic', experience: '5 years', status: 'Accepted' },
-    { id: 2, category: 'Tow Truck', experience: '3 years', status: 'Refused' },
-    { id: 3, category: 'Car Wash', experience: '2 years', status: 'Pending' },
-    { id: 1, category: 'Mechanic', experience: '5 years', status: 'Accepted' },
-    { id: 2, category: 'Tow Truck', experience: '3 years', status: 'Refused' },
-    { id: 3, category: 'Car Wash', experience: '2 years', status: 'Pending' },
-    { id: 1, category: 'Mechanic', experience: '5 years', status: 'Accepted' },
-    { id: 2, category: 'Tow Truck', experience: '3 years', status: 'Refused' },
-    { id: 3, category: 'Car Wash', experience: '2 years', status: 'Pending' },
-  ];
+  
   
 
   statuses = ['All', 'Accepted', 'Pending', 'Refused'];
-  selectedStatus = 'All';
+  
 
-  get filteredServices() {
+  selectStatus(status:any)
+  {
+    console.log(status);
+    this.selectedStatus=status;
+    this.filteredServices();
+  }
+ filteredServices() {
     if (this.selectedStatus === 'All') {
-      return this.services;
+    this.vendorservices.getAllServices().subscribe((data:any)=>{
+      this.vendorsservices=data.data;
+      console.log(data.data)
+    })
     }
-    return this.services.filter(service => service.status === this.selectedStatus);
+    else
+    {
+      this.vendorservices.getAllServices().subscribe((data:any)=>{
+        this.vendorsservices=data.data.filter((service:any)=>service.status===this.selectedStatus);
+        
+      })
+    }
   }
-
-  onStatusChange(status: string) {
-    this.selectedStatus = status;
-  }
+  
   ngOnInit(): void {
     this.vendorservices.getAllServices().subscribe((data:any)=>{
       this.vendorsservices=data.data;
@@ -49,4 +53,5 @@ export class ServicesComponent implements OnInit {
 
    
   }
+  
 }
