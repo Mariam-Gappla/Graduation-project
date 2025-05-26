@@ -1,137 +1,52 @@
-<div class="landing" id="landing">
-    <div class="d-flex flex-column align-items-center pt-5 landing-content">
-        <p class="title">Handle the details</p>
-        <p class="subtitle">Enjoy the moment</p>
-        <img src="Line1.png" class="image-line">
-        <p>simplify wedding planning by combinning multiple features into one seamless platform with Zaffa</p>
-        <button>GET STARTED</button>
-    </div>
-</div>
-<div class="services">
-    <div class="services" id="services">
-        <h1 class="sevices-heading">OUR SERVICES</h1>
-        <img src="Line1.png" class="image-line">
-        <p>Enjoy all your wedding services in one place !</p>
+<app-landing></app-landing>
+<app-our-services id="our-services"></app-our-services>
 
-        <div class="services-items w-100 row justify-content-center gy-4 mt-4">
-            <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-center" *ngFor="let item of services">
-                <div class="mb-4">
-                    <a [routerLink]="['/vendors', item.title]">
-                        <img [src]="item.image" class="img-fluid mb-2" alt="{{ item.title }}">
-                    </a>
-                    <p>{{ item.title }}</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--about-->
+<app-about></app-about>
 
-    <!--about-->
+<!--common vendors-->
+<div class="common-services">
+  <div>
+    <h1 class="lheading">MOST COMMON VENDORS</h1>
+    <div class="line-container">
+      <div class="circle"></div>
+    </div>
+  </div>
+  <div
+    class="d-flex align-items-center justify-content-center mb-4 mt-5 wrapper"
+  >
+    <button (click)="prev()">
+      <i class="bi bi-caret-left-fill"></i>
+    </button>
+
     <div class="container">
-        <div class="about row" id="about">
-            <div class="col-12 col-md-6">
-                <h1>ABOUT</h1>
-                <img src="Line1.png" class="image-line">
-                <p>
-                    We bring together the best wedding services all in one place from professional photographers to
-                    stunning
-                    bridal dresses, elegant groom suits, luxurious wedding halls, and stylish cars to make your entrance
-                    unforgettable.
-                </p>
-                <p>
-                    Our mission is to make wedding planning easy, stress-free, and exciting by connecting you with
-                    trusted vendors and offering a seamless booking experience.
-                    Whether you're planning a grand celebration or an intimate gathering, we're here to help you bring
-                    your dream wedding to life.
-                </p>
-            </div>
-            <div class="col-12 image col-md-6">
-                <img src="about.jpg">
-            </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-6 col-lg-4 mb-3" *ngFor="let v of vendors">
+          <div class="text-center position-relative vendor-card">
+            <a [routerLink]="['/details', v.topService.serviceId]" class="image-wrapper">
+              <img
+                [src]="'http://localhost:3000/' + v.topService.serviceImage"
+                class="img-fluid mb-2"
+                [alt]="v.category"
+              />
+              <div class="animated-div">
+                <span>{{ v.topService.serviceTitle }}</span>
+              </div>
+            </a>
+            <h5 class="card-title">{{ v.category }}</h5>
+            <button (click)="bookNow(v.topService.serviceId)" class="book">BOOK NOW</button>
+          </div>
         </div>
-    </div>
-    <!--common services-->
-    <div class="common-services">
-        <div class="text-center">
-            <h1>MOST COMMON VENDORS</h1>
-            <img src="Line1.png" class="image-line">
-        </div>
-        <div class="d-flex align-items-center justify-content-center mb-4 mt-5">
-            <button class="arrow left btn btn-outline-dark ms-5" (click)="prev()">
-                <i class="fa-solid fa-arrow-left"></i>
-            </button>
-
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-sm-6 col-lg-4 mb-3" *ngFor="let product of productsToshow">
-                        <div class="text-center">
-                            <img [src]="product.image" class="img-fluid mb-2" [alt]="product.category">
-                            <h5 class="card-title">{{ product.category }}</h5>
-                            <button>BOOK NOW</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <button class="arrow right btn btn-outline-dark me-5" (click)="next()">
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
-        </div>
-
-
-        <!--why choosing zaffa-->
-        <div class="why-choosing container">
-            <div class="text-center mb-5">
-                <h1>WHY CHOOSING ZAFFA ?</h1>
-                <img src="Line1.png" class="image-line">
-            </div>
-            <div class="row">
-                <div class="col-3 item-1">
-                    <p class="m-0">Flexible</p>
-                    <p class="m-0">Budgeting</p>
-                </div>
-                <div class="col-3 p-0 item-2">
-                    <img src="img 2.png">
-                </div>
-                <div class="col-3 p-0 item-3">
-                    <p class="m-0">+5000</p>
-                    <p class="m-0">Vendor</p>
-                </div>
-                <div class="col-3 p-0 item-4">
-                    <img src="img 4.png">
-                </div>
-                <div class="col-3 p-0 item-5">
-                    <img src="img 1.png">
-                </div>
-                <div class="col-3 p-0 item-6">
-                    <p class="m-0">Varied</p>
-                    <p class="m-0">Options</p>
-                </div>
-                <div class="col-3 p-0 item-7">
-                    <img src="img 3.png">
-                </div>
-                <div class="col-3 p-0 item-8">
-                    <p class="m-0">Easy</p>
-                    <p class="m-0">Booking</p>
-                </div>
-            </div>
-
-        </div>
-        <!--contact us-->
-        <div class="contact-us mb-5" id="contact">
-            <div class="text-center mt-5">
-                <h1>CONTACT US</h1>
-                <img src="Line1.png" class="image-line">
-                <p class="m-0">Have questions or need assistance? We're here to help you</p>
-            </div>
-            <div class="contact-form">
-                <form>
-                    <input type="email" placeholder="Enter your Email"><br>
-                    <textarea placeholder="Enter your message" rows="4"></textarea><br>
-                    <button>send</button>
-                </form>
-            </div>
-
-        </div>
+      </div>
     </div>
 
+    <button (click)="next()">
+      <i class="bi bi-caret-right-fill"></i>
+    </button>
+  </div>
+  <app-packages></app-packages>
+
+  <app-why-choosing-us></app-why-choosing-us>
+  <!--contact us-->
+  <app-contact></app-contact>
 </div>

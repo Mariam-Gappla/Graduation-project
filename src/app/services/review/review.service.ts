@@ -39,5 +39,21 @@ export class ReviewService {
     console.log('headers', headers);
     return this.httpclient.get<ReviewResponse>(`${this.baseUrl}${vendorId}`,{ headers });
   }
+  getReviewsByServiceId(serviceId: string): Observable<ReviewResponse> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    });
+    console.log('headers', headers);
+    return this.httpclient.get<ReviewResponse>(`${this.baseUrl}service/${serviceId}`,{ headers });
+  }
+  getTopRatedVendorsWithTopServiceByCategory(): Observable<ReviewResponse> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    });
+    console.log('headers', token);
+    return this.httpclient.get<ReviewResponse>(`${this.baseUrl}top-rated/category`, { headers });
+  }
 }
 

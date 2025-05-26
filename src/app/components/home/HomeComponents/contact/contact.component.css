@@ -1,0 +1,131 @@
+/* contact-us */
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 800px;
+  padding: 0 20px; /* Add padding for smaller screens */
+  margin: 0 auto;
+}
+
+.contact-us .contact-us-heading {
+  font-family: 'Playfair Display SC', serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  color: #327537;
+  text-align: center;
+}
+
+.line-container {
+  margin: 10px auto 16px;
+  position: relative;
+  width: 340px;
+  height: 4px;
+  background-color: #474747;
+}
+
+.line-container .circle {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #474747;
+  border-radius: 50%;
+  animation: moveCircle 3s infinite alternate ease-in-out;
+}
+
+@keyframes moveCircle {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .line-container {
+    display: none;
+  }
+
+  .contact-form {
+    padding-top: 60px;
+  }
+
+  .contact-form form {
+    width: 95%;
+  }
+
+  .contact-form button {
+    margin: 0 auto;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+  }
+}
+
+.contact-us-sub-heading {
+  font-family: 'actor', sans-serif;
+  font-weight: 400;
+  color: #474747b8;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  background-image: url("../../../../../../public/contact.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 100px 20px 50px;
+  border: 3px solid #4747477e;
+  border-radius: 12px;
+}
+
+.contact-form form {
+  width: 80%;
+  max-width: 600px;
+}
+
+input[type="email"],
+.contact-form textarea {
+  border: 2px solid #474747;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: transparent;
+  outline: none;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.contact-form button {
+  border: none;
+  background-color: #327537;
+  color: #ffffff;
+  padding: 10px 50px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .contact-form button {
+    width: 100%;
+    font-size: 18px;
+  }
+}
+
+.contact-form button:hover {
+  background-color: var(--secondary-color);
+}

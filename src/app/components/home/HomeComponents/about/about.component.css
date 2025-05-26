@@ -1,0 +1,335 @@
+/* about section */
+.about {
+  display: flex;
+  flex-direction: row; /* Default for larger screens */
+  align-items: center;
+  justify-content: space-between;
+  margin: 100px 60px; /* Default margin */
+  gap: 40px;
+  flex-wrap: wrap; /* Allows items to wrap if space is constrained */
+  padding: 0 20px; /* Add horizontal padding for smaller screens */
+  box-sizing: border-box; /* Include padding in the element's total width */
+  max-width: 1200px; /* Optional: Constrain max width for very large screens */
+  margin-left: auto; /* Center the section if max-width is set */
+  margin-right: auto; /* Center the section if max-width is set */
+}
+
+/* heading */
+.about .about-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  color: var(--main-color);
+  text-align: start; /* Default for row layout */
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.line-container {
+  margin: 10px 0 24px;
+  position: relative;
+  width: 240px;
+  height: 4px;
+  background-color: #474747;
+}
+
+.line-container .circle {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #474747;
+  border-radius: 50%;
+  animation: moveCircle 3s infinite alternate ease-in-out;
+}
+
+@keyframes moveCircle {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 20px);
+  }
+}
+
+@media (max-width: 400px) {
+  .line-container {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .line-container {
+    display: none;
+
+  }
+
+}
+
+/* description container */
+.about-desc {
+  flex: 1 1 450px;
+  min-width: 280px;
+  text-align:justify;
+}
+
+/* Image container */
+.about .about-img {
+  flex: 1 1 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-right: 0;
+}
+
+/* image box */
+.about .img-box {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px; /* Fixed height for consistency on larger screens */
+  border: 1px solid #474747;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* image */
+.about .img-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+/* Paragraph text in description */
+.about-desc p {
+ font-family: 'actor', sans-serif;
+  font-size: 1.2rem; /* Adjusted for readability */
+  line-height: 1.6; /* Improved line height for better readability */
+  color: #474747; /* Text color */
+  text-align: justify;
+}
+@media (max-width: 600px) {
+  .about-desc p {
+  font-family: 'actor', sans-serif;
+  font-size: .7rem; /* Adjusted for readability */
+  line-height: 1.6; /* Improved line height for better readability */
+  color: #474747; /* Text color */
+  text-align: justify;
+}
+}
+/* animations */
+.about-desc,
+.about-img {
+  /* opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s ease-out forwards; */
+}
+.animate-in {
+  opacity: 0; /* Start invisible */
+  transform: translateY(40px); /* Start slightly below */
+  animation: fadeInUp 1s ease-out forwards;
+}
+.about-desc.animate-in {
+  animation-delay: 0.2s;
+}
+
+.about-img.animate-in {
+  animation-delay: 0.5s;
+}
+/* Update the existing fadeInUp keyframes to include scaling */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95); /* Start further down and slightly smaller */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* End at original position and size */
+  }
+}
+
+/* Add a new keyframe animation for the image to come from the side */
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(60px) scale(0.95); /* Start from the right and slightly smaller */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1); /* End at original position and size */
+  }
+}
+
+/* Apply the new animations in your .animate-in classes */
+.animate-in {
+  opacity: 0; /* Ensures elements are invisible before animation */
+  /* Remove initial transform here, it's now handled by the keyframes */
+}
+
+.about-desc.animate-in {
+  animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; /* Use a slightly bouncy easing */
+  animation-delay: 0.2s;
+}
+
+.about-img.animate-in {
+  animation: fadeInRight 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; /* Apply slide from right with bouncy easing */
+  animation-delay: 0.5s;
+}
+.about .img-box .border-box {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  height: 400px;
+  width: 600px;
+  border: 3.5px solid #F0B9BD;
+  pointer-events: none; /* Optional: lets mouse events pass through */
+}
+
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Media Queries --- */
+
+
+/* Responsive for small phones (e.g., 600px and below) */
+@media (max-width: 600px) {
+  .about {
+    margin: 40px 15px;
+    gap: 20px;
+  }
+
+  .about .about-heading {
+    /* Adjusted lower bound for 600px and below:
+       - 1.6rem is the new minimum (was 1.8rem)
+       - 7vw for scaling
+       - 2.2rem is the max
+    */
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+
+
+  .about-desc {
+    min-width: unset;
+  }
+
+
+
+  .about .img-box {
+    height: auto;
+    padding-bottom: 75%;
+  }
+}
+
+/* Responsive for tablets and medium desktops (e.g., 1024px and below) */
+@media (max-width: 1024px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+    margin: 80px 20px;
+    gap: 30px;
+  }
+
+  .about .about-heading {
+    /* Adjusted lower bound for 1024px and below:
+       - 1.8rem is the new minimum for this breakpoint (was 2rem)
+       - 5vw for scaling
+       - 2.8rem is the max
+    */
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    text-align: center;
+  }
+
+
+
+  .about-desc {
+    text-align: justify;
+    flex: 1 1 auto;
+    max-width: 700px;
+  }
+
+
+
+  .about .about-img {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .about .img-box {
+    height: auto;
+    padding-bottom: 66.66%;
+    position: relative;
+  }
+
+  .about .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 20px;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .about .about-heading {
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .line-container {
+    width: 180px; /* Adjusted for smaller screens */
+    margin: 10px auto 24px;
+  }
+
+  .about-desc {
+    flex: 1 1 auto;
+    max-width: 100%;
+    width: 80%;
+    text-align: justify;
+  }
+
+  .about .about-img {
+    flex: 1 1 auto;
+    max-width: 90%;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .about .img-box {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2; /* Ensures a responsive aspect ratio */
+    position: relative;
+  }
+
+  .about .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about .img-box .border-box {
+    display: none; /* Optional: hides decorative frame on smaller screens */
+  }
+}

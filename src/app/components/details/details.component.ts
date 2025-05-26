@@ -66,10 +66,11 @@ export class DetailsComponent {
     const id = this.route.snapshot.paramMap.get('vendorId');
     this.vendorservice.getVendorById(id).subscribe((res) => {
       this.vendor = res.data[0];
-      console.log(this.vendor.vendorId);
-    this.reviewService.getReviewsByVendorId(this.vendor.vendorId).subscribe((res) => {
+      console.log(this.vendor._id);
+
+    this.reviewService.getReviewsByServiceId(this.vendor._id).subscribe((res) => {
       this.reviews = res;
-console.log('Full Review Response Keys:', this.reviews);
+        console.log('Full Review Response Keys:', this.reviews);
     });
     });
 

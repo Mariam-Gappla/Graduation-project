@@ -1,0 +1,27 @@
+<div class="service">
+  <div class="services-content">
+  <h1 class="sevices-heading">OUR SERVICES</h1>
+  <div class="line-container">
+    <div class="circle"></div>
+  </div>
+
+  <p class="sevice-title">Enjoy all your wedding services in one place !</p>
+</div>
+
+<div class="services-items w-100">
+  <div class="row justify-content-center gy-4">
+    @for(service of services; track service){
+      <div class="item col-12 col-md-4 col-lg-2 text-center .item1">
+      <a [routerLink]="['/vendors', service.label]" class="text-decoration-none">
+        <div class="service-icon">
+        <img [src]="service.image" class="img-fluid" [alt]="service.alt" />
+      </div>
+      </a>
+      <p>{{service.alt}}</p>
+    </div>
+    }
+
+  </div>
+</div>
+
+</div>
