@@ -1,28 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { UserService } from '../../services/userservices/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterModule],
+  imports: [RouterModule, HttpClientModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
-  standalone:true
-
+  providers: [UserService],
+  standalone: true,
 })
-export class HeaderComponent {
-isclick:boolean=false;
-id:any
-constructor(){
-  this.id=localStorage.getItem('id')
-}
-clicked()
-{
-  this.isclick=!this.isclick;
-}
-scrollToSection(sectionId: string) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+export class HeaderComponent implements OnInit {
+  isclick: boolean = false;
+  id: any;
+  role: any;
+  
+  constructor(private userService: UserService) {
+
+  }
+  ngOnInit(): void {
+    this.id = localStorage.getItem('id');
+    this.userService.getRoleByUserId(this.id).subscribe(
+      (response: any) => {
+        this.role = response.role;
+        console.log('User role:', this.role);
+      },
+      (error: any) => {
+        console.error('Error fetching user role:', error);
       }
+    );
+  }
+  clicked() {
+    this.isclick = !this.isclick;
+  }
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
 }
