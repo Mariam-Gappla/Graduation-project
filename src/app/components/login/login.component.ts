@@ -32,6 +32,7 @@ export class LoginComponent {
         console.log('Response:', res);
         localStorage.setItem('token',res.data.token)
          localStorage.setItem('id',res.data._id)
+         localStorage.setItem('role',res.data.role);
         this.route.navigate(['/home'])
       },
       (err) => {
