@@ -1,7 +1,7 @@
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   padding: 30px 15px;
   font-family: var(--font-family);
 }
@@ -10,7 +10,7 @@
     margin: auto;
     padding: 20px;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #FAF3E0;
+    background-color: #F5F5F8;
   }
 
   .profile-info {
@@ -45,7 +45,7 @@
     font-family: 'Actor', sans-serif;
     font-size: 35px;
     font-weight: 400;
-    color: #327537;
+    color: #252423;
     margin-top: 10px;
     letter-spacing: 0%;
   }
@@ -216,11 +216,11 @@
 }
 
 .add-review-btn {
-  background-color: #327537;
-  color: #FAF3E0;
+  background-color: #252423;
+  color: #F5F5F8;
   padding: 12px 24px;
   font-size: 20px;
-  font-family: 'Playfair Display SC', serif;
+  font-family: system-ui, sans-serif;
   font-weight: bold;
   border: none;
   border-radius: 8px;
@@ -246,7 +246,7 @@
 
   /* PRICING Section */
   .pricing-section {
-    background: #FAF3E0;
+    background: #F5F5F8;
     padding: 20px;
   }
 
@@ -259,7 +259,7 @@
   background-color: black;
 }
   .pricing-box {
-    background: #FAF3E0;
+    background: #F5F5F8;
     max-width: 700px;
     margin: auto;
     padding: 30px 20px;
@@ -292,7 +292,7 @@
     border-radius: 12px;
     font-weight: bold;
     font-size: 20px;
-    font-family: 'Playfair Display SC', serif;
+    font-family: system-ui, sans-serif;
     white-space: nowrap;
   }
 
@@ -300,13 +300,13 @@
     margin: 20px auto 0;
     display: block;
     padding: 12px 24px;
-    background: #327537;
-    color: #F5D2D5;
+    background: #252423;
+    color: #F7F2EC;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 35px;
-    font-family: 'playfair display', serif;
+    font-family: system-ui, sans-serif;
     font-weight: 900;
   }
   .book-btn:hover {
@@ -317,9 +317,9 @@
 
   .main{
     font-size: 30px;
-    font-weight: 700;
-    font-family: 'Playfair Display SC', serif;
-    color: #327537;
+    font-weight: 400;
+    font-family: system-ui, sans-serif;
+    color: #252423;
   }
 
 
@@ -329,9 +329,9 @@
 }
 
 .review-header {
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
-  color: #327537;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
+  color: #252423;
 }
 .line-container {
   margin: 10px 0px 20px;

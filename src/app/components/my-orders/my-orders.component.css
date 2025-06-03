@@ -1,16 +1,16 @@
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   padding: 30px 15px;
   font-family: 'Actor', sans-serif;
   box-sizing: border-box;
 }
 
 h2 {
-  color: #327537;
-  font-family: 'Playfair Display SC', serif;
-  font-weight: 700;
+  color: #252423;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
   font-size: 2.4rem;
   text-align: center;
   margin-bottom: 2rem;
@@ -77,7 +77,7 @@ h2 {
 .order-title {
   font-size: 1.6rem;
   font-weight: bold;
-  color: #FAF3E0;
+  color: #F5F5F8;
 }
 
 .order-date {

@@ -9,10 +9,10 @@
 }
 
 .contact-us .contact-us-heading {
-  font-family: 'Playfair Display SC', serif;
-  font-weight: 700;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
   font-size: clamp(1.6rem, 5vw, 2.8rem);
-  color: #327537;
+  color: #252423;
   text-align: center;
 }
 
@@ -107,7 +107,7 @@ input[type="email"],
 
 .contact-form button {
   border: none;
-  background-color: #327537;
+  background-color: #E18670;
   color: #ffffff;
   padding: 10px 50px;
   font-size: 20px;
@@ -127,5 +127,5 @@ input[type="email"],
 }
 
 .contact-form button:hover {
-  background-color: var(--secondary-color);
+  background-color: #e27053;
 }

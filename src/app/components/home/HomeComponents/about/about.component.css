@@ -16,10 +16,10 @@
 
 /* heading */
 .about .about-heading {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
+  font-family: system-ui, sans-serif;
+  font-weight: 500;
   font-size: clamp(2.2rem, 6vw, 3.5rem);
-  color: var(--main-color);
+  color: #252423;
   text-align: start; /* Default for row layout */
   margin-top: 0;
   margin-bottom: 20px;
@@ -184,7 +184,7 @@
   right: 40px;
   height: 400px;
   width: 600px;
-  border: 3.5px solid #F0B9BD;
+  border: 3.5px solid #E18670 ;
   pointer-events: none; /* Optional: lets mouse events pass through */
 }
 

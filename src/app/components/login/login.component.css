@@ -1,14 +1,14 @@
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   padding: 20px;
   font-family: var(--font-family);
   box-sizing: border-box;
 }
 
 .sign-up {
-  background-color: #F5D2D5;
+  background-color: #F7F2EC;
   overflow: hidden;
   margin: 20px auto;
   border-radius: 24px;
@@ -16,7 +16,7 @@
 }
 
 .signup-content {
-  background-color: #F5D2D5;
+  background-color: #F7F2EC;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,9 +32,9 @@
 }
 
 .sign-up h1 {
-  color: #327537;
-  font-family: 'Playfair Display SC', serif;
-  font-weight: 700;
+  color: #252423;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
   font-size: 2.5rem;
   text-align: center;
   margin-top: 20px;
@@ -84,7 +84,7 @@
   outline: none;
   border: none;
   border-radius: 10px;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   font-family: 'Almarai', sans-serif;
   font-size: 1rem;
   margin: 8px 0;
@@ -118,7 +118,7 @@
   padding: 10px 30px;
   border-radius: 10px;
   border: none;
-  background-color: #327537;
+  background-color: #252423;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -189,7 +189,7 @@
 
 .havenot-account a {
   text-decoration: none;
-  color: #327537;
+  color: #252423;
   font-weight: 600;
 }
 

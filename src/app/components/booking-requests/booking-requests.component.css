@@ -1,16 +1,16 @@
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   padding: 30px 15px;
   font-family: var(--font-family);
   box-sizing: border-box;
 }
 
 h2 {
-  color: #327537;
-  font-family: 'playfair display SC', serif;
-  font-weight: 700;
+  color: #252423;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
   font-size: 2.4rem;
 }
 
@@ -45,7 +45,7 @@ h2 {
 .dropdown-toggle{
   background-color: #474747;
   font-family: 'actor' sans-serif;
-  color: #FAF3E0;
+  color: #F5F5F8;
   font-size: 1.2rem;
   margin-bottom: 64px;
 }
@@ -66,10 +66,10 @@ h2 {
   }
 
   .table-header {
-    background-color: #F5D2D5;
-    font-family: 'playfair display SC', serif;
+    background-color: #F7F2EC;
+    font-family: system-ui, sans-serif;
     font-size: 1.3rem;
-    border-bottom: 2px solid #FAF3E0;
+    border-bottom: 2px solid #F5F5F8;
   }
 
   .table-body .tr {
@@ -119,7 +119,7 @@ h2 {
     transition: all 0.3s ease;
   }
 .approve-btn{
-  background-color: #327537;
+  background-color: #252423;
 
   cursor: pointer;
 }

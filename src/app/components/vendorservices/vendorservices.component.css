@@ -1,12 +1,12 @@
 .service{
-    background-color: #FAF3E0;
+    background-color: #F5F5F8;
 }
 .service h1{
     text-align: center;
     padding-top: 20px;
 }
 .button{
-    background-color: #327537;
+    background-color: #252423;
     color: aliceblue;
     border: none;
     height: 40px;
@@ -38,7 +38,7 @@ opacity: 0;
 position: absolute;
 justify-content: center;
 align-items: center;
-color: #FAF3E0;
+color: #F5F5F8;
 font-size: 30px;
 transition: 2s;
 }

@@ -1,7 +1,7 @@
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   padding: 30px 15px; /* Consistent padding, can be adjusted further */
   font-family: var(--font-family);
 }
@@ -35,7 +35,7 @@
   border-radius: 8px;
   font-weight: bold;
   font-size: 18px;
-  color: #FAF3E0;
+  color: #F5F5F8;
   padding: 10px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
@@ -60,7 +60,7 @@
 }
 
 .box .info span {
-  color: #FAF3E0;
+  color: #F5F5F8;
   font-weight: 400;
   font-family: 'Actor', sans-serif;
   font-size: 1.1em; /* Adjust relative to parent font-size */
@@ -83,14 +83,14 @@
   flex-direction: column;
   font-weight: bold;
   font-size: 18px;
-  color: #327537;
+  color: #252423;
   padding: 0;
   box-sizing: border-box;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .bottom-box .heading {
-  background-color: #F5D2D5;
+  background-color: #F7F2EC;
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -121,7 +121,7 @@
 }
 
 .booking {
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   padding: 10px 12px;
   display: flex;
   flex-wrap: wrap;
@@ -152,8 +152,8 @@
 }
 
 .booking .col span {
-  background-color: #327537;
-  color: #F5D2D5;
+  background-color: #252423;
+  color: #F7F2EC;
   min-width: 80px;
   height: 36px;
   display: flex;

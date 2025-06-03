@@ -1,46 +1,41 @@
-<div class="container-fluid">
-    <div class="row header-background py-4">
-      <div class="col-3 p-0">
-
-            <img src="Logo.png" class="logo-img" >
+<div class="container-fluid text-center footer-container">
+  <hr class="footer-hr">
+  <div class="row footer-row align-items-center justify-content-center p-0 logo-col">
+    <!-- <div class="col-12 col-md-3 d-flex align-items-center justify-content-center p-0 logo-col">
+      </div> -->
+    <div class="col-12 col-sm-6 col-md-2 p-0 footer-section">
+      <h4 class="footer-title">Services</h4>
+      @for(service of services; track service){
+      <a [routerLink]="['/vendors', service.label]">
+        <p class="mb-1 footer-link">{{service.alt}}</p>
+      </a>
+      }
+    </div>
+    <div class="col-12 col-sm-6 col-md-2 p-0 footer-section">
+      <h4 class="footer-title">Contact Us</h4>
+      <a href="mailto:zaffa1034&#64;gmail.com" class="footer-link">zaffa1034&#64;gmail.com</a>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 p-0 footer-section">
+      <h4 class="footer-title">Packages</h4>
+      @for(pkg of pcgs; track pkg){
+      <a [routerLink]="['/details', pkg.service._id]">
+        <p class="footer-link package-title">{{pkg.service.title}}</p>
+      </a>
+      }
+    </div>
+    <div class="col-12 col-sm-6 col-md-2 p-0 social-col">
+      <div class="d-flex justify-content-center">
+        <a href="#" class="social-icon-link">
+          <i class="fa-brands fa-facebook icon-size fa-facebook-custom"></i>
+        </a>
+        <a href="#" class="social-icon-link">
+          <i class="fa-brands fa-square-x-twitter icon-size fa-twitter-custom"></i>
+        </a>
+        <a href="#" class="social-icon-link">
+          <i class="fa-brands fa-instagram icon-size fa-instagram-custom"></i>
+        </a>
       </div>
-      <div class="col p-0">
-       <h4 class="footer-title-color">Services</h4>
-       <p class="mb-1">Photography</p>
-       <p class="mb-1">Halls</p>
-       <p class="mb-1">Cars</p>
-       <p class="mb-1">Bride Dressses</p>
-       <p class="mb-1">Groom Suits</p>
-       <p class="mb-1">Makeup Artist</p>
-       <p class="mb-1">Session Halls</p>
-      </div>
-      <div class="col p-0">
-        <h4 class="footer-title-color">Contact US</h4>
-        <p class="mb-1">ZaffaHu&#64;info.com</p>
-      </div>
-      <div class="col p-0">
-        <h4 class="footer-title-color"> Packages</h4>
-        <p class="mb-1">Package 1</p>
-        <p class="mb-1">Package 2</p>
-        <p class="mb-1">Package 3</p>
-      </div>
-      <div class="col p-0">
-        <div class="d-flex h-75 align-items-end">
-            <div>
-                <a href="#">
-                  <i class="fa-brands fa-facebook icon-size"></i>
-                </a>
-            </div>
-            <div>
-               <a href="#">
-                <i class="fa-brands fa-square-x-twitter icon-size"></i>
-               </a>
-            </div>
-            <div>
-                <a href="#"><i class="fa-brands fa-instagram icon-size"></i></a>
-            </div>
-        </div>
-        <small>&copy;ZAFA 2025.all rights reserved</small>
-      </div>
+      <p class="d-block mt-2 copyright-text">&copy;ZAFA 2025. All rights reserved</p>
     </div>
   </div>
+</div>

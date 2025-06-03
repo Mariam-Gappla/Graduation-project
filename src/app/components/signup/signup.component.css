@@ -1,14 +1,14 @@
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   padding: 20px; /* Adjusted padding for smaller screens */
   font-family: var(--font-family);
   box-sizing: border-box;
 }
 
 .sign-up {
-  background-color: #F5D2D5;
+  background-color: #F7F2EC;
   overflow: hidden;
   margin: 20px auto; /* Adjusted margin for responsiveness and centering */
   border-radius: 24px;
@@ -16,16 +16,16 @@
 }
 
 .sign-up .signup-content h1 {
-  color: #327537;
-  font-family: 'Playfair Display SC', serif;
-  font-weight: 700;
+  color: #252423;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
   font-size: 2.5rem; /* Adjusted font size for better responsiveness */
   text-align: center; /* Center the heading on smaller screens */
   margin-top: 20px; /* Add some top margin */
 }
 
 .signup-content {
-  background-color: #F5D2D5;
+  background-color: #F7F2EC;
   /* height: 100vh; Removed fixed height for flexibility */
   display: flex; /* Enable flexbox for layout control */
   flex-direction: column; /* Stack content vertically by default */
@@ -82,7 +82,7 @@
   outline: none;
   border: none;
   border-radius: 10px;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   padding: 12px 24px;
   font-family: 'Almarai', sans-serif;
   font-size: 1rem; /* Adjusted font size for responsiveness */
@@ -115,7 +115,7 @@
 
 .login a {
   text-decoration: none;
-  color: #327537; /* Inherit or specify link color */
+  color: #252423; /* Inherit or specify link color */
 }
 
 .space {
@@ -140,7 +140,7 @@
 
 /* Link styling inside the sign-in text */
 .sign-up p.mt-3 a {
-  color: #327537;
+  color: #252423;
   text-decoration: none;
   font-weight: 600;
 }
@@ -166,7 +166,7 @@
   padding: 10px 30px; /* Adjusted padding for responsiveness */
   border-radius: 10px;
   border: none;
-  background-color: #327537;
+  background-color: #252423;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;

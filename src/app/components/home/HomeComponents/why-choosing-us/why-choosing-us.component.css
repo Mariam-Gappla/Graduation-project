@@ -1,8 +1,8 @@
 .why-choosing .why-choosing-heading{
-  font-family: 'Playfair Display SC', serif;
-  font-weight: 700;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
   font-size: clamp(1.6rem, 5vw, 2.8rem);
-  color: #327537;
+  color: #252423;
   text-align: center;
   margin-top: 50px;
 }
@@ -80,12 +80,13 @@
 }
 
 .item-1 {
-  background-color: #474747;
-  color: #ffffff;
+  background-color: #F7F2EC;
+  color: #252423;
 }
 
 .item-8 {
-  background-color: #F0B9BD;
+  background-color: #E18670;
+  color: white;
 }
 
 .items .item img {

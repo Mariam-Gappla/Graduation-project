@@ -2,7 +2,7 @@
 .iconsnav {
   position: relative;
   width: 80px !important;
-  background-color: #F5D2D5;
+  background-color: #F7F2EC;
 }
 
 /* Logo Image */
@@ -36,7 +36,7 @@
   z-index: 1000;
 }
 .open-icon i {
-  color: #F5D2D5;
+  color: #F7F2EC;
   font-size: 16px;
 }
 
@@ -51,7 +51,7 @@
 
 .tabs a:not(.open-icon) {
   margin: 2px 0;
-  border: 1px solid #FAF3E0;
+  border: 1px solid #F5F5F8;
   width: 100%;               /* Make tab full width */
   text-align: center;        /* Center icon horizontally */
   padding: 8px 0;           /* Vertical padding */
@@ -59,11 +59,11 @@
 }
 
 .tabs a:not(.open-icon):hover {
-  background-color: #FAF3E0; /* Light hover effect */
+  background-color: #F5F5F8; /* Light hover effect */
 }
 
 .tabs :not(.open-icon) i {
-  color: #327537;
+  color: #252423;
   font-size: 16px;
 }
 
@@ -71,7 +71,7 @@
 
 /* Opened Sidebar */
 .offcanvas {
-  background-color: #F5D2D5;
+  background-color: #F7F2EC;
   height: 100vh !important;
   overflow-y: auto;
 }
@@ -97,7 +97,7 @@
   border: none;
 }
 .close-icon i{
-  color: #F5D2D5;
+  color: #F7F2EC;
   font-size: 16px;
 }
 
@@ -133,19 +133,19 @@ ul{
   justify-content: flex-start;
   align-items: center;
   padding: 12px 16px;
-  border: 1px solid #FAF3E0;
+  border: 1px solid #F5F5F8;
   margin: 0 0 24px 0;
   box-sizing: border-box;
 }
 
 
 .nav-item div:hover {
-  background-color: #FAF3E0;
-  border-color: #327537;
+  background-color: #F5F5F8;
+  border-color: #252423;
 }
 
 .nav-item div i {
-  color: #327537;
+  color: #252423;
   font-size: 28px;
   margin-right: 20px;
 }
@@ -165,7 +165,7 @@ a {
 .custom-scrollbar {
   overflow-y: auto; /* enable vertical scrolling */
   scrollbar-width: thin;          /* Firefox */
-  scrollbar-color: #327537 #F5D2D5; /* thumb and track colors for Firefox */
+  scrollbar-color: #252423 #F7F2EC; /* thumb and track colors for Firefox */
 }
 
 /* Webkit browsers (Chrome, Edge, Safari) */
@@ -174,14 +174,14 @@ a {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #F5D2D5;
+  background: #F7F2EC;
   border-radius: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #327537;
+  background-color: #252423;
   border-radius: 4px;
-  border: 2px solid #F5D2D5; /* space around thumb */
+  border: 2px solid #F7F2EC; /* space around thumb */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
@@ -222,6 +222,6 @@ a {
   background-color: #474747;
   z-index: 1050;
   top: 12px;
-  color: #F5D2D5;
+  color: #F7F2EC;
 }
 

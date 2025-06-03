@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserService } from '../../services/userservices/user.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,10 +12,18 @@ import { HttpClientModule } from '@angular/common/http';
   standalone: true,
 })
 export class HeaderComponent implements OnInit {
+  isScrolled = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    this.isScrolled = scrollY > 50;
+  }
+  
   isclick: boolean = false;
   id: any;
   role: any;
-  
+
   constructor(private userService: UserService) {
 
   }

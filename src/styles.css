@@ -1,13 +1,13 @@
 
 :root {
-  --main-color: #327537;
+  --main-color: #252423;
   --secondary-color: #5a9a5a;
-  --background-color: #F5D2D5;
+  --background-color: #F7F2EC;
   --text-color: #ffffff;
 }
 
 html, body {
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
     width: 100%;
     font-family: 'Actor', sans-serif;
   }

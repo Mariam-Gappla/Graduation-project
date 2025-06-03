@@ -1,6 +1,6 @@
 .reviews-page {
   font-family: 'Inter', sans-serif;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   padding: 20px; /* Reduced padding for smaller screens */
   min-height: 100vh;
   box-sizing: border-box; /* Ensure padding doesn't add to width/height */
@@ -9,8 +9,8 @@
 .page-title {
   max-width: 800px; /* Limit max width for larger screens */
   margin: 0 auto;
-  font-family: 'Playfair Display SC', serif;
-  color: #327537;
+  font-family: system-ui, sans-serif;
+  color: #252423;
   font-size: 28px; /* Slightly smaller on mobile */
   text-align: center;
   font-weight: bold;
@@ -34,12 +34,12 @@
   font-family: 'Actor', sans-serif;
   font-weight: 400;
   font-size: 21px;
-  color: #FAF3E0;
+  color: #F5F5F8;
 }
 hr{
   border: none;
   height: 1px;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   margin: 31px 0;
 }
 .profile-section {
@@ -48,7 +48,7 @@ hr{
   display: flex;
   align-items: center;
   gap: 16px;
-  background-color: #F5D2D5;
+  background-color: #F7F2EC;
   width: 100%;
   box-sizing: border-box;
   padding: 16px 24px;
@@ -95,14 +95,14 @@ hr{
   font-family: 'Actor', sans-serif;
   font-weight: 400;
   font-size: 30px;
-  color: #F5D2D5;
+  color: #F7F2EC;
   margin-bottom: 12px;
 }
 .summary-section p{
   font-family: 'Actor', sans-serif;
   font-weight: 400;
   font-size: 21px;
-  color: #FAF3E0;
+  color: #F5F5F8;
 }
 .service-section{
   margin-bottom: 24px;
@@ -116,7 +116,7 @@ hr{
   font-family: 'Actor', sans-serif;
   font-weight: 200;
   font-size: 17px;
-  color: #FAF3E0;
+  color: #F5F5F8;
 }
 .p-img{
   border-radius: 15px;
@@ -145,7 +145,7 @@ hr{
   color: #fff;
   border-radius: 0;
   border: 0;
-  font-family: 'Playfair Display SC', serif;
+  font-family: system-ui, sans-serif;
   font-size: 28px; /* Slightly smaller on mobile */
   margin: 16px 24px; /* Reduced margin */
   text-align: center;

@@ -7,10 +7,10 @@
 
 /* Heading */
 .packages-heading {
-  font-family: 'Playfair Display SC', serif;
-  font-weight: 700;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
   font-size: clamp(1.6rem, 5vw, 2.8rem);
-  color: #327537;
+  color: #252423;
   text-align: start;
   margin-top: 50px;
 }
@@ -42,7 +42,7 @@
 
 /* Package card */
 .package-card {
-  background-color: #f0b9bd;
+  background-color: white;
   padding: 40px 30px 90px;
   position: relative;
   border-radius: 12px;
@@ -51,10 +51,10 @@
   margin: 0 15px;
   cursor: pointer;
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 20px #47474796;
   animation: pulseEffect 2s ease-in-out infinite;
-animation-delay: 6s;
+  animation-delay: 6s;
   animation-iteration-count: infinite;
+  border: 2px solid #25242320;
 }
 @keyframes pulseEffect {
   0% {
@@ -85,8 +85,8 @@ animation-delay: 6s;
 }
 
 .price {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
   color: var(--main-color);
   font-size: 3rem;
   text-align: start;
@@ -115,7 +115,7 @@ animation-delay: 6s;
 
 /* Check icon */
 .check {
-  background-color: #474747;
+  background-color: #E18670;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -125,14 +125,14 @@ animation-delay: 6s;
   margin-right: 15px;
 }
 
-.check i {
-  font-size: 28px;
-  color: #ffffff;
+img {
+  width: 40px;
+  margin-right: 12px;
 }
 
 /* Book now button */
 .book-btn {
-  background-color: #474747;
+  background-color: #E18670;
   color: #ffffff;
   font-family: 'Actor', sans-serif;
   font-size: 24px;
@@ -152,7 +152,7 @@ animation-delay: 6s;
   overflow-y: auto;
   margin-bottom: 20px;
   padding-right: 10px;
-  scrollbar-color: #ffffff transparent;
+  scrollbar-color: #E18670 transparent;
   scrollbar-width: thin;
 }
 
@@ -172,23 +172,15 @@ animation-delay: 6s;
 
 /* Dark variation of package */
 .second-item {
-  background-color: #474747;
+  background-color: #F7F2EC;
 }
 
-.second-item .price {
-  color: #f0b9bd;
-}
 
-.second-item .package-item .check {
-  background-color: var(--main-color);
-}
 
-.second-item .package-item p {
-  color: #ffffff;
-}
 
 .second-item button {
-  background-color: var(--main-color);
+  background-color: white;
+  color: #E18670;
 }
 
 /* Responsive styles */

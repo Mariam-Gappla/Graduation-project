@@ -2,7 +2,7 @@
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   padding: 30px 15px;
   font-family: var(--font-family);
   box-sizing: border-box;
@@ -24,7 +24,7 @@ table {
 }
 
 thead th {
-  background-color: #F5D2D5;
+  background-color: #F7F2EC;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   color: #474747;
@@ -37,7 +37,7 @@ tbody tr {
   background-color: #474747;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  color: #FAF3E0;
+  color: #F5F5F8;
   font-size: 16px;
   text-align: center;
 }
@@ -50,7 +50,7 @@ tbody tr td {
 button.p-button-secondary {
   background-color: transparent;
   border: none;
-  color: #FAF3E0;
+  color: #F5F5F8;
   cursor: pointer;
 }
 

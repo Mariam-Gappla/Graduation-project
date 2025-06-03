@@ -1,16 +1,16 @@
 :root {
-  --main-color: #327537;
+  --main-color: #252423;
   --secondary-color: #5a9a5a;
-  --background-color: #f5d2d5;
+  --background-color: #F7F2EC;
   --text-color: #ffffff;
   --secondary-text-color: #4747473d;
-  --font-family: "Playfair Display", serif;
+  --font-family: system-ui, sans-serif;
 }
 
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   padding: 30px 15px;
   font-family: var(--font-family);
 }
@@ -34,7 +34,7 @@ button {
   color: var(--text-color);
   margin-top: 20px;
   font-family: var(--font-family);
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1.2rem;
   border-radius: 12px;
   padding: 10px 18px;
@@ -156,8 +156,8 @@ button {
 }
 
 hr {
-  color: #FAF3E0;
-  border: 2px solid #FAF3E0;
+  color: #F5F5F8;
+  border: 2px solid #F5F5F8;
 }
 
 /* BEST VENDOR Badge */
@@ -171,7 +171,7 @@ hr {
 
 .best-vendor-padge p {
   font-family: var(--font-family);
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1rem;
   color: #474747;
   padding: 12px 26px;

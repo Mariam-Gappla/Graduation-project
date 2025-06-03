@@ -15,7 +15,7 @@ export class OurServicesComponent {
     label: 'Photography'
   },
   {
-    image: 'wedding-ceremony.png',
+    image: 'hall.png',
     alt: 'Halls',
     label: 'Halls'
   },

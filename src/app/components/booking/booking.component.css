@@ -103,14 +103,14 @@ form input[type="file"] {
 form button {
   margin: 20px auto 0;
   padding: 10px 30px;
-  background: #327537;
+  background: #252423;
   color: white;
   font-weight: bold;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   width: 150px;
-  font-family: 'Playfair Display', serif;
+  font-family: system-ui, sans-serif;
   font-size: 18px;
 }
 
