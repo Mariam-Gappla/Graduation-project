@@ -1,4 +1,5 @@
-<h2>Order Details</h2>
+<div class="container">
+  <h2>Order Details</h2>
 <div class="line-container">
   <div class="circle"></div>
 </div>
@@ -11,9 +12,10 @@
           <i class="fas fa-trash delete-icon"></i>
         </button>
         <div class="order-header">
-          <span class="order-title">{{ order.service }}</span>
+          <p class="order-title">{{ order.service }}</p>
           <span class="order-date">Date: {{ order.date | date }}</span>
         </div>
+        <hr>
         <div class="order-status">
           <span class="status-label">Status:</span>
           <button
@@ -40,10 +42,6 @@
             <span class="detail-value">{{ order.client }}</span>
           </div>
           <div>
-            <span class="detail-label">Category: </span>
-            <span class="detail-value">{{ order.category }}</span>
-          </div>
-          <div>
             <span class="detail-label">Price: </span>
             <span class="detail-value">{{ order.price }} EGP</span>
           </div>
@@ -61,4 +59,6 @@
     </div>
     }
   </div>
+</div>
+
 </div>

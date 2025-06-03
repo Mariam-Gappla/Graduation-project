@@ -91,6 +91,7 @@
   margin: 8px 0;
   box-sizing: border-box;
 }
+
 .inp:focus{
   border: 1px solid #252423;
   background-color: white;
@@ -250,4 +251,7 @@
 
 .ms-1 {
   margin-left: 0.25rem;
+}
+.signup{
+  color: #e27053;
 }

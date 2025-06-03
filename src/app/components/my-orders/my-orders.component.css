@@ -2,7 +2,7 @@
   display: block;
   min-height: 100vh;
   background-color: #F5F5F8;
-  padding: 30px 15px;
+  padding: 100px 15px;
   font-family: 'Actor', sans-serif;
   box-sizing: border-box;
 }
@@ -23,7 +23,11 @@ h2 {
   height: 3px;
   background-color: rgba(0, 0, 0, 0.8);
 }
-
+@media (max-width: 740px) {
+  .line-container {
+    display: none;
+  }
+}
 .line-container .circle {
   position: absolute;
   top: -6px;
@@ -41,19 +45,21 @@ h2 {
 }
 
 .order-card {
-  background-color: #333333;
-  color: #FFFFFF;
+  background-color: white;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
   border-radius: 0.75rem;
   margin-bottom: 3rem;
   padding: 2rem;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   max-width: 360px;
   width: 100%;
   position: relative;
-  border: 1px solid #6b7280;
+  min-height: 500px;
+  border: 2px solid rgba(0, 0, 0, 0.15) ;
 }
 
 .order-card:hover {
@@ -66,25 +72,44 @@ h2 {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid #6b7280;
   padding-bottom: 1rem;
+}
+hr{
+  width: 100%;
+  margin: 0 auto 30px auto;
+  border: 2px solid rgba(128, 128, 128, 0.4);
+  border-radius: 50%;
 }
 .order-header{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
 }
 .order-title {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #F5F5F8;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  margin-right: 8px;
+  font-weight: 600;
+  font-family: system-ui, sans-serif;
+  overflow: hidden;
+  width: 100%;
+  display: block;
+  text-align: center;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .order-date {
   font-size: 1.1rem;
-  font-family: 'playfair-display-sc', serif;
-  color: #d1d5db;
+  font-family: system-ui, sans-serif;
+  color: #333333b5;
   margin-top: 0.5rem;
+  font-weight: 400;
+  align-self: end;
 }
 
 .order-status {
@@ -92,10 +117,11 @@ h2 {
 }
 
 .status-label {
-  font-weight: bold;
-  color: #d1d5db;
+  font-size: 1.1rem;
+  font-family: system-ui, sans-serif;
+  color: #333333;
+  font-weight: 500;
   margin-right: 0.75rem;
-  font-size: 1.2rem;
 }
 
 .order-details {
@@ -106,15 +132,19 @@ h2 {
 }
 
 .detail-label {
-  font-weight: bold;
-  color: #d1d5db;
   font-size: 1.1rem;
+  font-family: system-ui, sans-serif;
+  color: #333333;
+  font-weight: 600;
+  margin-right: 0.75rem;
 }
 
 .detail-value {
-  font-size: 1.2rem;
-  color: #fff;
+  font-size: 1.1rem;
+  font-family: system-ui, sans-serif;
+  color: #333333;
   font-weight: 500;
+  margin-right: 0.75rem;
 }
 
 .confirmed-btn, .waiting-btn, .refused-btn {
@@ -167,7 +197,7 @@ h2 {
 
 .pay-button {
   margin-top: 1rem;
-  background-color: #32a852;
+  background-color: #E18670  ;
   border: none;
   padding: 0.7rem 1.2rem;
   border-radius: 0.4rem;
