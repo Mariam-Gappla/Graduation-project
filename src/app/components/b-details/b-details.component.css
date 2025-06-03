@@ -3,10 +3,11 @@
   min-height: 100vh;
   background-color: #F5F5F8;
   padding: 30px 15px;
-  font-family: var(--font-family);
+  font-family: 'Actor', sans-serif;
+  
 }
 
-.container.rounded {
+.profile-container {
   margin: 100px auto;
   padding: 32px;
   background-color: white;
@@ -33,7 +34,7 @@
   position: relative;
   width: 390px;
   height: 4px;
-  background-color: #333333;
+  background-color: #333;
   margin: 0 auto;
 }
 
@@ -43,7 +44,7 @@
   left: 0;
   width: 20px;
   height: 20px;
-  background-color: #333333;
+  background-color: #333;
   border-radius: 50%;
   animation: moveCircle 3s infinite alternate ease-in-out;
 }
@@ -53,138 +54,208 @@
   100% { left: calc(100% - 20px); }
 }
 
-/* Form Inputs */
-input, select, textarea {
-  font-family: "Actor", sans-serif;
+/* Profile Image */
+.image-upload {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.image-upload img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.image-upload p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  margin-top: 10px;
+}
+
+/* File Upload */
+.uploaded-files {
+  padding: 0;
+}
+.uploaded-files li {
+  list-style: none;
+  background-color: #3f3f3f;
+  color: white;
+  padding: 8px 12px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+}
+
+/* Form Section */
+.form-section {
+  padding: 20px;
+  background-color: #F7F2EC;
+  border-radius: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 20px;
   font-weight: 400;
+  color: #333;
+  margin-bottom: 6px;
+  display: block;
+  font-family: 'Actor', sans-serif;
+}
+
+/* Inputs */
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 14px;
   background-color: transparent;
   border: 2px solid #33333355;
-  padding: 8px 12px;
   border-radius: 6px;
+  font-family: "Actor", sans-serif;
   transition: all 0.3s ease-in-out;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   border-color: rgba(237, 184, 171, 0.7);
-  /* background-color: #e8f6e5; */
   box-shadow: 0 0 5px rgba(237, 184, 171, 0.7);
 }
 
-/* Labels */
-.main {
-  color: #252423;
-  font-weight: 400;
-  font-size: 20px;
-  font-family: 'Actor', sans-serif;
-  display: block;
-  margin-bottom: 6px;
+textarea {
+  resize: vertical;
 }
 
-/* Confirm Button */
-.confirm-button {
+/* Upload Box */
+.upload-box {
+  background-color: #fdf6e4;
+  border: 1px solid #888;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.upload-box img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+/* Pricing */
+.pricing-box {
+  background-color: #fdf6e4;
+  padding: 15px;
+  border: 1px solid #999;
+  border-radius: 10px;
+}
+
+.pricing-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.label-box {
+  background-color: #3f3f3f;
+  color: white;
+  padding: 10px;
+  width: 80%;
+  border-radius: 6px;
+  border: none;
+}
+
+.price-box {
+  background-color: #F7F2EC;
+  padding: 10px;
+  width: 20%;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: bold;
+  font-family: 'Actor', sans-serif;
+  color: #222;
+}
+
+/* Add Icon */
+.add-icon {
+  text-align: right;
+  margin-top: 10px;
+}
+.add-icon button {
+  font-size: 22px;
+  background-color: white;
+  border: 2px solid #444;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+/* Contact Fields */
+.contact-fields {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.contact-fields input {
+  flex: 1;
+}
+
+/* Save Button */
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.save-btn {
   background-color: #E18670;
   color: white;
-  border-radius: 6px;
-  padding: 12px 24px;
+  width: 60%;
   font-size: 24px;
   font-weight: 400;
   font-family: system-ui, sans-serif;
   border: none;
-  transition: background-color 0.3s ease-in-out;
+  border-radius: 8px;
+  margin-top: 20px;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.confirm-button:hover {
-  background-color: #e27053 ;
+.save-btn:hover {
+  background-color: #e27053;
 }
 
-.confirm-button span {
-  display: block;
+/* Responsive Input */
+.responsive-file-input {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
-/* Discount Alert */
-.discount {
-  background-color: #F7F2EC;
-  border-radius: 50px;
-  padding: 15px 25px;
-  margin: 20px auto;
-  max-width: 90%;
-  text-align: center;
-}
-
-.discount span {
-  color: #252423;
-  font-weight: 400;
-  font-size: 18px;
-  font-family: 'Actor', sans-serif;
-}
-
-/* Service Summary */
-.border-top {
-  border-top: 2px solid #ccc;
-  margin-top: 30px;
-  padding-top: 20px;
-}
-
-.border-top p {
-  margin-bottom: 10px;
-}
-
-.border-top p span {
-  color: #333333;
-  font-family: 'Actor', sans-serif;
-  font-size: 16px;
-  margin-left: 12px;
-}
-
-.border-top p strong {
-  font-family: system-ui, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .container.rounded {
-    padding: 20px;
+@media (max-width: 600px) {
+  .responsive-file-input {
+    max-width: 100%;
   }
-
   .title-with-line {
     font-size: 26px;
   }
-
   .line-container {
     width: 260px;
     height: 3px;
   }
-
   .line-container .circle {
     width: 15px;
     height: 15px;
     top: -6px;
-  }
-
-  .main {
-    font-size: 18px;
-  }
-
-  .confirm-button {
-    height: auto;
-    padding: 15px;
-  }
-
-  .confirm-button span {
-    font-size: 20px;
-  }
-
-  .discount span {
-    font-size: 16px;
-  }
-
-  .border-top p strong {
-    font-size: 18px;
-  }
-
-  .border-top p span {
-    font-size: 14px;
   }
 }
