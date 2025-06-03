@@ -1,6 +1,6 @@
 import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 
-export function email(emails:string[]):ValidatorFn
+export function existingEmail(emails:string[]):ValidatorFn
 {
     return (controle:AbstractControl):ValidationErrors|null=>{
         let email=controle.get('email')?.value;
@@ -11,7 +11,4 @@ export function email(emails:string[]):ValidatorFn
         }
         return null;
     }
-}
-{
-
 }
