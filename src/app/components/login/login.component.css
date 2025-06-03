@@ -13,10 +13,11 @@
   margin: 20px auto;
   border-radius: 24px;
   max-width: 960px;
+  border: 1px solid #252423;
 }
 
 .signup-content {
-  background-color: #F7F2EC;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,7 +53,7 @@
   font-family: 'actor', sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  color: #474747;
+  color: #333333;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -83,14 +84,17 @@
   padding: 12px 24px;
   outline: none;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: #F5F5F8;
   font-family: 'Almarai', sans-serif;
   font-size: 1rem;
   margin: 8px 0;
   box-sizing: border-box;
 }
-
+.inp:focus{
+  border: 1px solid #252423;
+  background-color: white;
+}
 @media (min-width: 576px) {
   .inp {
     width: 90%;
@@ -118,7 +122,7 @@
   padding: 10px 30px;
   border-radius: 10px;
   border: none;
-  background-color: #252423;
+  background-color: #E18670;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -138,12 +142,12 @@
 }
 
 .sign-up button:disabled {
-  background-color: #8bb88b;
+  background-color: #e187708e;
   cursor: not-allowed;
 }
 
 .sign-up button:not(:disabled):hover {
-  background-color: #245423;
+  background-color: #e27053;
 }
 
 .forget-content {
@@ -162,7 +166,7 @@
 
 .forget-password {
   text-decoration: none;
-  color: #474747;
+  color: #333333;
   font-size: 0.9rem;
 }
 

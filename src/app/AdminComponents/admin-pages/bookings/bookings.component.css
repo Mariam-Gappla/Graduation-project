@@ -18,7 +18,7 @@
 
 /* Dropdown button */
 .dropdown button {
-  background-color: #474747;
+  background-color: #333333;
   color: #F5F5F8;
   font-family: 'Actor', sans-serif;
   font-weight: 400;
@@ -31,7 +31,7 @@
 
 /* Dropdown menu */
 .dropdown-menu {
-  background-color: #474747;
+  background-color: #333333;
 }
 
 /* Table wrapper for responsive */
@@ -52,14 +52,14 @@ thead th {
   background-color: #F7F2EC;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  color: #474747;
+  color: #333333;
   font-size: 18px;
   text-align: center;
   padding: 12px 8px;
 }
 
 tbody tr {
-  background-color: #474747;
+  background-color: #333333;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   color: #F5F5F8;

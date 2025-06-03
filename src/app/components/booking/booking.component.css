@@ -52,7 +52,7 @@
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 6px;
-  color: #474747;
+  color: #333333;
 }
 
 .number-box {
@@ -67,7 +67,7 @@
 .number-box span {
   font-family: 'Actor', sans-serif;
   font-size: 16px;
-  color: #474747;
+  color: #333333;
 }
 
 .number-box img {
@@ -96,7 +96,7 @@ form input[type="file"] {
 }
 
 form input[type="file"] {
-  background: #474747;
+  background: #333333;
   color: white;
 }
 

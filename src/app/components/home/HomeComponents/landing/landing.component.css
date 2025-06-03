@@ -48,7 +48,7 @@
   position: relative;
   width: 600px;
   height: 4px;
-  background-color: #474747;
+  background-color: #333333;
 }
 
 .line-container .circle {
@@ -57,7 +57,7 @@
   left: 0;
   width: 20px;
   height: 20px;
-  background-color: #474747;
+  background-color: #333333;
   border-radius: 50%;
   animation: moveCircle 3s infinite alternate ease-in-out;
 }

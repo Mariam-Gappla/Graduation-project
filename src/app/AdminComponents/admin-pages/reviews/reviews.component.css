@@ -17,7 +17,7 @@
 }
 
 .review-container {
-  background-color: #474747;
+  background-color: #333333;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   position: relative;
   border-radius: 16px;
@@ -76,7 +76,7 @@ hr{
   font-family: 'Actor', sans-serif;
   font-weight: 400;
   font-size: 30px;
-  color: #474747;
+  color: #333333;
 }
 
 .profile-details .info {
@@ -88,7 +88,7 @@ hr{
   font-family: 'Actor', sans-serif;
   font-weight: 400;
   font-size: 21px;
-  color: #474747;
+  color: #333333;
   margin-right: 12px;
 }
 .section-title{

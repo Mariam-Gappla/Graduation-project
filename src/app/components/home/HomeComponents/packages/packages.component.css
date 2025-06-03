@@ -59,15 +59,15 @@
 @keyframes pulseEffect {
   0% {
     transform: scale(1);
-    box-shadow: 0 4px 20px #47474796;
+    box-shadow: 0 4px 20px #33333396;
   }
   50% {
     transform: scale(1.02);
-    box-shadow: 0 6px 30px #474747aa;
+    box-shadow: 0 6px 30px #333333aa;
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 4px 20px #47474796;
+    box-shadow: 0 4px 20px #33333396;
   }
 }
 
@@ -79,7 +79,7 @@
 .start-text {
   font-family: 'Actor', sans-serif;
   font-size: 26px;
-  color: #474747;
+  color: #333333;
   text-align: start;
   margin-bottom: 0;
 }
@@ -103,7 +103,7 @@
 .package-item p {
   font-family: 'Actor', sans-serif;
   font-size: 24px;
-  color: #474747;
+  color: #333333;
   margin: 0;
   text-align: start;
 }

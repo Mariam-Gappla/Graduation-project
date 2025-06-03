@@ -4,7 +4,7 @@
   --secondary-color: #5a9a5a;
   --background-color: #f5d2d5;
   --text-color: #ffffff;
-  --secondary-text-color: #4747473d;
+  --secondary-text-color: #3333333d;
 }
 :host {
   display: block;

@@ -1,7 +1,7 @@
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #F5F5F8;
+  background-color: #FAF3E0;
   padding: 30px 15px;
   font-family: var(--font-family);
   box-sizing: border-box;
@@ -19,7 +19,7 @@
 /* Dropdown button */
 .dropdown button {
   background-color: #474747;
-  color: #F5F5F8;
+  color: #FAF3E0;
   font-family: 'Actor', sans-serif;
   font-weight: 400;
   border-radius: 0;
@@ -49,7 +49,7 @@ table {
 }
 
 thead th {
-  background-color: #F7F2EC;
+  background-color: #F5D2D5;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   color: #474747;
@@ -62,7 +62,7 @@ tbody tr {
   background-color: #474747;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  color: #F5F5F8;
+  color: #FAF3E0;
   font-size: 16px;
   text-align: center;
 }
@@ -75,7 +75,7 @@ tbody tr td {
 button.p-button-secondary {
   background-color: transparent;
   border: none;
-  color: #F5F5F8;
+  color: #FAF3E0;
   cursor: pointer;
 }
 

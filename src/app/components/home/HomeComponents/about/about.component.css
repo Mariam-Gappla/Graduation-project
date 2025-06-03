@@ -30,7 +30,7 @@
   position: relative;
   width: 240px;
   height: 4px;
-  background-color: #474747;
+  background-color: #333333;
 }
 
 .line-container .circle {
@@ -39,7 +39,7 @@
   left: 0;
   width: 20px;
   height: 20px;
-  background-color: #474747;
+  background-color: #333333;
   border-radius: 50%;
   animation: moveCircle 3s infinite alternate ease-in-out;
 }
@@ -89,7 +89,7 @@
   width: 100%;
   max-width: 600px;
   height: 400px; /* Fixed height for consistency on larger screens */
-  border: 1px solid #474747;
+  border: 1px solid #333333;
   border-radius: 20px;
   overflow: hidden;
 }
@@ -108,7 +108,7 @@
  font-family: 'actor', sans-serif;
   font-size: 1.2rem; /* Adjusted for readability */
   line-height: 1.6; /* Improved line height for better readability */
-  color: #474747; /* Text color */
+  color: #333333; /* Text color */
   text-align: justify;
 }
 @media (max-width: 600px) {
@@ -116,7 +116,7 @@
   font-family: 'actor', sans-serif;
   font-size: .7rem; /* Adjusted for readability */
   line-height: 1.6; /* Improved line height for better readability */
-  color: #474747; /* Text color */
+  color: #333333; /* Text color */
   text-align: justify;
 }
 }

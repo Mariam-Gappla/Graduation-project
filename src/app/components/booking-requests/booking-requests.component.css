@@ -43,7 +43,7 @@ h2 {
 }
 
 .dropdown-toggle{
-  background-color: #474747;
+  background-color: #333333;
   font-family: 'actor' sans-serif;
   color: #F5F5F8;
   font-size: 1.2rem;
@@ -73,7 +73,7 @@ h2 {
   }
 
   .table-body .tr {
-    background-color: #474747;
+    background-color: #333333;
     color: #FFFFFF;
     font-family: 'actor', sans-serif;
     font-size: 1.2rem;

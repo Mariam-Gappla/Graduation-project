@@ -3,7 +3,7 @@
   --secondary-color: #5a9a5a;
   --background-color: #F7F2EC;
   --text-color: #ffffff;
-  --secondary-text-color: #4747473d;
+  --secondary-text-color: #3333333d;
   --font-family: system-ui, sans-serif;
 }
 
@@ -11,13 +11,13 @@
   display: block;
   min-height: 100vh;
   background-color: #F5F5F8;
-  padding: 30px 15px;
+  padding: 70px 15px;
   font-family: var(--font-family);
 }
 
 /* Buttons */
-button {
-  background-color: #474747;
+button.dropdown-toggle {
+  background-color: #E18670;
   font-family: 'Actor', sans-serif;
   color: var(--background-color);
   border: none;
@@ -28,23 +28,30 @@ button {
 }
 
 
-
+button.dropdown-toggle {
+  background-color: #e27053;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
 .show {
-  background-color: var(--main-color);
-  color: var(--text-color);
+  background-color: #E18670;
+  color: white;
   margin-top: 20px;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 1.2rem;
-  border-radius: 12px;
+  border-radius: 4px;
   padding: 10px 18px;
   width: 100%;
   max-width: 250px;
   transition: background-color 0.3s ease;
+  border: none;
 }
 
 .show:hover {
-  background-color: #285d2c;
+  background-color: #e27053 ;
 }
 
 /* Dropdown Row */
@@ -59,7 +66,7 @@ button {
   font-size: 2rem;
   font-family: 'Actor', sans-serif;
   font-weight: 400;
-  color: var(--main-color);
+  color: #252423;
 }
 
 /* Animated Line */
@@ -91,7 +98,7 @@ button {
 /* Card Styling */
 .card {
   position: relative;
-  background-color: #474747;
+  background-color: white;
   border-radius: 12px;
   border: none;
   padding: 20px;
@@ -99,6 +106,7 @@ button {
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
 }
 
 .card:hover {
@@ -129,7 +137,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--main-color);
+  background-color: #47B5AB;
   border-radius: 25px;
   padding: 4px 18px;
   margin-bottom: 12px;
@@ -142,7 +150,7 @@ button {
 }
 
 .likes span {
-  color: var(--background-color);
+  color: white;
   font-size: 1.2rem;
   margin-left: 10px;
   font-family: 'Actor', sans-serif;
@@ -151,13 +159,14 @@ button {
 .info p {
   font-family: 'Actor', sans-serif;
   font-size: 1.5rem;
-  color: var(--text-color);
+  color: #333333;
   margin: 10px 0;
 }
 
 hr {
-  color: #F5F5F8;
-  border: 2px solid #F5F5F8;
+  color: #333333;
+  border: 2px solid #333333;
+  border-radius: 50%;
 }
 
 /* BEST VENDOR Badge */
@@ -173,7 +182,7 @@ hr {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 1rem;
-  color: #474747;
+  color: #333333;
   padding: 12px 26px;
 }
 

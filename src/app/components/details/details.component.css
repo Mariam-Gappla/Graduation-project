@@ -20,7 +20,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: #474747;
+    background-color: #333333;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -63,7 +63,7 @@
   }
 
   .stat {
-    background: #474747;
+    background: #333333;
     padding: 10px 20px;
     border-radius: 10px;
     text-align: center;
@@ -171,7 +171,7 @@
   .summary-text {
     padding: 0 20px 20px;
     line-height: 100%;
-    color: #474747;
+    color: #333333;
     font-family: 'Actor', sans-serif;
     font-size: 26px;
     font-weight: 400;
