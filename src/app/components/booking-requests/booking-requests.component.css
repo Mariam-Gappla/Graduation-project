@@ -2,7 +2,7 @@
   display: block;
   min-height: 100vh;
   background-color: #F5F5F8;
-  padding: 30px 15px;
+  padding: 100px 15px;
   font-family: var(--font-family);
   box-sizing: border-box;
 }
@@ -43,11 +43,12 @@ h2 {
 }
 
 .dropdown-toggle{
-  background-color: #333333;
+  background-color: #E18670  ;
   font-family: 'actor' sans-serif;
   color: #F5F5F8;
   font-size: 1.2rem;
   margin-bottom: 64px;
+  border: none;
 }
 
 
@@ -66,15 +67,22 @@ h2 {
   }
 
   .table-header {
-    background-color: #F7F2EC;
+    background-color: #e27053;
     font-family: system-ui, sans-serif;
     font-size: 1.3rem;
     border-bottom: 2px solid #F5F5F8;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
+    color: #F5F5F8;
+    border: none;
   }
 
+
   .table-body .tr {
-    background-color: #333333;
-    color: #FFFFFF;
+    background-color: white;
+    border-bottom:1px solid #33333342;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
     font-family: 'actor', sans-serif;
     font-size: 1.2rem;
     font-weight: 400;
@@ -119,12 +127,12 @@ h2 {
     transition: all 0.3s ease;
   }
 .approve-btn{
-  background-color: #252423;
+  background-color: #4BB6AD  ;
 
   cursor: pointer;
 }
 .refuse-btn{
-  background-color: #FF0000;
+  background-color: #FF0033;
   cursor: pointer;
 }
 .confirmed-btn{
@@ -143,7 +151,7 @@ h2 {
   width: 270px;
 }
 .approve-btn:hover{
-  background-color: #46944b;
+  background-color: #40aaa2 ;
 
   cursor: pointer;
 }
