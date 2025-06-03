@@ -27,7 +27,12 @@ button.dropdown-toggle {
   transition: background-color 0.3s ease;
 }
 
-
+@media (max-width: 768px) {
+  button.dropdown-toggle, .dropdown-menu, .dropdown-item {
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+}
 button.dropdown-toggle {
   background-color: #e27053;
 }

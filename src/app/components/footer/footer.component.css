@@ -1,26 +1,23 @@
 /* General Footer Styles */
 .footer-container {
-  background-color: #f8f9fa; /* Light background for the footer */
+  background-color: #f8f9fa;
   padding-top: 20px;
   padding-bottom: 20px;
-  position: relative;
 }
 
 .footer-hr {
   width: 70%;
-  margin: 0 auto 30px auto; /* Add margin below the HR */
-  border: 4px solid rgba(128, 128, 128, 0.4); /* Slightly lighter and thinner */
+  margin: 0 auto 30px auto;
+  border: 4px solid rgba(128, 128, 128, 0.4);
   border-radius: 50%;
 }
 
-.footer-row {
-  align-items: flex-start; /* Align content to the top of each column */
-}
+
 
 /* Section Titles */
 .footer-title {
   color: #333333;
-  margin-bottom: 15px; /* Space below titles */
+  margin-bottom: 15px;
   font-weight: 600;
   font-size: 1.15rem;
 }
@@ -28,70 +25,71 @@
 /* Links */
 a {
   text-decoration: none;
-  color: #555555; /* Slightly softer link color */
-  transition: color 0.3s ease; /* Smooth transition for hover */
-}
-
-a:hover {
-  color: #007bff; /* Example hover color */
-}
-
-.footer-link {
-  margin-bottom: 8px; /* Spacing between links */
-  font-size: 0.95rem;
-}
-
-/* Logo Column */
-.logo-col {
-  min-height: 100px; /* Ensure some height even without a logo */
-}
-
-.logo-img {
-  max-height: 80px; /* Constrain logo size */
-  max-width: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-/* Packages Section specific styles */
-.package-title {
-  white-space: normal; /* Allow text to wrap */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box; /* For multi-line ellipsis */
-  -webkit-line-clamp: 2; /* Limit to 2 lines */
-  -webkit-box-orient: vertical;
-  max-width: 90%; /* Adjust width to fit content better, percentage is responsive */
-  margin: 0 auto 8px auto; /* Center and add bottom margin */
-  cursor: pointer;
-  line-height: 1.3; /* Improve readability for wrapped text */
-}
-
-
-/* Social Icons */
-.social-icons-wrapper {
-  margin-top: 20px; /* Space above social icons */
-}
-
-.social-icon-link {
-  margin-right: 15px; /* Spacing between icons */
-  font-size: 30px; /* Slightly smaller for better balance */
-  color: #6c757d; /* Default icon color */
+  color: #555555;
   transition: color 0.3s ease;
 }
 
-.social-icon-link:last-child {
-  margin-right: 0;
+a:hover {
+  color: #007bff;
+}
+
+.footer-link {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* Logo */
+.logo-col {
+  min-height: 100px;
+  text-align: center;
+}
+
+.logo-img {
+  max-height: 80px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Packages Styling */
+.package-title {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-width: 90%;
+  margin: 0 auto 8px auto;
+  cursor: pointer;
+  line-height: 1.3;
+}
+
+/* Social Icons */
+.sociel{
+  position: relative;
+}
+.social-icons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 80% 0 20%;
+}
+
+.social-icon-link {
+  font-size: 30px;
+  color: #6c757d;
+  transition: color 0.3s ease;
+  margin: 12px;
 }
 
 .fa-facebook-custom {
   color: #0866FF;
 }
-
-.fa-twitter-custom { /* Using .fa-square-x-twitter but naming for clarity */
-  color: #000000; /* Black for X */
+.fa-twitter-custom {
+  color: #000000;
 }
-
 .fa-instagram-custom {
   color: #FF2549;
 }
@@ -99,11 +97,9 @@ a:hover {
 .social-icon-link:hover .fa-facebook-custom {
   color: #054fca;
 }
-
 .social-icon-link:hover .fa-twitter-custom {
   color: #333333;
 }
-
 .social-icon-link:hover .fa-instagram-custom {
   color: #d11e3b;
 }
@@ -112,36 +108,54 @@ a:hover {
 .copyright-text {
   color: #6c757d;
   font-size: 0.85rem;
-  margin-top: 15px; /* Space above copyright */
+  margin-top: 15px;
 }
-.social-col{
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-}
+
 /* Responsive Adjustments */
 @media (max-width: 767.98px) {
-  .footer-section, .social-col, .logo-col {
-    text-align: center;
-    margin-bottom: 25px; /* Add space between stacked sections */
-  }
-
   .footer-row {
-    flex-direction: column; /* Stack columns on small screens */
-  }
-
-  .social-icons-wrapper {
-    justify-content: center !important; /* Center social icons on small screens */
-    height: auto; /* Allow height to adjust */
+    flex-direction: column;
     align-items: center;
   }
 
-  .logo-col {
-    order: -1; /* Place logo at the top on small screens if desired */
-    margin-bottom: 30px;
+  .footer-section {
+    flex: 0 0 100%;
+    margin-bottom: 25px;
   }
 
   .package-title {
-    max-width: 80%; /* Adjust for smaller screens */
+    max-width: 80%;
+  }
+}
+@media (max-width: 767.98px) {
+  .footer-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    flex: 0 0 100%;
+    margin-bottom: 25px;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+  }
+
+  .footer-link,
+  .package-title {
+    font-size: 0.85rem;
+  }
+
+  .copyright-text {
+    font-size: 0.75rem;
+  }
+
+  .package-title {
+    max-width: 80%;
+  }
+
+  .social-icon-link {
+    font-size: 24px; /* Slightly smaller icons */
   }
 }

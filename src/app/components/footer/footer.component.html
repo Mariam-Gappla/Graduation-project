@@ -1,41 +1,46 @@
 <div class="container-fluid text-center footer-container">
   <hr class="footer-hr">
-  <div class="row footer-row align-items-center justify-content-center p-0 logo-col">
-    <!-- <div class="col-12 col-md-3 d-flex align-items-center justify-content-center p-0 logo-col">
-      </div> -->
-    <div class="col-12 col-sm-6 col-md-2 p-0 footer-section">
+  <div class="row justify-content-center p-0">
+
+    <!-- Services Column -->
+    <div class="col-lg-3 col-md-6 col-sm-6 mb-4 footer-section">
       <h4 class="footer-title">Services</h4>
       @for(service of services; track service){
-      <a [routerLink]="['/vendors', service.label]">
-        <p class="mb-1 footer-link">{{service.alt}}</p>
-      </a>
+        <a [routerLink]="['/vendors', service.label]">
+          <p class="mb-1 footer-link">{{service.alt}}</p>
+        </a>
       }
     </div>
-    <div class="col-12 col-sm-6 col-md-2 p-0 footer-section">
+
+    <!-- Contact Column -->
+    <div class="col-lg-3 col-md-6 col-sm-6 mb-4 footer-section">
       <h4 class="footer-title">Contact Us</h4>
       <a href="mailto:zaffa1034&#64;gmail.com" class="footer-link">zaffa1034&#64;gmail.com</a>
     </div>
-    <div class="col-12 col-sm-6 col-md-3 p-0 footer-section">
+
+    <!-- Packages + Social Column -->
+    <div class="col-lg-3 col-md-6 col-sm-6 mb-4 footer-section">
       <h4 class="footer-title">Packages</h4>
       @for(pkg of pcgs; track pkg){
-      <a [routerLink]="['/details', pkg.service._id]">
-        <p class="footer-link package-title">{{pkg.service.title}}</p>
-      </a>
+        <a [routerLink]="['/details', pkg.service._id]">
+          <p class="footer-link package-title">{{pkg.service.title}}</p>
+        </a>
       }
+
+      <!-- Social icons below packages -->
+
     </div>
-    <div class="col-12 col-sm-6 col-md-2 p-0 social-col">
-      <div class="d-flex justify-content-center">
-        <a href="#" class="social-icon-link">
-          <i class="fa-brands fa-facebook icon-size fa-facebook-custom"></i>
-        </a>
-        <a href="#" class="social-icon-link">
-          <i class="fa-brands fa-square-x-twitter icon-size fa-twitter-custom"></i>
-        </a>
-        <a href="#" class="social-icon-link">
-          <i class="fa-brands fa-instagram icon-size fa-instagram-custom"></i>
-        </a>
+    <div class="col-lg-3 col-md-6 col-sm-6 mb-4 footer-section sociel">
+      <div class="d-flex justify-content-center mt-2">
+        <a href="#" class="social-icon-link"><i class="fa-brands fa-facebook fa-facebook-custom"></i></a>
+        <a href="#" class="social-icon-link"><i class="fa-brands fa-square-x-twitter fa-twitter-custom"></i></a>
+        <a href="#" class="social-icon-link"><i class="fa-brands fa-instagram fa-instagram-custom"></i></a>
       </div>
-      <p class="d-block mt-2 copyright-text">&copy;ZAFA 2025. All rights reserved</p>
+
+      <p class="d-block mt-2 copyright-text">
+        &copy; ZAFA 2025. All rights reserved
+      </p>
     </div>
+
   </div>
 </div>
