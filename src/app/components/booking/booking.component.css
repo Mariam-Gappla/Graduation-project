@@ -1,5 +1,38 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #F5F5F8;
+  padding: 100px 15px;
+  font-family: 'Actor', sans-serif;
+  box-sizing: border-box;
+}
+
+.line-container {
+  position: relative;
+  width: 200px;
+  height: 3px;
+  background-color: #333;
+  margin: 0 auto;
+}
+
+.line-container .circle {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 13px;
+  height: 13px;
+  background-color: #333;
+  border-radius: 50%;
+  animation: moveCircle 3s infinite alternate ease-in-out;
+}
+
+@keyframes moveCircle {
+  0% { left: 0; }
+  100% { left: calc(100% - 20px); }
+}
+
+
 .payment-container {
-  background: #fffef9;
   padding: 30px 20px;
   font-family: 'Segoe UI', sans-serif;
 
@@ -9,10 +42,10 @@
 }
 
 .payment-box {
-  border: 2px solid green;
   border-radius: 10px;
-  padding: 20px;
+  padding: 44px 32px;
   background: #fff;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
 
   /* الحل الأساسي هنا 👇 */
   width: 100%;
@@ -31,13 +64,14 @@
 .method-option {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   cursor: pointer;
+  flex-direction: row;
 }
 
 .method-option img {
-  height: 111px;
-  width: 148px;
+  height: 90px;
+  width: 90px;
 }
 
 .cash-number {
@@ -83,27 +117,34 @@ form {
 }
 
 form label {
-  color: green;
+  color: #333  ;
   font-weight: 600;
   margin-top: 10px;
 }
 
-form input[type="text"],
-form input[type="file"] {
+input[type="text"],
+input[type="file"] {
   padding: 10px;
   border: 1px solid #aaa;
   border-radius: 4px;
 }
 
 form input[type="file"] {
-  background: #333333;
-  color: white;
+  background: #F7F2EC ;
+  color: #333;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(237, 184, 171, 0.7);
+  box-shadow: 0 0 5px rgba(237, 184, 171, 0.7);
+  outline: none; /* prevents default blue outline in some browsers */
 }
 
 form button {
   margin: 20px auto 0;
   padding: 10px 30px;
-  background: #252423;
+  background:  #E18670  ;
   color: white;
   font-weight: bold;
   border: none;
@@ -111,17 +152,28 @@ form button {
   cursor: pointer;
   width: 150px;
   font-family: system-ui, sans-serif;
+  transition: all .5s ease;
   font-size: 18px;
+}
+form button:hover{
+  background-color: #e27053 ;
 }
 
 @media (max-width: 600px) {
+  .line-container{
+    display: none;
+  }
+  .method-option img {
+  height: 90px;
+  width: 90px;
+}
   .cash-number {
     align-items: flex-start;
     text-align: left;
   }
 
-  .payment-methods {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  .method-option img {
+  height: 50px;
+  width: 50px;
+}
 }

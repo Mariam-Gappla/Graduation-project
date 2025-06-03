@@ -90,7 +90,7 @@
   margin: 8px 0;
   box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
-.inp:focus{
+.inp:system-ui, sans-serif{
   border: 1px solid #252423;
 }
 @media (min-width: 576px) {

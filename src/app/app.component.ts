@@ -7,6 +7,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { errorContext } from 'rxjs/internal/util/errorContext';
 import { ErrorComponent } from './components/error/error.component';
 import { AdminComponentComponent } from './AdminComponents/admin-component/admin-component.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ export class AppComponent {
     if (
       component instanceof LoginComponent ||
       component instanceof SignupComponent ||
+      component instanceof ForgetPasswordComponent||
       component instanceof ErrorComponent ||
       component instanceof AdminComponentComponent
     ) {

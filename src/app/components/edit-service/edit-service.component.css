@@ -79,6 +79,8 @@
   textarea:focus {
   border-color: rgba(237, 184, 171, 0.7);
   box-shadow: 0 0 5px rgba(237, 184, 171, 0.7);
+  outline: none; /* prevents default blue outline in some browsers */
+
 }
 
 

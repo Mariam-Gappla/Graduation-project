@@ -95,6 +95,8 @@
 .inp:focus{
   border: 1px solid #252423;
   background-color: white;
+  outline: none; /* prevents default blue outline in some browsers */
+
 }
 @media (min-width: 576px) {
   .inp {

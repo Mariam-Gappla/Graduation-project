@@ -11,8 +11,9 @@
   display: block;
   min-height: 100vh;
   background-color: #F5F5F8;
-  padding: 70px 15px;
+  padding: 100px 15px;
   font-family: var(--font-family);
+
 }
 
 /* Buttons */
@@ -202,7 +203,7 @@ hr {
   }
 
   .line-container {
-    width: 90%;
+    display: none;
   }
 
   .card {
