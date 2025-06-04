@@ -124,6 +124,7 @@
 .service-icon {
   background-color: #F5F5F8;
   border-radius: 50%;
+  box-shadow: 0 4px 21px rgba(128, 128, 128, 0.4);
   width: 140px;
   height: 140px;
   display: flex;
