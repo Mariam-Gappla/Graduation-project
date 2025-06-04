@@ -26,7 +26,7 @@
 }
 
 .box {
-  background-color: #333333;
+  background-color: white;
   height: 120px;
   display: flex;
   flex-direction: row;
@@ -35,10 +35,10 @@
   border-radius: 8px;
   font-weight: bold;
   font-size: 18px;
-  color: #F5F5F8;
+  color: #333;
   padding: 10px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
 }
 
 .box:hover {
@@ -60,10 +60,10 @@
 }
 
 .box .info span {
-  color: #F5F5F8;
+  color: #333;
   font-weight: 400;
   font-family: 'Actor', sans-serif;
-  font-size: 1.1em; /* Adjust relative to parent font-size */
+  font-size: 1.2rem
 }
 
 /* Bottom Half - Charts and Bookings */
@@ -77,20 +77,35 @@
 .bottom-box {
   flex: 1 1 calc(50% - 10px); /* Adjust to fit two boxes per row on larger screens */
   min-width: 300px; /* Ensure minimum width for stacking */
-  background-color: #333333;
+  background-color: #F5F5F8;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   font-weight: bold;
   font-size: 18px;
-  color: #252423;
+  color: #333333;
   padding: 0;
   box-sizing: border-box;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+.bottom-box-2 {
+  flex: 1 1 calc(50% - 10px); /* Adjust to fit two boxes per row on larger screens */
+  min-width: 300px; /* Ensure minimum width for stacking */
+  background-color: #f3f3f6 ;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333333;
+  padding: 0;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-.bottom-box .heading {
-  background-color: #F7F2EC;
+.bottom-box-2 .heading {
+  background-color: #E18670  ;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -101,8 +116,8 @@
   border-radius: 6px;
 }
 
-.bottom-box .heading p {
-  color: #333333;
+.bottom-box-2 .heading p {
+  color: #F5F5F8;
   font-family: 'Actor', sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -152,14 +167,14 @@
 }
 
 .booking .col span {
-  background-color: #252423;
+  background-color: #4BB6AD ;
   color: #F7F2EC;
   min-width: 80px;
   height: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 6px;
   padding: 0 8px;
   box-sizing: border-box;
   margin: 0 auto; /* Center the span horizontally if it takes full width */

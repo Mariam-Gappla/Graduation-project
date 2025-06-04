@@ -1,28 +1,33 @@
 .reviews-page {
   font-family: 'Inter', sans-serif;
   background-color: #F5F5F8;
-  padding: 20px; /* Reduced padding for smaller screens */
+  padding: 32px 30px; /* Reduced padding for smaller screens */
   min-height: 100vh;
   box-sizing: border-box; /* Ensure padding doesn't add to width/height */
 }
 
 .page-title {
-  max-width: 800px; /* Limit max width for larger screens */
-  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px; /* Limit max width for larger screens */
+  margin: 1rem auto;
   font-family: system-ui, sans-serif;
-  color: #252423;
-  font-size: 28px; /* Slightly smaller on mobile */
-  text-align: center;
-  font-weight: bold;
+  color: #F5F5F8;
+  font-size: 32px; /* Slightly smaller on mobile */
+  font-weight: 400;
+  color: #333  ;
+  border-radius: 6px;
 }
 
 .review-container {
-  background-color: #333333;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  background-color: #F5F5F8;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
   position: relative;
   border-radius: 16px;
-  margin: 16px auto; /* Center horizontally */
-  max-width: 800px; /* Add max-width */
+  margin: 32px auto; /* Center horizontally */
+  max-width: 600px; /* Add max-width */
   width: 100%; /* Ensure it doesn't exceed screen width */
   box-sizing: border-box; /* Include padding and borders in width */
 }
@@ -31,16 +36,20 @@
   margin: 20px;
 }
 .section p{
-  font-family: 'Actor', sans-serif;
+  font-family: sans-serif;
   font-weight: 400;
-  font-size: 21px;
-  color: #F5F5F8;
+  font-size: 1.2rem;
+  color: #333;
 }
 hr{
   border: none;
-  height: 1px;
-  background-color: #F5F5F8;
-  margin: 31px 0;
+  height: 2px;
+  background-color: #333;
+  margin: 31px auto;
+  width: 90%;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
+
 }
 .profile-section {
   margin-bottom: 30px;
@@ -48,7 +57,7 @@ hr{
   display: flex;
   align-items: center;
   gap: 16px;
-  background-color: #F7F2EC;
+  background-color: #E18670  ;
   width: 100%;
   box-sizing: border-box;
   padding: 16px 24px;
@@ -75,8 +84,8 @@ hr{
   font-weight: 600;
   font-family: 'Actor', sans-serif;
   font-weight: 400;
-  font-size: 30px;
-  color: #333333;
+  font-size: 2.2rem;
+  color: #F5F5F8;
 }
 
 .profile-details .info {
@@ -85,24 +94,24 @@ hr{
 
 }
 .profile-details .info span{
-  font-family: 'Actor', sans-serif;
+  font-family: sans-serif;
   font-weight: 400;
   font-size: 21px;
-  color: #333333;
+  color: #F5F5F8;
   margin-right: 12px;
 }
 .section-title{
   font-family: 'Actor', sans-serif;
-  font-weight: 400;
-  font-size: 30px;
-  color: #F7F2EC;
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: #333;
   margin-bottom: 12px;
 }
 .summary-section p{
   font-family: 'Actor', sans-serif;
   font-weight: 400;
-  font-size: 21px;
-  color: #F5F5F8;
+  font-size: 1.3rem;
+  color: #333;
 }
 .service-section{
   margin-bottom: 24px;
@@ -113,16 +122,16 @@ hr{
 }
 
 .service span{
-  font-family: 'Actor', sans-serif;
+  font-family:  sans-serif;
   font-weight: 200;
   font-size: 17px;
-  color: #F5F5F8;
+  color: #333;
 }
 .p-img{
   border-radius: 15px;
 }
 .info-box {
-  background-color: #F0F0F0;
+  background-color: #333;
   padding: 10px; /* Reduced padding */
   border-radius: 8px;
   text-align: center;
@@ -138,29 +147,37 @@ hr{
 }
 
 .action-buttons button {
-  padding: 8px 44px;
-  font-size: 14px; /* Smaller button text */
+  padding: 4px 24px;
+  font-size: 1.5rem; /* Smaller button text */
   cursor: pointer;
   box-sizing: border-box; /* Include padding in width */
   color: #fff;
   border-radius: 0;
   border: 0;
   font-family: system-ui, sans-serif;
-  font-size: 28px; /* Slightly smaller on mobile */
   margin: 16px 24px; /* Reduced margin */
   text-align: center;
-  font-weight: bold;
-  border-radius: 12px;
+  border-radius: 8px;
+  transition: all .3s ease;
 }
 
 .accept-btn {
-  background-color: #008000;
+  background-color: #4BB6AD ;
+
+
+}
+.accept-btn:hover {
+  background-color: #257e77 ;
 
 
 }
 
 .refuse-btn {
-  background-color: #FF0000;
+  background-color: #ee0022;
+
+}
+.refuse-btn:hover {
+  background-color: #af041e;
 
 }
 
@@ -282,4 +299,10 @@ hr{
     justify-content: center;
 
   }
+}
+.carousel-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
 }

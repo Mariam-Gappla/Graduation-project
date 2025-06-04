@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { OrderInterface } from '../../../models/order-interface';
-import { DatePipe, NgClass, NgStyle, TitleCasePipe } from '@angular/common';
+import { DatePipe, NgClass, NgIf, NgStyle, TitleCasePipe } from '@angular/common';
 import { OrderService } from '../../services/Order/order.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-my-orders',
-  imports: [HttpClientModule, DatePipe, NgStyle],
+  imports: [HttpClientModule, DatePipe, NgStyle, NgIf],
   templateUrl: './my-orders.component.html',
   styleUrl: './my-orders.component.css',
   providers: [OrderService]

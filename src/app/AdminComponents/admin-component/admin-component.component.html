@@ -12,6 +12,7 @@
     <!-- Open Sidebar Arrow -->
     <a class="nav-link text-dark open-icon" href="#" title="Open Menu" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
       <i class="bi bi-caret-right"></i>
+
     </a>
 
     <!-- Navigation Icons -->
@@ -39,7 +40,8 @@
   data-bs-target="#sidebarMenu"
   aria-label="Toggle sidebar"
 >
-  <i class="bi bi-caret-right"></i>
+  <i class="bi bi-list"></i>
+
 </button>
 <!-- Expandable Offcanvas Sidebar -->
 <div class="offcanvas offcanvas-start custom-sidebar" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarLabel">
@@ -98,29 +100,24 @@
 </div>
 
 <div class="main-content">
-
+  <div style="height: 15px;"></div>
   <div id="home" class="tab-content active">
     <app-home></app-home>
   </div>
 
-  <div id="service" class="tab-content" style="display:none;">
+  <div id="service" class="tab-content">
+    <!-- ,canActivate:[authGuard] -->
     <app-services></app-services>
   </div>
 
-  <div id="booking" class="tab-content" style="display:none;">
-    <app-bookings></app-bookings>
-  </div>
-
-  <div id="users" class="tab-content" style="display:none;">
+  <div id="users" class="tab-content">
+    <!--  style="display:none;" -->
     <app-users></app-users>
   </div>
 
-  <div id="reviews" class="tab-content" style="display:none;">
+  <div id="reviews" class="tab-content">
     <app-reviews></app-reviews>
-  </div>
-
-  <div id="statistics" class="tab-content" style="display:none;">
-    <app-statistics></app-statistics>
+    <!--  style="display:none;" -->
   </div>
 
 </div>

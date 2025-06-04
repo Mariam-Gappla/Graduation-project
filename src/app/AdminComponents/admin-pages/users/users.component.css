@@ -1,85 +1,142 @@
-
 :host {
   display: block;
   min-height: 100vh;
   background-color: #F5F5F8;
-  padding: 30px 15px;
+  padding: 100px 15px;
   font-family: var(--font-family);
   box-sizing: border-box;
 }
 
-/* Table wrapper for responsive */
+a {
+  text-decoration: none;
+  color: #CBAACB	;
+  font-weight: bold;
+}
+
+/* Dropdown alignment */
+.dropdown {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 24px 24px 24px;
+}
+
+/* Dropdown button */
+.dropdown button {
+  background-color: #E18670;
+  color: #FAF3E0;
+  font-family: 'Actor', sans-serif;
+  font-weight: 400;
+  border-radius: 6px;
+  font-size: 18px;
+  margin: 6px 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.dropdown button:hover {
+  background-color: #d1745f;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+.dropdown-menu .dropdown-item
+{
+  color: #333;
+  cursor: pointer;
+}
+.dropdown-menu .dropdown-item:hover {
+  background-color: #e4e4e5;
+}
+
+/* Table wrapper */
 .table-responsive {
   width: 100%;
   overflow-x: auto;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
 }
 
 /* Table styles */
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 600px; /* ensures full layout on narrow screens */
-  border: 0;
-  margin: 64px 24px;
+  min-width: 600px;
+  border: none;
+}
+
+thead th:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+thead th:last-child {
+  border-radius: 0 8px 0 0;
 }
 
 thead th {
-  background-color: #F7F2EC;
+  background-color: #E18670;
   font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  color: #333333;
-  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  font-size: 17px;
   text-align: center;
   padding: 12px 8px;
 }
 
 tbody tr {
-  background-color: #333333;
+  background-color: #FDFDFE;
   font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  color: #F5F5F8;
+  color: #333;
   font-size: 16px;
   text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: #f2f2f3;
 }
 
 tbody tr td {
   padding: 12px 8px;
+  border-top: 1px solid #e0e0e0;
 }
 
 /* Action button */
 button.p-button-secondary {
   background-color: transparent;
   border: none;
-  color: #F5F5F8;
+  color: #4BB6AD;
   cursor: pointer;
 }
 
 /* Status colors */
 .status-accepted {
-  color: #008000;
+  color: #4BB6AD;
+  font-weight: 600;
 }
+
 .status-refuces {
-  color: #FF0000;
+  color: #FF4C4C;
+  font-weight: 600;
 }
-.delete-btn{
-  background-color: red;
-  border: none;
-  margin: 4px;
-  color: white;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  width: 80px;
+
+.status-pending {
+  color: #FFA500;
+  font-weight: 600;
 }
-.stop-btn{
-  background-color: black;
-  border: none;
-  margin: 4px;
-  color: white;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  width: 80px;
-}
-/* MEDIA QUERIES FOR SMALL DEVICES */
+
+/* Media Queries */
 @media (max-width: 768px) {
   .dropdown {
     justify-content: center;
@@ -87,12 +144,12 @@ button.p-button-secondary {
   }
 
   .dropdown button {
-    font-size: 18px;
-    padding: 6px 12px;
+    font-size: 16px;
+    padding: 8px 12px;
   }
 
   thead th, tbody tr td {
-    font-size: 16px;
+    font-size: 15px;
     padding: 10px 6px;
   }
 }
@@ -105,7 +162,7 @@ button.p-button-secondary {
 
   .dropdown button {
     width: 100%;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   table {
@@ -117,4 +174,38 @@ button.p-button-secondary {
     padding: 8px 4px;
     font-size: 14px;
   }
+}
+.delete-btn{
+  background-color: #FF4C4C;
+  border: none;
+  border-radius: 4px;
+  color: #F5F5F8;
+  padding: 6px 18px;
+}
+.delete-btn:hover{
+  background-color: #FF4C5F;
+  border: none;
+  border-radius: 4px;
+  color: #F5F5F8;
+  padding: 6px 18px;
+}
+/* light peach for Bride/Groom */
+.bride-groom {
+  color: #E18670;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* turquoise for Vendor */
+.vendor {
+  color: #4BB6AD;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* dark gray for Admin */
+.admin {
+  color: #CBAACB;
+  font-weight: bold;
+  border-radius: 5px;
 }

@@ -27,11 +27,11 @@
 /* Arrow Open Button */
 .open-icon {
   position: absolute;
-
   right: -17px;
+  top: 138px;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 37px;
+  height: 37px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,6 +112,8 @@
   box-shadow: 0 4px 24px rgba(128, 128, 128, 0.6);
   z-index: 1000;
   border: none;
+  width: 37px;
+  height: 37px;
 }
 .close-icon i{
   color: #4BB6AD ;
@@ -225,12 +227,18 @@ a {
 }
 
 @media (max-width: 767.98px) {
+  :host{
+    padding-top: 100px;
+  }
   .main-content {
     margin-left: 0px;
   }
 }
 /* Hide the fixed vertical icon nav on small screens */
 @media (max-width: 767.98px) {
+  :host{
+    padding-top: 100px;
+  }
   .iconsnav, .hide {
     display: none !important;
   }
@@ -245,12 +253,18 @@ a {
 .mobile-sidebar-toggle {
   display: none;
   position: fixed;
-  left: 0px;
-  padding: 8px;
-  border-radius: 50%;
+  left: 12px;
+  padding: 0;
+  border-radius: 8px;
   background-color: white ;
   z-index: 1050;
-  top: 12px;
-  color: #F7F2EC;
+  top: 6px;
+  color: #4BB6AD;
+  border: none;
+  font-size: 2rem;
+  width: 45px;
+  height: 45px;
+  font-weight: bolder;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.1);
 }
 

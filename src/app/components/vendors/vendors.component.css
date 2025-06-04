@@ -113,6 +113,7 @@ a{
   align-items: center;
   transition: transform 0.3s ease;
   box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
+  cursor: pointer;
 }
 
 .card:hover {
