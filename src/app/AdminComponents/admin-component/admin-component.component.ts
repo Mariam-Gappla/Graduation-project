@@ -4,7 +4,7 @@ import { ServicesComponent } from '../admin-pages/services/services.component';
 import { BookingsComponent } from '../admin-pages/bookings/bookings.component';
 import { ReviewsComponent } from '../admin-pages/reviews/reviews.component';
 import { UsersComponent } from '../admin-pages/users/users.component';
-import { StatisticsComponent } from '../admin-pages/statistics/statistics.component';
+import { NgClass } from '@angular/common';
 
 // Declare Bootstrap globally
 declare var bootstrap: any;
@@ -12,11 +12,27 @@ declare var bootstrap: any;
 @Component({
   selector: 'app-admin-component',
   standalone: true,
-  imports: [HomeComponent, ServicesComponent, BookingsComponent, ReviewsComponent, UsersComponent, StatisticsComponent],
+  imports: [HomeComponent, ServicesComponent, NgClass, ReviewsComponent, UsersComponent],
   templateUrl: './admin-component.component.html',
   styleUrls: ['./admin-component.component.css']
 })
 export class AdminComponentComponent implements OnInit {
+  isSidebarOpen = false;
+
+toggleSidebar() {
+  this.isSidebarOpen = !this.isSidebarOpen;
+}
+ngAfterViewInit() {
+  const sidebar = document.getElementById('sidebarMenu');
+  if (sidebar) {
+    sidebar.addEventListener('hidden.bs.offcanvas', () => {
+      this.isSidebarOpen = false;
+    });
+    sidebar.addEventListener('shown.bs.offcanvas', () => {
+      this.isSidebarOpen = true;
+    });
+  }
+}
   activeTab: string = 'home';
 
   ngOnInit(): void {
@@ -40,7 +56,7 @@ export class AdminComponentComponent implements OnInit {
       link.addEventListener('click', (event) => {
         event.preventDefault();
         // Determine the target ID based on the index of the icon
-        const targetIds = ['home', 'service', 'booking', 'users', 'reviews', 'statistics'];
+        const targetIds = ['home', 'service', 'users', 'reviews'];
         if (index < targetIds.length) {
           this.setActiveTab(targetIds[index]);
         }

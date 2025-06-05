@@ -1,6 +1,6 @@
 <!-- Always-visible Icon Sidebar -->
 <div class="iconsnav position-fixed h-100 sidebar-iconbar d-none d-md-flex flex-column align-items-center py-3"
-     style="background-color: #F5D2D5;">
+     style="background-color: #F7F2EC;">
 
   <!-- Logo Image -->
   <div class="closed-nav-img">
@@ -12,23 +12,25 @@
     <!-- Open Sidebar Arrow -->
     <a class="nav-link text-dark open-icon" href="#" title="Open Menu" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
       <i class="bi bi-caret-right"></i>
+
     </a>
 
     <!-- Navigation Icons -->
     <a class="nav-link text-dark my-3" href="#" title="Home">
-      <i class="fa-solid fa-house fs-3"></i>
+      <img src="home.png" class="blue" alt="">
+      <img src="home2.png" class="white" alt="">
     </a>
     <a class="nav-link text-dark my-3" href="#" title="Service">
-      <i class="fa-solid fa-gear fs-3"></i>
-    </a>
-    <a class="nav-link text-dark my-3" href="#" title="Booking">
-      <i class="fa-solid fa-calendar-days fs-3"></i>
+      <img src="repair-tool.png" class="blue" alt="">
+      <img src="repair-tool2.png" class="white" alt="">
     </a>
     <a class="nav-link text-dark my-3" href="#" title="Users">
-      <i class="fa-solid fa-users fs-3"></i>
+      <img src="group.png" class="blue" alt="">
+      <img src="group2.png" class="white" alt="">
     </a>
     <a class="nav-link text-dark my-3" href="#" title="Reviews">
-      <i class="fa-solid fa-star-half-stroke fs-3"></i>
+      <img src="customer-review.png" class="blue" alt="">
+      <img src="customer-review2.png" class="white" alt="">
     </a>
   </div>
 </div>
@@ -38,7 +40,8 @@
   data-bs-target="#sidebarMenu"
   aria-label="Toggle sidebar"
 >
-  <i class="bi bi-caret-right"></i>
+  <i class="bi bi-list"></i>
+
 </button>
 <!-- Expandable Offcanvas Sidebar -->
 <div class="offcanvas offcanvas-start custom-sidebar" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarLabel">
@@ -46,7 +49,8 @@
     <img src="zaffanav.png" alt="" class="img-fluid">
     <!-- Close Sidebar Button -->
     <button type="button" class="close-icon hide" data-bs-dismiss="offcanvas" aria-label="Close">
-      <i class="bi bi-caret-left "></i>
+      <i class="bi bi-x"></i>
+
     </button>
   </div>
 
@@ -55,7 +59,8 @@
       <li class="nav-item">
         <a href="#" data-target="home" title="Home">
           <div>
-            <i class="fa-solid fa-house"></i>
+            <img src="home.png" class="blue" alt="">
+            <img src="home2.png" class="white" alt="">
             <span>HOME</span>
           </div>
         </a>
@@ -63,23 +68,19 @@
       <li class="nav-item">
         <a class="" href="#" data-target="service" title="Service">
           <div>
-            <i class="fa-solid fa-gear"></i>
+            <img src="repair-tool.png" class="blue" alt="">
+            <img src="repair-tool2.png" class="white" alt="">
             <span>SERVICES</span>
           </div>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="" href="#" data-target="booking" title="Booking">
-          <div>
-            <i class="fa-solid fa-calendar-days"></i>
-            <span>BOOKING</span>
-          </div>
-        </a>
-      </li>
+
       <li class="nav-item">
         <a  href="#" data-target="users" title="Users">
           <div>
-            <i class="fa-solid fa-users"></i>
+
+            <img src="group.png" class="blue" alt="">
+            <img src="group2.png" class="white" alt="">
             <span>USERS</span>
           </div>
         </a>
@@ -87,7 +88,8 @@
       <li class="nav-item">
         <a href="#" data-target="reviews" title="Reviews">
           <div>
-            <i class="fa-solid fa-star-half-stroke"></i>
+            <img src="customer-review.png" class="blue" alt="">
+            <img src="customer-review2.png" class="white" alt="">
             <span>REVIEWS</span>
           </div>
         </a>
@@ -98,29 +100,24 @@
 </div>
 
 <div class="main-content">
-
+  <div style="height: 15px;"></div>
   <div id="home" class="tab-content active">
     <app-home></app-home>
   </div>
 
-  <div id="service" class="tab-content" style="display:none;">
+  <div id="service" class="tab-content">
+    <!-- ,canActivate:[authGuard] -->
     <app-services></app-services>
   </div>
 
-  <div id="booking" class="tab-content" style="display:none;">
-    <app-bookings></app-bookings>
-  </div>
-
-  <div id="users" class="tab-content" style="display:none;">
+  <div id="users" class="tab-content">
+    <!--  style="display:none;" -->
     <app-users></app-users>
   </div>
 
-  <div id="reviews" class="tab-content" style="display:none;">
+  <div id="reviews" class="tab-content">
     <app-reviews></app-reviews>
-  </div>
-
-  <div id="statistics" class="tab-content" style="display:none;">
-    <app-statistics></app-statistics>
+    <!--  style="display:none;" -->
   </div>
 
 </div>

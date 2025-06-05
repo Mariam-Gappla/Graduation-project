@@ -1,8 +1,8 @@
 .why-choosing .why-choosing-heading{
-  font-family: 'Playfair Display SC', serif;
-  font-weight: 700;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
   font-size: clamp(1.6rem, 5vw, 2.8rem);
-  color: #327537;
+  color: #252423;
   text-align: center;
   margin-top: 50px;
 }
@@ -10,7 +10,7 @@
   position: relative;
   width: 550px;
   height: 4px;
-  background-color: #474747;
+  background-color: #333333;
   margin: 0 auto;
 }
 
@@ -20,7 +20,7 @@
   left: 0;
   width: 20px;
   height: 20px;
-  background-color: #474747;
+  background-color: #333333;
   border-radius: 50%;
   animation: moveCircle 3s infinite alternate ease-in-out;
 }
@@ -72,7 +72,7 @@
   font-family: 'actor', sans-serif;
   font-weight: 400;
   font-size: clamp(1.2rem, 3vw, 3rem);
-  color: #474747;
+  color: #333333;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,12 +80,13 @@
 }
 
 .item-1 {
-  background-color: #474747;
-  color: #ffffff;
+  background-color: #F7F2EC;
+  color: #252423;
 }
 
 .item-8 {
-  background-color: #F0B9BD;
+  background-color: #E18670;
+  color: white;
 }
 
 .items .item img {

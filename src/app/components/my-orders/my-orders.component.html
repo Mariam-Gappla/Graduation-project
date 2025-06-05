@@ -1,64 +1,66 @@
-<h2>Order Details</h2>
-<div class="line-container">
-  <div class="circle"></div>
-</div>
 <div class="container">
-  <div class="row gy-3">
-    @for(order of orders; track order){
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <div class="order-card">
-        <button class="del-btn" (click)="deleteOrder(order._id)">
-          <i class="fas fa-trash delete-icon"></i>
-        </button>
-        <div class="order-header">
-          <span class="order-title">{{ order.service }}</span>
-          <span class="order-date">Date: {{ order.date | date }}</span>
-        </div>
-        <div class="order-status">
-          <span class="status-label">Status:</span>
-          <button
-            class="confirmed-btn"
-            [ngStyle]="{
-              'background-color':
-                order.status === 'confirmed'
-                  ? '#383892'
-                  : order.status === 'pending'
-                  ? 'orange'
-                  : order.status === 'refused'
-                  ? 'red'
-                  : 'gray',
-              color: 'white',
-              border: 'none'
-            }"
-          >
-            {{ order.status }}
-          </button>
-        </div>
-        <div class="order-details">
-          <div>
-            <span class="detail-label">Name: </span>
-            <span class="detail-value">{{ order.client }}</span>
-          </div>
-          <div>
-            <span class="detail-label">Category: </span>
-            <span class="detail-value">{{ order.category }}</span>
-          </div>
-          <div>
-            <span class="detail-label">Price: </span>
-            <span class="detail-value">{{ order.price }} EGP</span>
-          </div>
-          <div>
-            <span class="detail-label">Payment Method: </span>
-            <span class="detail-value">{{ order.method }}</span>
-          </div>
-          <div>
-            <span class="detail-label">Shipping Info: </span>
-            <span class="detail-value">{{ order.shipping_info }}</span>
-          </div>
-        </div>
-        <button class="btn btn-success pay-button" [disabled]="order.method === 'cash'">Pay Now</button>
-      </div>
+  <h2>Order Details</h2>
+  <div class="line-container">
+    <div class="circle"></div>
+  </div>
+  <div class="container">
+    <div *ngIf="orders.length === 0" class="alert alert-info text-center">
+      No orders available.
     </div>
-    }
+    <div class="row gy-3">
+      @for(order of orders; track order){
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="order-card">
+          <button class="del-btn" (click)="deleteOrder(order._id)">
+            <i class="fas fa-trash delete-icon"></i>
+          </button>
+          <div class="order-header">
+            <p class="order-title">{{ order.service }}</p>
+            <span class="order-date">Date: {{ order.date | date }}</span>
+          </div>
+          <hr>
+          <div class="order-status">
+            <span class="status-label">Status:</span>
+            <button
+              class="confirmed-btn"
+              [ngStyle]="{
+                'background-color':
+                  order.status === 'confirmed'
+                    ? '#383892'
+                    : order.status === 'pending'
+                    ? 'orange'
+                    : order.status === 'refused'
+                    ? 'red'
+                    : 'gray',
+                color: 'white',
+                border: 'none'
+              }"
+            >
+              {{ order.status }}
+            </button>
+          </div>
+          <div class="order-details">
+            <div>
+              <span class="detail-label">Name: </span>
+              <span class="detail-value">{{ order.client }}</span>
+            </div>
+            <div>
+              <span class="detail-label">Price: </span>
+              <span class="detail-value">{{ order.price }} EGP</span>
+            </div>
+            <div>
+              <span class="detail-label">Payment Method: </span>
+              <span class="detail-value">{{ order.method }}</span>
+            </div>
+            <div>
+              <span class="detail-label">Shipping Info: </span>
+              <span class="detail-value">{{ order.shipping_info }}</span>
+            </div>
+          </div>
+          <button class="btn btn-success pay-button" [disabled]="order.method === 'cash'">Pay Now</button>
+        </div>
+      </div>
+      }
+    </div>
   </div>
 </div>

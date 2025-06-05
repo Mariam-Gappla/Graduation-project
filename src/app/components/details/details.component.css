@@ -1,7 +1,7 @@
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   padding: 30px 15px;
   font-family: var(--font-family);
 }
@@ -10,7 +10,7 @@
     margin: auto;
     padding: 20px;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #FAF3E0;
+    background-color: #F5F5F8;
   }
 
   .profile-info {
@@ -20,17 +20,19 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: #474747;
+    background-color: #F74A55;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-left: 10px;
+    color: white;
+    cursor: pointer;
   }
+
 
   .heart-icon img {
     width: 20px;
     height: 20px;
-    filter: brightness(100%) sepia(1) saturate(5) hue-rotate(300deg); /* يخليها وردي */
   }
 
   .profile-img {
@@ -38,14 +40,14 @@
     height: 315px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #ccc;
+    border: 3px solid white;
   }
 
   .name {
     font-family: 'Actor', sans-serif;
     font-size: 35px;
     font-weight: 400;
-    color: #327537;
+    color: #252423;
     margin-top: 10px;
     letter-spacing: 0%;
   }
@@ -63,7 +65,7 @@
   }
 
   .stat {
-    background: #474747;
+    background: #47B5AB;
     padding: 10px 20px;
     border-radius: 10px;
     text-align: center;
@@ -110,8 +112,12 @@
 
   .left-title {
     text-align: left;
-    color: green;
     margin-bottom: 5px;
+  }
+  .summary-heading, .left-title{
+    color: #252423;
+    font-family: system-ui, sans-serif;
+    font-weight: 500;
   }
 
   .center-header {
@@ -171,20 +177,29 @@
   .summary-text {
     padding: 0 20px 20px;
     line-height: 100%;
-    color: #474747;
+    color: #333333c2;
     font-family: 'Actor', sans-serif;
-    font-size: 26px;
+    font-size: 1.3rem;
     font-weight: 400;
+    line-height: 28px;
   }
 
   /* WORK Section */
   .work-section {
-    background: #fddde6;
+    background: #F7F2EC;
     padding: 30px 0;
     text-align: center;
 
   }
+button i {
+  color: #E18670;
+  font-size: 2rem;
+  transition: color 0.3s ease;
 
+}
+button:hover i {
+  color: #e27053;
+}
 .work-line-container {
   margin: 10px 0 30px;
   position: relative;
@@ -216,20 +231,21 @@
 }
 
 .add-review-btn {
-  background-color: #327537;
-  color: #FAF3E0;
+  background-color: white;
+  border: 1px solid #e27053;
+  color: #e27053;
   padding: 12px 24px;
   font-size: 20px;
-  font-family: 'Playfair Display SC', serif;
+  font-family: system-ui, sans-serif;
   font-weight: bold;
-  border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .add-review-btn:hover {
-  background-color: #285d2c;
+  transform: translateY(-4px) translateX(4px);
+
 }
 @media (max-width: 948px) {
   .carousel img {
@@ -246,8 +262,10 @@
 
   /* PRICING Section */
   .pricing-section {
-    background: #FAF3E0;
+    background: white;
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
+    border-radius: 8px;
   }
 
 .service-line-container {
@@ -257,14 +275,15 @@
   width: 400px;
   height: 3px;
   background-color: black;
+
 }
   .pricing-box {
-    background: #FAF3E0;
+    background: white;
     max-width: 700px;
     margin: auto;
     padding: 30px 20px;
     border-radius: 10px;
-    border: 2px solid green;
+
   }
 
   .package {
@@ -272,66 +291,69 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
   }
 
   .package-left {
-    background: #333;
-    color: white;
+    color: #333333;
     padding: 20px;
     border-radius: 12px;
+    border: 1px;
     font-size: 18px;
     flex: 1;
     font-family: 'Actor', sans-serif;
   }
 
   .package-right {
-    background: #fddde6;
     color: #333;
     padding: 20px 30px;
     margin-left: 20px;
     border-radius: 12px;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 20px;
-    font-family: 'Playfair Display SC', serif;
+    font-family: system-ui, sans-serif;
     white-space: nowrap;
   }
 
   .book-btn {
     margin: 20px auto 0;
     display: block;
-    padding: 12px 24px;
-    background: #327537;
-    color: #F5D2D5;
+    padding: 8px 24px;
+    background: #E18670;
+    color: #F7F2EC;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 35px;
-    font-family: 'playfair display', serif;
-    font-weight: 900;
+    font-size: 1.5rem;
+    font-family: system-ui, sans-serif;
+    font-weight: 500;
+    transition: all .5s ease;
   }
   .book-btn:hover {
-    background: #5a9a5a;
+    background: #e27053 ;
 
   }
 
 
   .main{
     font-size: 30px;
-    font-weight: 700;
-    font-family: 'Playfair Display SC', serif;
-    color: #327537;
+    font-weight: 400;
+    font-family: system-ui, sans-serif;
+    color: #252423;
   }
 
 
 .review-section {
   padding: 40px 20px;
-  background-color: transparent;
+  background-color: #F7F2EC;
+  margin: 24px;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
 }
 
 .review-header {
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
-  color: #327537;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
+  color: #252423;
 }
 .line-container {
   margin: 10px 0px 20px;

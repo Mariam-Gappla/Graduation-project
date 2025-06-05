@@ -1,62 +1,123 @@
-.service{
-    background-color: #FAF3E0;
-}
-.service h1{
-    text-align: center;
-    padding-top: 20px;
-}
-.button{
-    background-color: #327537;
-    color: aliceblue;
-    border: none;
-    height: 40px;
-    text-align: center;
-    width: 20%;
-}
-.btn-container{
-display: flex;
-    justify-content: flex-end;
-    margin-bottom: 50px;
-    margin-top: 30px;
-}
-.service-card{
-    background-image: url('../../../../public/photo.jpg');
-    background-size: cover;
-    height: 250px;
-    padding: 0px;
-    margin-right: 10px;
-    position: relative;
-}
-.card{
-background-color: #5E5D5C;
-height: 100%;
-width: 0%;
-display: flex;
-left: 0;
-top:0;
-opacity: 0;
-position: absolute;
-justify-content: center;
-align-items: center;
-color: #FAF3E0;
-font-size: 30px;
-transition: 2s;
+/* Improve service card padding/margin */
+.service {
+  background-color: #F5F5F8;
+  padding: 20px 0;
 }
 
-.service-card:hover .card{
-    width: 100%;
-   opacity: 0.7;
-
-}
-.card-icons{
-    display: flex;
-     margin-top: 3%;
-}
-.card-icons .icon-left{
-   margin-right: 30%;
-   margin-left: 30%;
-}
-.big-icon{
-    font-size: 25px;
+.service h1 {
+  text-align: center;
+  padding-top: 20px;
 }
 
+/* Button styling */
+.button {
+  background-color: #E18670;
+  color: aliceblue;
+  border: none;
+  height: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  transition: all 0.5s ease;
+  padding: 0 20px;
+}
+
+.button:hover {
+  background-color: #e27053;
+}
+
+/* Button container alignment */
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .btn-container {
+    justify-content: center;
+  }
+
+  .button {
+    width: 60%;
+    font-size: 1rem;
+  }
+}
+
+/* Service card */
+.service-card {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  margin-bottom: 20px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Hover overlay */
+.card {
+  background-color: #5E5D5C;
+  height: 100%;
+  width: 0%;
+  display: flex;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  color: #F5F5F8;
+  font-size: 1.5rem;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.service-card:hover .card {
+  width: 100%;
+  opacity: 0.7;
+}
+
+/* Icon positions */
+.icon-left,
+.icon-right {
+  position: absolute;
+  top: 8px;
+  font-size: 24px;
+  color: #e27053;
+  cursor: pointer;
+}
+
+.icon-left {
+  left: 8px;
+}
+
+.icon-right {
+  right: 8px;
+}
+
+/* Responsive columns fix */
+@media (max-width: 1200px) {
+  .col-3 {
+    width: 33.3333%;
+  }
+}
+
+@media (max-width: 992px) {
+  .col-3 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-3 {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .card {
+    font-size: 1rem;
+    margin: 8px 2rem;
+  }
+}

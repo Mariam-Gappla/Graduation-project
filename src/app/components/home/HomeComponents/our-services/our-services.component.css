@@ -16,7 +16,7 @@
 
 
 .service{
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
 
 }
 .services-content {
@@ -31,15 +31,15 @@
 
 /* fixed typo: sevices-heading -> services-heading */
 .sevices-heading {
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
+  font-family: system-ui, sans-serif;
+  font-weight: 500;
   font-size: clamp(2rem, 5vw, 3rem);
-  color: #327537;
+  color: #252423;
   margin-bottom: 20px;
   margin-top: 100px;
 }
 .sevice-title{
-  color: #474747;
+  color: #444444;
   font-family: 'arial', sans-serif;
   font-size: clamp(1rem, 3vw, 1.5rem);
   font-weight: 400;
@@ -60,7 +60,7 @@
   position: relative;
   width: 400px;
   height: 4px;
-  background-color: #474747;
+  background-color: #333333;
 }
 
 .line-container .circle {
@@ -69,7 +69,7 @@
   left: 0;
   width: 20px;
   height: 20px;
-  background-color: #474747;
+  background-color: #333333;
   border-radius: 50%;
   animation: moveCircle 3s infinite alternate ease-in-out;
 }
@@ -99,7 +99,7 @@
 
 /* service items section */
 .services-items {
-  background-color: #f5d2d5;
+  background-color: #F7F2EC;
   padding: 40px 20px;
   width: 100%;
 }
@@ -122,8 +122,9 @@
 }
 
 .service-icon {
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   border-radius: 50%;
+  box-shadow: 0 4px 21px rgba(128, 128, 128, 0.4);
   width: 140px;
   height: 140px;
   display: flex;
@@ -144,10 +145,11 @@
 }
 
 .item p {
-  color: #474747;
+  color: #333333;
+  font-family: secondarytypeface, serif;
   margin-top: 16px;
   font-size: clamp(1rem, 2.5vw, 1.25rem);
-  font-weight: 500;
+  font-weight: 600;
 }
 @media (max-width: 480px) {
   .item {

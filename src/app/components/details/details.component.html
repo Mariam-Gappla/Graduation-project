@@ -1,4 +1,4 @@
-<div class="profile-container">
+<div class="profile-container mt-5">
   <div class="profile-info">
     <img
       [src]="'http://localhost:3000/' + vendor?.profileImage"
@@ -34,7 +34,7 @@
 
   <!-- SUMMARY SECTION -->
   <div class="section-header">
-    <h3 class="left-title main summary-heading">SUMMARY</h3>
+    <h3 class="summary-heading">SUMMARY</h3>
     <div class="line-container-header">
       <div class="circle"></div>
     </div>
@@ -53,7 +53,7 @@
   <div class="work-section">
     <div class="carousel">
       <button class="arrow left" (click)="prev()">
-        <i class="fa-solid fa-arrow-left"></i>
+        <i class="bi bi-caret-left-fill"></i>
       </button>
       <div class="carousel-images">
         @for(img of vendor?.serviceImage;track img) {
@@ -62,7 +62,7 @@
       </div>
 
       <button class="arrow right" (click)="next()">
-        <i class="fa-solid fa-arrow-right"></i>
+        <i class="bi bi-caret-right-fill"></i>
       </button>
     </div>
   </div>

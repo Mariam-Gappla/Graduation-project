@@ -2,42 +2,42 @@
   <!-- Top Half -->
   <div class="top-half">
     <div class="box">
-      <img src="pepole.png" alt="" />
+      <img src="group-o.png" alt="" />
       <div class="info">
         <span>{{ users }}</span>
-        <span>User</span>
+        <span>Users</span>
       </div>
     </div>
     <div class="box">
-      <img src="user.png" alt="" />
+      <img src="people.png" alt="" />
       <div class="info">
         <span>{{ brides }}</span>
-        <span>Brides&Grooms</span>
+        <span>Customers</span>
       </div>
     </div>
     <div class="box">
-      <img src="supplier.png" alt="" />
+      <img src="vendor-o.png" alt="" />
       <div class="info">
         <span>{{ vendors }}</span>
-        <span>Vendor</span>
+        <span>Vendors</span>
       </div>
     </div>
     <div class="box">
-      <img src="rating.png" alt="" />
+      <img src="rating-o.png" alt="" />
       <div class="info">
         <span>{{ services }}</span>
-        <span>Service</span>
+        <span>Services</span>
       </div>
     </div>
     <div class="box">
-      <img src="time.png" alt="" />
+      <img src="booking.png" alt="" />
       <div class="info">
         <span>{{ bookingsCount }}</span>
-        <span>Booking</span>
+        <span>Bookings</span>
       </div>
     </div>
     <div class="box">
-      <img src="tag.png" alt="" />
+      <img src="check-mark-o.png" alt="" />
       <div class="info">
         <span>{{ cBookingsCount }}</span>
         <span>Confirmed</span>
@@ -66,7 +66,7 @@
 </div>
 
 
-    <div class="bottom-box">
+    <div class="bottom-box-2">
       <div class="heading">
         <p>Recent Bookings Confirmed</p>
       </div>
@@ -76,7 +76,7 @@
           <div class="col">{{ b.full_name }}</div>
           <div class="col">{{ b.date | date }}</div>
           <div class="col">
-            <span>{{ b.price }} EGP</span>
+            <span>{{ b.total_price }} EGP</span>
           </div>
         </div>
         }

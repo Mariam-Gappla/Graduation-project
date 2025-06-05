@@ -15,15 +15,15 @@ export const routes: Routes = [
  {path:"details/:vendorId",loadComponent:()=>import('../app/components/details/details.component').then(d=>d.DetailsComponent),canActivate:[authGuard]},
  {path:"vendor/:vendorId",loadComponent:()=>import('../app/components/vendor/vendor.component').then(v=>v.VendorComponent),canActivate:[authGuard,userGuard]},
 // Update the import path and export to the correct component for orders
- {path:"orders/:userId",loadComponent:()=>import('../app/components/my-orders/my-orders.component').then(m=>m.MyOrdersComponent),canActivate:[authGuard]},
+ {path:"orders/:userId",loadComponent:()=>import('../app/components/my-orders/my-orders.component').then(m=>m.MyOrdersComponent),},//canActivate:[authGuard,userGuard]
  {path:"editservice",loadComponent:()=>import('../app/components/edit-service/edit-service.component').then(e=>e.EditServiceComponent),canActivate:[authGuard, vendorGuard]},
  {path:"editservice/:id",loadComponent:()=>import('../app/components/edit-service/edit-service.component').then(e=>e.EditServiceComponent),canActivate:[authGuard, vendorGuard]},
  {path:"forgetpassword",loadComponent:()=>import('../app/components/forget-password/forget-password.component').then(m=>m.ForgetPasswordComponent),canActivate:[authGuard]},
- {path:"admin",loadComponent:()=>import('../app/AdminComponents/admin-component/admin-component.component').then(m=>m.AdminComponentComponent),canActivate:[authGuard]},
- {path:"orderrequest",loadComponent:()=>import('../app/components/booking-requests/booking-requests.component').then(m=>m.BookingRequestsComponent),canActivate:[authGuard]},
- {path:"vendorservices/:id",loadComponent:()=>import('../app/components/vendorservices/vendorservices.component').then(m=>m.VendorservicesComponent),canActivate:[authGuard,vendorGuard]},
- {path:"admin/vendor/:vendorId",loadComponent:()=>import('../app/components/vendor/vendor.component').then(v=>v.VendorComponent),canActivate:[authGuard]},
+ {path:"admin",loadComponent:()=>import('../app/AdminComponents/admin-component/admin-component.component').then(m=>m.AdminComponentComponent)},//,canActivate:[authGuard]
+ {path:"orderrequest",loadComponent:()=>import('../app/components/booking-requests/booking-requests.component').then(m=>m.BookingRequestsComponent)},//,canActivate:[authGuard]
+ {path:"vendorservices/:id",loadComponent:()=>import('../app/components/vendorservices/vendorservices.component').then(m=>m.VendorservicesComponent)},//,canActivate:[authGuard,vendorGuard]
+ {path:"admin/vendor/:vendorId",loadComponent:()=>import('../app/components/vendor/vendor.component').then(v=>v.VendorComponent)},//,canActivate:[authGuard]
 
- {path:"adminservices",loadComponent:()=>import('../app/AdminComponents/admin-pages/services/services.component').then(m=>m.ServicesComponent),canActivate:[authGuard]},
+ {path:"adminservices",loadComponent:()=>import('../app/AdminComponents/admin-pages/services/services.component').then(m=>m.ServicesComponent)},//,canActivate:[authGuard]
  {path:"**",loadComponent:()=>import('../app/components/error/error.component').then(m=>m.ErrorComponent)},
 ];

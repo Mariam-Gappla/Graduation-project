@@ -1,47 +1,49 @@
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-     Status
-  </button>
-  <ul class="dropdown-menu">
-    <li *ngFor="let status of statuses" (click)="selectStatus(status)">
-      <a class="dropdown-item" >{{ status }}</a>
-    </li>
-  </ul>
-</div>
+<div class="container">
+  <!-- Dropdown -->
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Status
+    </button>
+    <ul class="dropdown-menu">
+      <li *ngFor="let status of statuses" (click)="selectStatus(status)">
+        <a class="dropdown-item">{{ status }}</a>
+      </li>
+    </ul>
+  </div>
 
-
-<div class="table-responsive">
-
-<table style="width: 100%; border-collapse: collapse;" border="1">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Experience</th>
-      <th>Status</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for(service of vendorsservices; track service){
-      <tr>
-        <td>{{ service.id }}</td>
-        <td>{{ service.title }}</td>
-        <td>{{ service.category }}</td>
-        <td>{{ service.exprience}}</td>
-        <td [ngClass]="{
-          'status-accepted': service.status === 'Accepted',
-          'status-refuces': service.status === 'Refused',
-          'status-pending': service.status === 'Pending'
-        }">
-  {{ service.status }}
-</td>
-        <td class="text-right">
-          <a [routerLink]="['/admin/vendor',service.id]">Show Details</a>
-        </td>
-      </tr>
-    }
-  </tbody>
-</table>
+  <!-- Table -->
+  <div class="table-responsive">
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Experience</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(service of vendorsservices; track service) {
+          <tr>
+            <td>{{ service.id }}</td>
+            <td>{{ service.title }}</td>
+            <td>{{ service.category }}</td>
+            <td>{{ service.exprience }}</td>
+            <td [ngClass]="{
+              'status-accepted': service.status === 'confirmed',
+              'status-refuces': service.status === 'Refused',
+              'status-pending': service.status === 'Pending'
+            }">
+              {{ service.status }}
+            </td>
+            <td class="text-right">
+              <a [routerLink]="['/admin/vendor',service.id]">Show Details</a>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 </div>

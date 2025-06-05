@@ -13,17 +13,16 @@
                     <div class="card">
                         {{ service.category }}
                     </div>
-                </div>
-                <div class="card-icons">
                     <div class="icon-left" (click)="deleteService(service)">
-                        <fa-icon [icon]="faTrash" class="big-icon"></fa-icon>
+                        <i class="bi bi-trash"></i>
                     </div>
                     <a [routerLink]="['/editservice',service._id]">
-                        <div>
-                            <fa-icon [icon]="faEdit" class="big-icon"></fa-icon>
+                        <div class="icon-right">
+                            <i class="bi bi-pencil-square"></i>
                         </div>
                     </a>
                 </div>
+
             </div>
         </div>
     </div>

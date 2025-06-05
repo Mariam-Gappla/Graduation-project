@@ -16,10 +16,10 @@
 
 /* heading */
 .about .about-heading {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
+  font-family: system-ui, sans-serif;
+  font-weight: 500;
   font-size: clamp(2.2rem, 6vw, 3.5rem);
-  color: var(--main-color);
+  color: #252423;
   text-align: start; /* Default for row layout */
   margin-top: 0;
   margin-bottom: 20px;
@@ -30,7 +30,7 @@
   position: relative;
   width: 240px;
   height: 4px;
-  background-color: #474747;
+  background-color: #333333;
 }
 
 .line-container .circle {
@@ -39,7 +39,7 @@
   left: 0;
   width: 20px;
   height: 20px;
-  background-color: #474747;
+  background-color: #333333;
   border-radius: 50%;
   animation: moveCircle 3s infinite alternate ease-in-out;
 }
@@ -89,7 +89,7 @@
   width: 100%;
   max-width: 600px;
   height: 400px; /* Fixed height for consistency on larger screens */
-  border: 1px solid #474747;
+  border: 1px solid #333333;
   border-radius: 20px;
   overflow: hidden;
 }
@@ -108,7 +108,7 @@
  font-family: 'actor', sans-serif;
   font-size: 1.2rem; /* Adjusted for readability */
   line-height: 1.6; /* Improved line height for better readability */
-  color: #474747; /* Text color */
+  color: #333333; /* Text color */
   text-align: justify;
 }
 @media (max-width: 600px) {
@@ -116,7 +116,7 @@
   font-family: 'actor', sans-serif;
   font-size: .7rem; /* Adjusted for readability */
   line-height: 1.6; /* Improved line height for better readability */
-  color: #474747; /* Text color */
+  color: #333333; /* Text color */
   text-align: justify;
 }
 }
@@ -184,7 +184,7 @@
   right: 40px;
   height: 400px;
   width: 600px;
-  border: 3.5px solid #F0B9BD;
+  border: 3.5px solid #E18670 ;
   pointer-events: none; /* Optional: lets mouse events pass through */
 }
 

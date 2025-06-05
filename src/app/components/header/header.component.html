@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary ps-4 pe-4">
+<nav class="navbar navbar-expand-lg bg-body-tertiary ps-4 pe-4" [class.shrink]="isScrolled">
   <div class="container-fluid">
     <img src="Logo.png" class="logo-img" />
     <button
-      class="navbar-toggler"
+      class="navbar-toggler  mb-1"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNavDropdown"
@@ -36,10 +36,10 @@
 
         </li>
         <li>
-          <a class="nav-link" [routerLink]="['/vendorservices', id]" [hidden]="role == 'Bride/Groom'"><img src="vendorPage.png" alt="" srcset="" /></a>
+          <a class="nav-link" [routerLink]="['/vendorservices', id]" [hidden]="role == 'Bride/Groom'"><img src="vendor.png" alt="" srcset="" /></a>
         </li>
         <li>
-          <a class="nav-link" [routerLink]="['/orderrequest']" [hidden]="role == 'Bride/Groom'"><img src="booking.png" alt="" srcset="" /></a>
+          <a class="nav-link" [routerLink]="['/orderrequest']" [hidden]="role == 'Bride/Groom'"><img src="book.png" alt="" srcset="" /></a>
         </li>
       </ul>
     </div>

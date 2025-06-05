@@ -1,15 +1,16 @@
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #FAF3E0;
-  padding: 30px 15px;
-  font-family: var(--font-family);
+  background-color: #F5F5F8;
+  padding: 120px 15px;
+  font-family: 'Actor', sans-serif;
+
 }
 
-.container.rounded {
-  margin: 24px auto;
+.profile-container {
+  margin: 100px auto;
   padding: 32px;
-  background-color: #f6f1e3;
+  background-color: white;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   border-radius: 24px;
   max-width: 800px;
@@ -21,29 +22,29 @@
 }
 
 .title-with-line {
-  color: #327537;
-  font-weight: 700;
-  font-size: 32px;
-  font-family: 'Playfair Display SC', serif;
+  color: #252423;
+  font-weight: 500;
+  font-size: 2rem;
+  font-family: system-ui, sans-serif;
   position: relative;
   padding-bottom: 10px;
 }
 
 .line-container {
   position: relative;
-  width: 390px;
-  height: 4px;
-  background-color: black;
+  width: 350px;
+  height: 3px;
+  background-color: #333;
   margin: 0 auto;
 }
 
 .line-container .circle {
   position: absolute;
-  top: -8px;
+  top: -6px;
   left: 0;
-  width: 20px;
-  height: 20px;
-  background-color: black;
+  width: 13px;
+  height: 13px;
+  background-color: #333;
   border-radius: 50%;
   animation: moveCircle 3s infinite alternate ease-in-out;
 }
@@ -53,138 +54,127 @@
   100% { left: calc(100% - 20px); }
 }
 
-/* Form Inputs */
-input, select, textarea {
-  font-family: "Actor", sans-serif;
-  font-weight: 400;
-  background-color: transparent;
-  border: 2px solid #474747;
-  padding: 8px 12px;
+.bookingForm{
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 32px 24px;
+  background-color: white;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
+
+}
+/* Profile Image */
+
+
+/* Form Section */
+.form-section {
+  padding: 20px;
+  background-color: white;
+  border-radius: 16px;
+  max-width: 700px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 20px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 6px;
+  display: block;
+  font-family: 'Actor', sans-serif;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: transparent;
+  border: 2px solid #33333355;
+  border-radius: 6px;
+  font-family: "Actor", sans-serif;
   transition: all 0.3s ease-in-out;
 }
 
-input:focus, select:focus, textarea:focus {
-  border-color: #327537;
-  background-color: #e8f6e5;
-  box-shadow: 0 0 5px rgba(50, 117, 55, 0.4);
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(237, 184, 171, 0.7);
+  box-shadow: 0 0 5px rgba(237, 184, 171, 0.7);
+  outline: none; /* prevents default blue outline in some browsers */
+
 }
 
-/* Labels */
-.main {
-  color: #327537;
-  font-weight: 400;
-  font-size: 20px;
-  font-family: 'Actor', sans-serif;
-  display: block;
-  margin-bottom: 6px;
+textarea {
+  resize: vertical;
 }
 
-/* Confirm Button */
-.confirm-button {
-  background-color: #327537;
-  color: white;
+/* Upload Box */
+.upload-box {
+  background-color: #fdf6e4;
+  border: 1px solid #888;
+  padding: 20px;
   border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 24px;
-  font-weight: 700;
-  font-family: 'Playfair Display SC', serif;
-  border: none;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.confirm-button:hover {
-  background-color: #5a9a5a;
-}
-
-.confirm-button span {
-  display: block;
-}
-
-/* Discount Alert */
-.discount {
-  background-color: #F5D2D5;
-  border-radius: 50px;
-  padding: 15px 25px;
-  margin: 20px auto;
-  max-width: 90%;
   text-align: center;
 }
 
-.discount span {
-  color: #327537;
+
+.label-box {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  width: 80%;
+  border-radius: 6px;
+  border: none;
+}
+
+button{
+  background-color: #4BB6AD;
+  color: white;
+  font-size: 1.5rem;
   font-weight: 400;
-  font-size: 18px;
-  font-family: 'Actor', sans-serif;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-family: system-ui, sans-serif;
+  transition: all 0.3s ease;
+  padding: 12px 24px;
+}
+button:hover{
+  background-color: #e27053 ;
+}
+/* Responsive Input */
+.responsive-file-input {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
-/* Service Summary */
-.border-top {
-  border-top: 2px solid #ccc;
-  margin-top: 30px;
-  padding-top: 20px;
-}
-
-.border-top p {
-  margin-bottom: 10px;
-}
-
-.border-top p span {
-  color: #474747;
-  font-family: 'Actor', sans-serif;
-  font-size: 16px;
-  margin-left: 12px;
-}
-
-.border-top p strong {
-  font-family: "Playfair Display", serif;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .container.rounded {
-    padding: 20px;
+@media (max-width: 600px) {
+  .responsive-file-input {
+    max-width: 100%;
   }
-
   .title-with-line {
     font-size: 26px;
   }
-
   .line-container {
-    width: 260px;
-    height: 3px;
+    display: none;
   }
-
   .line-container .circle {
     width: 15px;
     height: 15px;
     top: -6px;
-  }
-
-  .main {
-    font-size: 18px;
-  }
-
-  .confirm-button {
-    height: auto;
-    padding: 15px;
-  }
-
-  .confirm-button span {
-    font-size: 20px;
-  }
-
-  .discount span {
-    font-size: 16px;
-  }
-
-  .border-top p strong {
-    font-size: 18px;
-  }
-
-  .border-top p span {
-    font-size: 14px;
   }
 }

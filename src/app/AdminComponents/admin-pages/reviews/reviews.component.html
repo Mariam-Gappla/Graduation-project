@@ -1,5 +1,5 @@
 <div class="reviews-page">
-  <h1 class="page-title">Review Details</h1>
+  <span class="page-title" >Review Details</span>
 
   @for(service of services; track service){
   <div class="review-container">
@@ -10,7 +10,7 @@
         <h2>{{ service.title }}</h2>
         <div class="info">
           <span>{{ service.category }}</span>
-          <span>{{ service.exprience }} Years</span>
+          <span>{{ service.exprience }} Years Experience</span>
         </div>
       </div>
     </div>
@@ -36,15 +36,25 @@
       </div>
     </div>
     <hr>
+    <div class="section service-section">
+      <h3 class="section-title">Gallery</h3>
+      <p-carousel [value]="service.serviceImage" [numVisible]="2" [numScroll]="1" [responsiveOptions]="responsiveOptions">
+
+      <ng-template pTemplate="item" let-item>
+    <div class=" border border-surface-200 dark:border-surface-700 rounded m-2 p-2">
+      <div class="m-1">
+        <div class="relative mx-auto">
+          <img [src]="'http://localhost:3000/' + item" alt="Service image" class="p-img carousel-img">
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
+    </div>
 
     <!-- Section 4: Additional Info -->
-    <p-carousel [value]="service.serviceImage" [numVisible]="4" [numScroll]="3" [circular]="false"
-      [responsiveOptions]="responsiveOptions">
-      <ng-template let-image pTemplate="item">
-        <img [src]="'http://localhost:3000/' + image" alt="Service image" class="p-img"
-          style="width: 100%; height: 200px; object-fit: cover;" />
-      </ng-template>
-    </p-carousel>
+<!-- <p>{{service.serviceImage | json}}</p> -->
+
 
     <hr>
 

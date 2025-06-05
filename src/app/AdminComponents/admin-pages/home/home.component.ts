@@ -58,65 +58,75 @@ export class HomeComponent implements OnInit {
     private datePipe: DatePipe
   ) {
     this.chartOptions = {
-      series: [
-        {
-          name: "User Growth",
-          data: []
-        }
-      ],
-      chart: {
-        height: 350,
-        type: "line",
-        zoom: {
-          enabled: false
-        }
-      },
-      dataLabels: {
-        enabled: false
-      },
-      stroke: {
-        curve: "straight",
-        colors: ['#FFFFFF'] // Line color
-      },
-      title: {
-        text: "User Growth by Month",
-        align: "left",
-        style: {
-          color: '#fff' // Title color
-        }
-      },
-      grid: {
-        row: {
-          colors: ['transparent', 'transparent']
-        },
-        borderColor: '#fff', // Grid border color
-        xaxis: {
-          lines: {
-            show: false
-          }
-        },
-        yaxis: {
-          lines: {
-            show: false
-          }
-        }
-      },
-      xaxis: {
-        categories: [],
-        labels: {
-          style: {
-            colors: '#fff' // X-axis label color
-          }
-        }
-      },
-      yaxis: {
-        labels: {
-          style: {
-            colors: '#fff' // Y-axis label color
-          }
-        }
+  series: [
+    {
+      name: "User Growth",
+      data: []
+    }
+  ],
+  chart: {
+    height: 350,
+    type: "line",
+    zoom: {
+      enabled: false
+    },
+    background: "#f9f9f9", // Soft background color
+    toolbar: {
+      show: false
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    curve: "smooth", // Smooth line
+    colors: ['#4e73df'], // Soft blue line
+    width: 3
+  },
+  title: {
+    text: "User Growth by Month",
+    align: "left",
+    style: {
+      fontSize: '18px',
+      color: '#2c3e50' // Softer dark blue-gray
+    }
+  },
+  grid: {
+    borderColor: '#e0e0e0', // Soft gray grid border
+    row: {
+      colors: ['#ffffff', '#f2f2f2'], // Light row alternation
+      opacity: 0.5
+    },
+    xaxis: {
+      lines: {
+        show: false
       }
-    };
+    },
+    yaxis: {
+      lines: {
+        show: true
+      }
+    }
+  },
+  xaxis: {
+    categories: [],
+    labels: {
+      style: {
+        colors: '#555', // Soft gray
+        fontSize: '12px'
+      }
+    }
+  },
+  yaxis: {
+    labels: {
+      style: {
+        colors: '#555',
+        fontSize: '12px'
+      }
+    }
+  }
+};
+
   }
 
   // Chart.js configurations (these are not used for the ApexChart but are part of the original code)

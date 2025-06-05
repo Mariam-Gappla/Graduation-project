@@ -1,22 +1,23 @@
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   padding: 20px;
   font-family: var(--font-family);
   box-sizing: border-box;
 }
 
 .sign-up {
-  background-color: #F5D2D5;
+  background-color: #F7F2EC;
   overflow: hidden;
   margin: 20px auto;
   border-radius: 24px;
   max-width: 960px;
+  border: 1px solid #252423;
 }
 
 .signup-content {
-  background-color: #F5D2D5;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,9 +33,9 @@
 }
 
 .sign-up h1 {
-  color: #327537;
-  font-family: 'Playfair Display SC', serif;
-  font-weight: 700;
+  color: #252423;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
   font-size: 2.5rem;
   text-align: center;
   margin-top: 20px;
@@ -52,7 +53,7 @@
   font-family: 'actor', sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  color: #474747;
+  color: #333333;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -83,14 +84,20 @@
   padding: 12px 24px;
   outline: none;
   border: none;
-  border-radius: 10px;
-  background-color: #FAF3E0;
+  border-radius: 8px;
+  background-color: #F5F5F8;
   font-family: 'Almarai', sans-serif;
   font-size: 1rem;
   margin: 8px 0;
   box-sizing: border-box;
 }
 
+.inp:focus{
+  border: 1px solid #252423;
+  background-color: white;
+  outline: none; /* prevents default blue outline in some browsers */
+
+}
 @media (min-width: 576px) {
   .inp {
     width: 90%;
@@ -118,7 +125,7 @@
   padding: 10px 30px;
   border-radius: 10px;
   border: none;
-  background-color: #327537;
+  background-color: #E18670;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -138,12 +145,12 @@
 }
 
 .sign-up button:disabled {
-  background-color: #8bb88b;
+  background-color: #e187708e;
   cursor: not-allowed;
 }
 
 .sign-up button:not(:disabled):hover {
-  background-color: #245423;
+  background-color: #e27053;
 }
 
 .forget-content {
@@ -162,7 +169,7 @@
 
 .forget-password {
   text-decoration: none;
-  color: #474747;
+  color: #333333;
   font-size: 0.9rem;
 }
 
@@ -189,7 +196,7 @@
 
 .havenot-account a {
   text-decoration: none;
-  color: #327537;
+  color: #252423;
   font-weight: 600;
 }
 
@@ -246,4 +253,7 @@
 
 .ms-1 {
   margin-left: 0.25rem;
+}
+.signup{
+  color: #e27053;
 }

@@ -1,25 +1,25 @@
 /* Global Styles */
 :root {
-  --main-color: #327537;
+  --main-color: #252423;
   --secondary-color: #5a9a5a;
   --background-color: #f5d2d5;
   --text-color: #ffffff;
-  --secondary-text-color: #4747473d;
+  --secondary-text-color: #3333333d;
 }
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #FAF3E0;
+  background-color: #F5F5F8;
   height: 100%;
   margin-bottom: 0;
 }
 
 
 .lheading{
-  font-family: 'Playfair Display SC', serif;
-  font-weight: 700;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
   font-size: clamp(1.6rem, 5vw, 2.8rem);
-  color: #327537;
+  color: #252423;
   text-align: center;
 }
 
@@ -61,14 +61,14 @@ display: none;  }
 }
 
 .wrapper{
-  background-color: #474747;
+  background-color: #F7F2EC;
   padding: 32px;
 }
 
 /* Cards */
 .card {
-  background-color: var(--secondary-color);
-  border: 3px solid #F0B9BD;
+  background-color: white;
+  border: 3px solid #E18670;
   border-radius: 20px;
   width: 280px;
   padding: 16px 12px;
@@ -136,41 +136,41 @@ button {
 }
 
 button i {
-  color: #F0B9BD;
+  color: #E18670;
   font-size: 2rem;
   transition: color 0.3s ease;
 
 }
 button:hover i {
-  color: #e06c79;
+  color: #e27053;
 }
 
 /* Card title */
 .card-title {
-  background-color: var(--secondary-color);
-  border: 3px solid #F0B9BD;
+  background-color: transparent;
+  border: 3px solid #E18670;
   border-radius: 24px;
   width: 80%;
   padding: 6px 12px;
   text-align: center;
   margin: 16px auto;
-  color: var(--background-color);
+  color: #333333;
   font-size: 1.1rem;
   font-weight: 600;
   user-select: none;
   transition: background-color 0.3s ease;
 }
 .card-title:hover {
-  background-color: #4a8650;
+  background-color: #e1877038;
 }
 
 /* Book Now button */
 button.book {
-  background-color: #F0B9BD;
-  color: #474747;
+  background-color: #E18670;
+  color: white;
   font-weight: bold;
   padding: 6px 14px;
-  border-radius: 8px;
+  border-radius: 4px;
   border: none;
   cursor: pointer;
   margin: 8px auto 0 auto;
@@ -178,7 +178,7 @@ button.book {
   display: inline-block;
 }
 button.book:hover {
-  background-color: #d99ea3;
+  background-color: #944D30;
   transform: scale(1.05);
 }
 

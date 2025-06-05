@@ -2,9 +2,12 @@
 .iconsnav {
   position: relative;
   width: 80px !important;
-  background-color: #F5D2D5;
+  background-color: white   !important;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
 }
-
+.blue{
+  display: none;
+}
 /* Logo Image */
 .closed-nav-img {
   width: 93px;
@@ -24,19 +27,20 @@
 /* Arrow Open Button */
 .open-icon {
   position: absolute;
-
   right: -17px;
+  top: 138px;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 37px;
+  height: 37px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #474747;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
   z-index: 1000;
 }
 .open-icon i {
-  color: #F5D2D5;
+  color: #4BB6AD;
   font-size: 16px;
 }
 
@@ -47,11 +51,11 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+
 }
 
 .tabs a:not(.open-icon) {
   margin: 2px 0;
-  border: 1px solid #FAF3E0;
   width: 100%;               /* Make tab full width */
   text-align: center;        /* Center icon horizontally */
   padding: 8px 0;           /* Vertical padding */
@@ -59,11 +63,17 @@
 }
 
 .tabs a:not(.open-icon):hover {
-  background-color: #FAF3E0; /* Light hover effect */
+  background-color: #4BB6AD; /* Light hover effect */
+}
+.tabs a:not(.open-icon):hover .white{
+  display: none;
+}
+.tabs a:not(.open-icon):hover .blue{
+  display: inline-block;
 }
 
-.tabs :not(.open-icon) i {
-  color: #327537;
+
+.tabs :not(.open-icon) img {
   font-size: 16px;
 }
 
@@ -71,11 +81,17 @@
 
 /* Opened Sidebar */
 .offcanvas {
-  background-color: #F5D2D5;
+  background-color: white ;
   height: 100vh !important;
   overflow-y: auto;
-}
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
 
+}
+.nav-link img{
+  width: 40px;
+  height: 40px;
+
+}
 /* Custom width */
 .custom-sidebar {
   width: 311px !important;
@@ -84,21 +100,25 @@
 /* Close icon position */
 .close-icon {
   position: absolute;
-  top: 126px;
-  right: 0px;
+  top: 12px;
+  right: 12px;
   border-radius: 50%;
   width: 30px;
   height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #474747;
+  background-color: white;
+  box-shadow: 0 4px 24px rgba(128, 128, 128, 0.6);
   z-index: 1000;
   border: none;
+  width: 37px;
+  height: 37px;
 }
 .close-icon i{
-  color: #F5D2D5;
-  font-size: 16px;
+  color: #4BB6AD ;
+  font-size: 2rem;
+
 }
 
 /* Logo Image */
@@ -133,19 +153,30 @@ ul{
   justify-content: flex-start;
   align-items: center;
   padding: 12px 16px;
-  border: 1px solid #FAF3E0;
+  border: none;
   margin: 0 0 24px 0;
   box-sizing: border-box;
 }
 
 
 .nav-item div:hover {
-  background-color: #FAF3E0;
-  border-color: #327537;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: #252423;
+}
+.nav-item div:hover {
+  background-color: #4BB6AD;
+  border-color: #252423;
+}
+.nav-item div:hover img.white{
+  display: none;
+}
+.nav-item div:hover img.blue{
+  display: inline-block;
 }
 
-.nav-item div i {
-  color: #327537;
+.nav-item div img {
+  width: 35px;
+  height: 35px;
   font-size: 28px;
   margin-right: 20px;
 }
@@ -154,7 +185,7 @@ ul{
   font-family: 'Actor', sans-serif;
   font-weight: 400;
   font-size: 20px;
-  color: #474747;
+  color: #333;
 }
 
 a {
@@ -165,7 +196,7 @@ a {
 .custom-scrollbar {
   overflow-y: auto; /* enable vertical scrolling */
   scrollbar-width: thin;          /* Firefox */
-  scrollbar-color: #327537 #F5D2D5; /* thumb and track colors for Firefox */
+  scrollbar-color: #252423 #F7F2EC; /* thumb and track colors for Firefox */
 }
 
 /* Webkit browsers (Chrome, Edge, Safari) */
@@ -174,18 +205,18 @@ a {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #F5D2D5;
+  background: #F7F2EC;
   border-radius: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #327537;
+  background-color: #252423;
   border-radius: 4px;
-  border: 2px solid #F5D2D5; /* space around thumb */
+  border: 2px solid #F7F2EC; /* space around thumb */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #255222;
+  background-color: white;
 }
 
 /*pages*/
@@ -196,12 +227,18 @@ a {
 }
 
 @media (max-width: 767.98px) {
+  :host{
+    padding-top: 100px;
+  }
   .main-content {
     margin-left: 0px;
   }
 }
 /* Hide the fixed vertical icon nav on small screens */
 @media (max-width: 767.98px) {
+  :host{
+    padding-top: 100px;
+  }
   .iconsnav, .hide {
     display: none !important;
   }
@@ -216,12 +253,18 @@ a {
 .mobile-sidebar-toggle {
   display: none;
   position: fixed;
-  left: 0px;
-  padding: 8px;
-  border-radius: 50%;
-  background-color: #474747;
+  left: 12px;
+  padding: 0;
+  border-radius: 8px;
+  background-color: white ;
   z-index: 1050;
-  top: 12px;
-  color: #F5D2D5;
+  top: 6px;
+  color: #4BB6AD;
+  border: none;
+  font-size: 2rem;
+  width: 45px;
+  height: 45px;
+  font-weight: bolder;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.1);
 }
 
