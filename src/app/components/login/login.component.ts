@@ -17,6 +17,7 @@ export class LoginComponent {
     this.userLogin = this.fb.group({
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
+      rememberMe: [false]
     })
   }
   get email() {
@@ -26,19 +27,42 @@ export class LoginComponent {
     return this.userLogin.get('password');
   }
   sendData() {
-    this.userservice.loginUser(this.userLogin.value).subscribe(
-      (res) => {
+  this.userservice.loginUser(this.userLogin.value).subscribe(
+    (res) => {
+      console.log('Response:', res);
 
-        console.log('Response:', res);
-        localStorage.setItem('token',res.data.token)
-         localStorage.setItem('id',res.data._id)
-         localStorage.setItem('role',res.data.role);
-        this.route.navigate(['/home'])
-      },
-      (err) => {
-        alert(err.error.message);
+      const rememberMe = this.userLogin.get('rememberMe')?.value;
+
+      if (rememberMe) {
+        // Clear sessionStorage first
+        sessionStorage.removeItem('token');
+        sessionStorage.removeItem('id');
+        sessionStorage.removeItem('role');
+
+        // Store in localStorage
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('id', res.data._id);
+        localStorage.setItem('role', res.data.role);
+        console.log('Stored in localStorage');
+      } else {
+        // Clear localStorage first
+        localStorage.removeItem('token');
+        localStorage.removeItem('id');
+        localStorage.removeItem('role');
+
+        // Store in sessionStorage
+        sessionStorage.setItem('token', res.data.token);
+        sessionStorage.setItem('id', res.data._id);
+        sessionStorage.setItem('role', res.data.role);
+        console.log('Stored in sessionStorage');
       }
-    );
 
-  }
+      this.route.navigate(['/']);
+    },
+    (err) => {
+      alert(err.error.message);
+    }
+  );
+}
+
 }

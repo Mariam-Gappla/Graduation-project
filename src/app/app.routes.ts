@@ -6,9 +6,9 @@ import { vendorGuard } from './guards/vendor.guard';
 import { userGuard } from './guards/user.guard';
 
 export const routes: Routes = [
- {path:"home",loadComponent:()=>import('../app/components/home/home.component').then(m => m.HomeComponent),canActivate:[authGuard]},
+ {path:"",loadComponent:()=>import('../app/components/home/home.component').then(m => m.HomeComponent)},
  {path:"login",loadComponent:()=>import('../app/components/login/login.component').then(m=>m.LoginComponent)},
- {path:"",loadComponent:()=>import('../app/components/signup/signup.component').then(m=>m.SignupComponent)},
+ {path:"signup",loadComponent:()=>import('../app/components/signup/signup.component').then(m=>m.SignupComponent)},
  {path:"vendors/:category",loadComponent:()=>import('../app/components/vendors/vendors.component').then(m=>m.VendorsComponent),canActivate:[authGuard, userGuard]},
  {path:"b-details",loadComponent:()=>import('../app/components/b-details/b-details.component').then(b=>b.BDetailsComponent),canActivate:[authGuard, userGuard]},
  {path:"booking",loadComponent:()=>import('../app/components/booking/booking.component').then(b=>b.BookingComponent),canActivate:[authGuard, userGuard]},

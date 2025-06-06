@@ -60,8 +60,8 @@ export class DetailsComponent {
     }
   }
   ngOnInit(): void {
-    this.userId = localStorage.getItem('id');
-    console.log('ts',localStorage.getItem('token'));
+    this.userId = localStorage.getItem('id') || sessionStorage.getItem('id');
+    console.log('ts',localStorage.getItem('token') || sessionStorage.getItem('token'));
     this.changeWidth();
     const id = this.route.snapshot.paramMap.get('vendorId');
     this.vendorservice.getVendorById(id).subscribe((res) => {
@@ -145,9 +145,9 @@ console.log('Full Review Response Keys:', this.reviews);
     });
     });
   });
- 
 
-  
+
+
 }
 
 }

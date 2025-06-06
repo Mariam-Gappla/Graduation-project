@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary ps-4 pe-4" [class.shrink]="isScrolled">
   <div class="container-fluid">
-    <img src="Logo.png" class="logo-img" />
+    <img src="ZAFFA.jpg" class="logo-img" />
     <button
-      class="navbar-toggler  mb-1"
+      class="navbar-toggler mb-1"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNavDropdown"
@@ -12,37 +12,53 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ms-auto text-end">
+
+      <!-- Main links -->
+      <ul class="navbar-nav ms-auto text-center">
         <li class="nav-item">
           <a class="nav-link" (click)="scrollToSection('landing')">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('our-services')"
-            >Services</a
-          >
+          <a class="nav-link" (click)="scrollToSection('our-services')">Services</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" (click)="scrollToSection('about')">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('contact')"
-            >Contact Us</a
-          >
+          <a class="nav-link" (click)="scrollToSection('contact')">Contact Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/orders', id]">My Orders</a>
-
-
+          <a class="nav-link" [routerLink]="['/orders', id]" [hidden]="isLogged == false">My Orders</a>
         </li>
-        <li>
-          <a class="nav-link" [routerLink]="['/vendorservices', id]" [hidden]="role == 'Bride/Groom'"><img src="vendor.png" alt="" srcset="" /></a>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/vendorservices', id]" [hidden]="isLogged == false || user?.role == 'Bride/Groom'">
+            <img src="vendor.png" alt="" />
+          </a>
         </li>
-        <li>
-          <a class="nav-link" [routerLink]="['/orderrequest']" [hidden]="role == 'Bride/Groom'"><img src="book.png" alt="" srcset="" /></a>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/orderrequest']" [hidden]="isLogged == false || user?.role == 'Bride/Groom'">
+            <img src="book.png" alt="" />
+          </a>
         </li>
       </ul>
+
+      <!-- Sign Up / Sign In links -->
+      <ul class="sign-btns" [hidden]="isLogged == true">
+        <li class="nav-item sign">
+          <a class="nav-link signup" [routerLink]="['/signup']">SignUp</a>
+        </li>
+        <li class="nav-item log">
+          <a class="nav-link signin" [routerLink]="['/login']">LogIn</a>
+        </li>
+      </ul>
+
+      <!-- Username display -->
+      <a class="nav-link" style="pointer-events: none; cursor: default;" *ngIf="isLogged && user">
+        {{user?.username}}
+      </a>
+
     </div>
   </div>
 </nav>
-

@@ -60,7 +60,7 @@ export class BDetailsComponent implements OnInit {
 
   onSubmit(): void {
     if (this.bookingForm.valid) {
-      const userId = localStorage.getItem('id');
+      const userId = localStorage.getItem('id') || sessionStorage.getItem('id') || sessionStorage.getItem('id');
       if (!userId) {
         alert('User ID not found. Please log in again.');
         return;

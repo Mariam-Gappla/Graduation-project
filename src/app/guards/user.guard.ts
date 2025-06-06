@@ -7,14 +7,14 @@ import { inject, Injectable } from '@angular/core';
 export class userRole{
   constructor(private router:Router){}
   CanActivateFn():boolean{
-  let  role=localStorage.getItem('role')
+  let  role=localStorage.getItem('role')|| sessionStorage.getItem('token');
     if(role === 'Bride/Groom')
-    { 
+    {
       console.log("authorized")
       return true;
     }
     else
-    { 
+    {
       console.log("not authorized")
       this.router.navigate(['/home'])
       return false;

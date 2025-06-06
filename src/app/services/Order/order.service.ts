@@ -24,7 +24,7 @@ export class OrderService {
     packageId: string;
     method: string;
   }): Observable<OrderResponse> {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ export class OrderService {
   }
 
   getAllOrders(): Observable<OrderResponse> {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
@@ -44,7 +44,7 @@ export class OrderService {
     return this.httpclient.get<OrderResponse>(this.baseUrl, { headers });
   }
   getAllConfirmedOrders(): Observable<OrderResponse> {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
@@ -53,7 +53,7 @@ export class OrderService {
   }
 
   getOrdersByVendorId(vendorId: string): Observable<OrderResponse> {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
@@ -67,7 +67,7 @@ export class OrderService {
     orderId: string,
     status: string
   ): Observable<OrderResponse> {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ export class OrderService {
   status?: string,
   vendorId?: string
 ): Observable<OrderResponse> {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem('token') || sessionStorage.getItem('token');
   const headers = new HttpHeaders({
     Authorization: `Bearer ${token}`,
   });
@@ -105,7 +105,7 @@ export class OrderService {
   });
 }
 getOrderByUserId(userId: string): Observable<OrderResponse> {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
@@ -117,7 +117,7 @@ getOrderByUserId(userId: string): Observable<OrderResponse> {
   }
   // 🗑 Delete order by ID
   deleteOrder(orderId: string): Observable<OrderResponse> {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });

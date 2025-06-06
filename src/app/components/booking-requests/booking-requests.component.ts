@@ -15,7 +15,7 @@ import { OrderInterface } from '../../../models/order-interface';
 })
 export class BookingRequestsComponent implements OnInit {
   selectedFilter = 'all';
-  vendorId = localStorage.getItem('id');
+  vendorId = localStorage.getItem('id') || sessionStorage.getItem('id');;
   requests: OrderInterface[] = [];
 
   constructor(private orderService: OrderService) {}

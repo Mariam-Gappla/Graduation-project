@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   constructor(private httpclient:HttpClient) { }
-  token:any=localStorage.getItem('token');
+  token:any=localStorage.getItem('token') || sessionStorage.getItem('token');
   headers= new HttpHeaders({
     'Authorization': `Bearer ${this.token}`,
     'Content-Type': 'application/json'
@@ -47,5 +47,8 @@ export class UserService {
   }
   getRoleByUserId(userId: any): Observable<any> {
     return this.httpclient.get(`http://localhost:3000/users/role/${userId}`, { headers: this.headers });
+  }
+  getUserByUserId(id: any): Observable<any> {
+    return this.httpclient.get(`http://localhost:3000/users/${id}`, { headers: this.headers });
   }
 }

@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PackagesService {
-  token:any=localStorage.getItem('token');
+  token:any=localStorage.getItem('token') || sessionStorage.getItem('token');
   headers= new HttpHeaders({
     'Authorization': `Bearer ${this.token}`,
     'Content-Type': 'application/json'

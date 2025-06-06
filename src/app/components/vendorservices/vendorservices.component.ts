@@ -19,15 +19,15 @@ export class VendorservicesComponent implements OnInit{
   faEdit = faEdit;
   faPlus = faPlus;
 constructor(private vendorservices:VendorsService){
-  this.vendorId=localStorage.getItem('id');
+  this.vendorId=localStorage.getItem('id') || sessionStorage.getItem('id');
 }
 
 ngOnInit(): void {
- 
+
   this.vendorservices.getServicesByVendorId(this.vendorId).subscribe((res)=>{
     this.vendorservice=res.data;
   })
-  
+
 }
 deleteService(service:any)
 {

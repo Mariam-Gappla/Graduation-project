@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [OrderService]
 })
 export class MyOrdersComponent {
-  userId = localStorage.getItem('id');
+  userId = localStorage.getItem('id') || sessionStorage.getItem('id');
   orders: OrderInterface[] = [];
   constructor(private orderService: OrderService) {}
 

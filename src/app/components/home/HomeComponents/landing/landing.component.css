@@ -1,6 +1,7 @@
 /*landing*/
 .landing {
   background-image: url("../../../../../../public/bg.jpg");
+  z-index: -1;
   background-size: cover;
   background-position: center;
   min-height: 100vh;

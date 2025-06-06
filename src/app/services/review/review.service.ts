@@ -21,7 +21,7 @@ export class ReviewService {
     vendorId: string;
     userId: string;
   }): Observable<ReviewResponse> {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token');
 
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
@@ -32,7 +32,7 @@ export class ReviewService {
     return this.httpclient.post<ReviewResponse>(this.baseUrl, reviewContent, {headers});
   }
   getReviewsByVendorId(vendorId: string): Observable<ReviewResponse> {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
@@ -40,7 +40,7 @@ export class ReviewService {
     return this.httpclient.get<ReviewResponse>(`${this.baseUrl}${vendorId}`,{ headers });
   }
   getReviewsByServiceId(serviceId: string): Observable<ReviewResponse> {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
@@ -48,7 +48,7 @@ export class ReviewService {
     return this.httpclient.get<ReviewResponse>(`${this.baseUrl}service/${serviceId}`,{ headers });
   }
   getTopRatedVendorsWithTopServiceByCategory(): Observable<ReviewResponse> {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token');
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });

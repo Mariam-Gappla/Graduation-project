@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class VendorsService {
 
   constructor(private httpclient:HttpClient) { }
-  token:any=localStorage.getItem('token');
+  token:any=localStorage.getItem('token') || sessionStorage.getItem('token');
   headers= new HttpHeaders({
     'Authorization': `Bearer ${this.token}`,
     'Content-Type': 'application/json'

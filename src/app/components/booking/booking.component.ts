@@ -38,8 +38,8 @@ export class BookingComponent {
       return;
     }
 
-    const token = localStorage.getItem('token');
-    console.log('Token:', token); 
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token') || sessionStorage.getItem('token');
+    console.log('Token:', token);
 
     if (!token) {
       alert('You are not logged in. Please login first.');
