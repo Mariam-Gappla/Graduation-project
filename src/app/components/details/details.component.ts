@@ -18,6 +18,8 @@ export class DetailsComponent {
   end: any;
   userId: any;
   reviews: any;
+  showedImages:any;
+  images:any;
   showReviewForm = false;
   newReview = {
     rating: '',
@@ -31,6 +33,7 @@ export class DetailsComponent {
   ) {
     window.addEventListener('resize', () => {
       this.changeWidth();
+      this.start=0;
     });
   }
 
@@ -40,12 +43,13 @@ export class DetailsComponent {
     const width = window.innerWidth;
 
     if (width < 768) {
-      this.end = this.start + 2; // موبايل
+      this.end = this.start + 1; // موبايل
     } else if (width < 992) {
-      this.end = this.start + 3; // تابلت
+      this.end = this.start + 2; // تابلت
     } else {
-      this.end = this.start + 4; // كمبيوتر
+      this.end = this.start + 3; // كمبيوتر
     }
+   
   }
   next(): void {
     if (this.end < this.vendor?.serviceImage.length) {
@@ -66,12 +70,14 @@ export class DetailsComponent {
     const id = this.route.snapshot.paramMap.get('vendorId');
     this.vendorservice.getVendorById(id).subscribe((res) => {
       this.vendor = res.data[0];
-      console.log(this.vendor._id);
-
+      this.images=this.vendor.serviceImage;
+      console.log(this.vendor);
+      console.log(this.images)
     this.reviewService.getReviewsByServiceId(this.vendor._id).subscribe((res) => {
       this.reviews = res;
         console.log('Full Review Response Keys:', this.reviews);
     });
+  
     });
 
   }

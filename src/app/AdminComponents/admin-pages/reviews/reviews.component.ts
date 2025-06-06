@@ -64,7 +64,7 @@ export class ReviewsComponent {
     })
   }
   updateStatus(serviceId: string, status: string) {
-    this.vendorservices.editService(serviceId, { status: status }).subscribe(
+    this.vendorservices.updatStatus(serviceId, { status: status }).subscribe(
       (res: any) => {
 
           if (status === 'Accepted') {

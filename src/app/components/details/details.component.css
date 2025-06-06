@@ -219,6 +219,10 @@ button:hover i {
   .carousel-images {
     transition: transform 0.5s ease;
   }
+  .carousel-images img{
+    width:30%;
+    margin-right: 5px;
+  }
   .carousel img {
     height: 176px;
     margin-right: 5px;

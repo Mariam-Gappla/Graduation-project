@@ -64,4 +64,13 @@ sortServicesByNewest(): Observable<any>{
 addLikeToService(id:any,userId:any): Observable<any>{
   return this.httpclient.patch(`http://localhost:3000/services/like/${id}`,userId,{ headers: this.headers } );
 }
+updatStatus(id:any,status:any)
+{
+return this.httpclient.patch(`http://localhost:3000/services/status/${id}`,status,{
+    headers: new HttpHeaders({
+      'Authorization': `Bearer ${this.token}`
+      // لا تضف Content-Type هنا
+    })
+  });
+}
 }
