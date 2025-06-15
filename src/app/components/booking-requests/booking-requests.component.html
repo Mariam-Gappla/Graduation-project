@@ -6,16 +6,35 @@
   </div>
 
   <div class="dropdown mb-3">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    {{ selectedFilter === 'all' ? 'All Requests' : selectedFilter | titlecase }}
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" (click)="onFilterChange('all')">All Requests</a></li>
-    <li><a class="dropdown-item" (click)="onFilterChange('confirmed')">confirmed</a></li>
-    <li><a class="dropdown-item" (click)="onFilterChange('pending')">Pending</a></li>
-    <li><a class="dropdown-item" (click)="onFilterChange('refused')">Refused</a></li>
-  </ul>
-</div>
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      {{
+        selectedFilter === "all" ? "All Requests" : (selectedFilter | titlecase)
+      }}
+    </button>
+    <ul class="dropdown-menu">
+      <li>
+        <a class="dropdown-item" (click)="onFilterChange('all')"
+          >All Requests</a
+        >
+      </li>
+      <li>
+        <a class="dropdown-item" (click)="onFilterChange('confirmed')"
+          >confirmed</a
+        >
+      </li>
+      <li>
+        <a class="dropdown-item" (click)="onFilterChange('pending')">Pending</a>
+      </li>
+      <li>
+        <a class="dropdown-item" (click)="onFilterChange('refused')">Refused</a>
+      </li>
+    </ul>
+  </div>
 
   <div *ngIf="requests.length > 0; else noRequests">
     <div class="table-wrapper">
@@ -25,8 +44,8 @@
         <span class="th">Category</span>
         <span class="th">Service</span>
         <span class="th">Price</span>
-        <span class="th">Payment</span>
         <span class="th">Method</span>
+        <!-- <span class="th">Method</span> -->
         <span class="th actions-field">Actions</span>
       </div>
       <div class="table-body">
@@ -35,56 +54,57 @@
           <span class="td">{{ request.date | date }}</span>
           <span class="td">{{ request.category }}</span>
           <span class="td">{{ request.service }}</span>
-          <span class="td">{{ request.price}} EGP</span>
-          <span class="td">{{ request.payment }}</span>
+          <span class="td">{{ request.price }} EGP</span>
           <span class="td">{{ request.method }}</span>
-         <span class="td actions">
-  <!-- If status is pending -->
-  <ng-container *ngIf="request.status === 'pending'; else notPending">
-    <button class="approve-btn" (click)="updateStatus(request, 'confirmed')">
-      Approve
-    </button>
-    <button class="refuse-btn" (click)="updateStatus(request, 'refused')">
-      Refuse
-    </button>
-  </ng-container>
-
-  <!-- If status is confirmed -->
-  <ng-template #notPending>
-    <ng-container *ngIf="request.status === 'confirmed'; else notConfirmed">
-
-      <!-- If payment method is cash -->
-      <ng-container *ngIf="request.method === 'cash'; else waitingDeposit">
-        <button class="confirmed-btn" [disabled]>
-          Confirmed
-        </button>
-      </ng-container>
-
-      <!-- If payment method is visa -->
-      <ng-template #waitingDeposit>
-        <button class="waiting-btn" >
-          Waiting for deposit
-        </button>
-      </ng-template>
-
-    </ng-container>
-
-    <!-- If status is refused -->
-    <ng-template #notConfirmed>
-      <ng-container *ngIf="request.status === 'refused'; else noActions">
-        <button class="refused-btn" [disabled]>
-          Refused
-        </button>
-      </ng-container>
-    </ng-template>
-  </ng-template>
-
-  <!-- If no actions available -->
-  <ng-template #noActions>
-    <span class="status">No actions available</span>
-  </ng-template>
-</span>
-
+          <!-- <span class="td"> {{ orderPayments[request._id]?._id }}</span> -->
+          <span class="td actions-field">
+            @if(request.status == 'pending'){
+            <button
+              class="approve-btn"
+              (click)="updateStatus(request, 'confirmed')"
+            >
+              Approve
+            </button>
+            <button
+              class="refuse-btn"
+              (click)="updateStatus(request, 'refused')"
+            >
+              Refuse
+            </button>
+            } @else if (request.status == 'confirmed'&& request.method == 'cash'
+            ) {
+            <button class="confirmed-btn" [disabled]>Confirmed</button>
+            } @else if (request.status == 'confirmed'&& request.method != 'cash'
+            && orderPayments[request._id]?._id == null ) {
+            <button class="waiting-btn">Waiting for deposit</button>
+            } @else if (request.status == 'confirmed'&& request.method != 'cash'
+            && orderPayments[request._id]?._id != null ) {
+            <button class="details-btn" [routerLink]="['/paymentdetails',orderPayments[request._id]?._id]" >View Details</button>
+            }
+            @else if ( request.method !=
+            'cash' && orderPayments[request._id]?.status == 'accepted') {
+            <button
+              class="accepted-btn"
+              [routerLink]="[
+                '/paymentdetails',
+                orderPayments[request._id]?._id
+              ]"
+            >
+              Payment Accepted
+            </button>
+            } @else if ( request.method !=
+            'cash' && orderPayments[request._id]?.status == 'refused') {
+            <button
+              class="payment-refused-btn"
+              [routerLink]="[
+                '/paymentdetails',
+                orderPayments[request._id]?._id
+              ]"
+            >
+              Payment Refused
+            </button>
+            }
+          </span>
         </div>
       </div>
     </div>
@@ -94,4 +114,3 @@
     <div class="alert alert-info">There are no booking requests.</div>
   </ng-template>
 </div>
-

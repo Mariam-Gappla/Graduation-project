@@ -115,6 +115,7 @@ getOrderByUserId(userId: string): Observable<OrderResponse> {
       { headers }
     );
   }
+
   // 🗑 Delete order by ID
   deleteOrder(orderId: string): Observable<OrderResponse> {
     const token = localStorage.getItem('token') || sessionStorage.getItem('token');
@@ -124,6 +125,17 @@ getOrderByUserId(userId: string): Observable<OrderResponse> {
 
     return this.httpclient.delete<OrderResponse>(
       `${this.baseUrl}${orderId}`,
+      { headers }
+    );
+  }
+  getOrderId(id: string): Observable<OrderResponse> {
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    });
+
+    return this.httpclient.get<OrderResponse>(
+      `${this.baseUrl}${id}`,
       { headers }
     );
   }

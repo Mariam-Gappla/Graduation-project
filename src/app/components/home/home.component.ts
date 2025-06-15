@@ -35,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+  token:any
     topRatedVendors: any[] = [];
   constructor(private el: ElementRef, private reviewService: ReviewService, private router: Router) {
     window.addEventListener('resize', () => {
@@ -43,7 +44,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
   ngOnInit(): void {
   this.start = 0;
-
+  this.token = localStorage.getItem('token') || sessionStorage.getItem('token') || sessionStorage.getItem('token');
   this.reviewService.getTopRatedVendorsWithTopServiceByCategory().subscribe({
     next: (response) => {
       // console.log('Response:', response);

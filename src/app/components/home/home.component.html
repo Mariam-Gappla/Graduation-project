@@ -5,7 +5,7 @@
 <app-about id="about"></app-about>
 
 <!--common vendors-->
-<div class="common-services">
+<div class="common-services"[hidden]="token == null">
   <div>
     <h1 class="lheading">MOST COMMON VENDORS</h1>
     <div class="line-container">
@@ -44,7 +44,7 @@
       <i class="bi bi-caret-right-fill"></i>
     </button>
   </div>
-  <app-packages></app-packages>
+  <app-packages [hidden]="token == null"></app-packages>
 
   <app-why-choosing-us></app-why-choosing-us>
   <!--contact us-->

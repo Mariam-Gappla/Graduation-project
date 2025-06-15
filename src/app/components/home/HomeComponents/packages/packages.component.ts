@@ -20,7 +20,6 @@ export class PackagesComponent implements OnInit {
 
   ngOnInit(): void {
     this.randomCategories = this.getRandomCategories(this.categories, 3);
-    console.log('Random Categories:', this.randomCategories);
 
     this.randomCategories.forEach((category) => {
       this.pcgservice.LowestByCategory(category).subscribe(
@@ -33,7 +32,6 @@ export class PackagesComponent implements OnInit {
         }
       );
     });
-    console.log('Packages:', this.pcgs);
   }
 
   getRandomCategories(arr: string[], count: number): string[] {

@@ -57,7 +57,7 @@
               <span class="detail-value">{{ order.shipping_info }}</span>
             </div>
           </div>
-          <button class="btn btn-success pay-button" [disabled]="order.method === 'cash'">Pay Now</button>
+          <button class="btn btn-success pay-button" [routerLink]="['/booking', order._id]" [disabled]="order.method === 'cash' || order.status != 'confirmed'">Pay Now</button>
         </div>
       </div>
       }

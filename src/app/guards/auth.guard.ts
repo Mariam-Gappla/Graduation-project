@@ -8,7 +8,7 @@ export class userAuth {
   constructor(private router: Router) {}
 
   CanActivateFn(): boolean {
-    let token = localStorage.getItem('token') || sessionStorage.getItem('token') || sessionStorage.getItem('token');
+    let token = localStorage.getItem('token') || sessionStorage.getItem('token');
 
     if (token) {
       console.log('authorized');

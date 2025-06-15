@@ -1,0 +1,42 @@
+<div class="container">
+
+  <!-- Dropdown - Add Admin section -->
+  <div class="dropdown">
+    <!-- Input to enter email -->
+    <input
+  type="email"
+  [(ngModel)]="newAdminEmail"
+  placeholder="Enter user email to make admin"
+  style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; margin-right: 8px;"
+/>
+
+<button class="btn btn-secondary" (click)="makeAdmin()">
+  Make Admin
+</button>
+
+  </div>
+
+  <!-- Admins Table -->
+  <div class="table-responsive">
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(admin of admins; track admin) {
+          <tr>
+            <td>{{ admin.username }}</td>
+            <td>{{ admin.email }}</td>
+            <td class="text-right">
+              <button class="p-button-secondary" (click)="deleteAdmin(admin._id)">Delete</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

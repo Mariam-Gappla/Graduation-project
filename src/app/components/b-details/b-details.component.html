@@ -54,8 +54,13 @@
         <label class="main">Payment Method:</label>
         <select class="form-control" formControlName="payment">
           <option value="" disabled>-- Select Method --</option>
-          <option value="cash">Cash</option>
-          <option value="Visa">Visa</option>
+            @if (paymentMethods?.length < 1) {
+              <option value="cash">Cash</option>
+            }
+            @else {
+              <option value="cash">Cash</option>
+              <option value="online">Online</option>
+            }
         </select>
       </div>
 
@@ -71,17 +76,17 @@
 
       <div class="border-top pt-3" *ngIf="bookingForm.valid">
         <p>
-          <strong class="main">SERVICE:</strong>
+          <strong class="main">SERVICE: </strong>
           <span>{{ getSelectedPackageTitle() }}</span>
         </p>
         <p>
-          <strong class="main">DATE:</strong>
+          <strong class="main">DATE: </strong>
           <span>{{
             bookingForm.value.bookingDate | date : "dd MMM yyyy"
           }}</span>
         </p>
         <p>
-          <strong class="main">PRICE:</strong>
+          <strong class="main">PRICE: </strong>
           <span>{{ getSelectedPackagePrice() }} EGP</span>
         </p>
       </div>
@@ -97,4 +102,7 @@
       </div>
     </form>
   </div>
+</div>
+<div *ngIf="message" class="alert" [ngClass]="{'alert-success': success, 'alert-danger': !success}" role="alert" style="text-align:center; margin-bottom:15px;">
+  {{ message }}
 </div>

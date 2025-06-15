@@ -1,0 +1,45 @@
+<div class="container m-5">
+  <!-- payment-details.component.html -->
+  <h2 class="text-center">Payment Details</h2>
+
+<div class="payment-details-container">
+
+  <div class="payment-info">
+  <a [href]="'http://localhost:3000/' + payment?.screenshot" target="_blank" rel="noopener noreferrer">
+    <img [src]="'http://localhost:3000/' + payment?.screenshot" alt="Payment Screenshot" class="payment-screenshot" style="cursor: pointer;" />
+  </a>
+
+  <div class="details">
+    <p><strong>Full Name:</strong> {{ payment?.fullName }}</p>
+    <p><strong>Phone Number:</strong> {{ payment?.phoneNumber }}</p>
+    <p><strong>Amount:</strong> {{ payment?.amount }} EGP</p>
+    <p><strong>Payment Method:</strong> {{ payment?.paymentMethod }}</p>
+    <p><strong>Status:</strong> {{ payment?.status }}</p>
+  </div>
+</div>
+
+  @if(payment?.status == 'pending'){
+    <div class="note-section">
+    <label for="note">Add Note:</label>
+    <textarea id="note" [(ngModel)]="note" placeholder="Enter your note here..."></textarea>
+    </div>
+  }
+  @else {
+    <p class="added-note">{{payment?.note}}</p>
+  }
+
+  <div class="button-group">
+    @if(payment?.status == 'pending'){
+      <button class="btn accept" (click)="updatePaymentStatus('accepted')">Accept</button>
+      <button class="btn refuse" (click)="updatePaymentStatus('refused')">Refuse</button>
+    }
+    @else if (payment?.status == 'refused') {
+      <button class="btn refused" [disabled]="payment?.status == 'refused'">Refused</button>
+    }
+    @else if (payment?.status == 'accepted') {
+      <button class="btn accepted" [disabled]="payment?.status == 'accepted'">Accepted</button>
+    }
+  </div>
+</div>
+
+</div>

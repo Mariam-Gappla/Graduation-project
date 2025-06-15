@@ -102,6 +102,9 @@
   background-color: #F7F2EC;
   padding: 40px 20px;
   width: 100%;
+  border-top: 4px solid #E18670  ;
+  border-bottom: 4px solid #E18670  ;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
 }
 
 .services-items .row {

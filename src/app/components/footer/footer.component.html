@@ -1,9 +1,9 @@
-<div class="container-fluid text-center footer-container">
-  <hr class="footer-hr">
+  <hr class="footer-hr my-0 p-0">
+<div class="container-fluid text-center footer-container pt-5">
   <div class="row justify-content-center p-0">
 
     <!-- Services Column -->
-    <div class="col-lg-3 col-md-6 col-sm-6 mb-4 footer-section">
+    <div class="col-lg-3 col-md-6 col-sm-6 mb-4 footer-section  text-start">
       <h4 class="footer-title">Services</h4>
       @for(service of services; track service){
         <a [routerLink]="['/vendors', service.label]">
@@ -13,20 +13,21 @@
     </div>
 
     <!-- Contact Column -->
-    <div class="col-lg-3 col-md-6 col-sm-6 mb-4 footer-section">
+    <div class="col-lg-3 col-md-6 col-sm-6 mb-4 footer-section  text-start">
       <h4 class="footer-title">Contact Us</h4>
       <a href="mailto:zaffa1034&#64;gmail.com" class="footer-link">zaffa1034&#64;gmail.com</a>
     </div>
 
     <!-- Packages + Social Column -->
-    <div class="col-lg-3 col-md-6 col-sm-6 mb-4 footer-section">
-      <h4 class="footer-title">Packages</h4>
-      @for(pkg of pcgs; track pkg){
-        <a [routerLink]="['/details', pkg.service._id]">
-          <p class="footer-link package-title">{{pkg.service.title}}</p>
-        </a>
-      }
 
+<div class="col-lg-3 col-md-6 col-sm-6 mb-4 footer-section text-start">
+  <h4 class="footer-title">Features</h4>
+    <p class="footer-link">Online Booking System</p>
+    <p class="footer-link">Custom Wedding Packages</p>
+    <p class="footer-link">Client Reviews & Ratings</p>
+    <p class="footer-link">Special Offers & Discounts</p>
+    <p class="footer-link">Wedding Tips & Blog</p>
+</div>
       <!-- Social icons below packages -->
 
     </div>
@@ -43,4 +44,3 @@
     </div>
 
   </div>
-</div>

@@ -7,7 +7,7 @@ import { inject, Injectable } from '@angular/core';
 export class vendorRole{
   constructor(private router:Router){}
   CanActivateFn():boolean{
-  let  role=localStorage.getItem('role')|| sessionStorage.getItem('token');
+  let  role=localStorage.getItem('role')|| sessionStorage.getItem('role');
     if(role === 'Vendor')
     {
       console.log("authorized")

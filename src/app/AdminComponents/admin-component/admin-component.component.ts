@@ -5,6 +5,7 @@ import { BookingsComponent } from '../admin-pages/bookings/bookings.component';
 import { ReviewsComponent } from '../admin-pages/reviews/reviews.component';
 import { UsersComponent } from '../admin-pages/users/users.component';
 import { NgClass } from '@angular/common';
+import { SuperAdminPageComponent } from '../admin-pages/super-admin-page/super-admin-page.component';
 
 // Declare Bootstrap globally
 declare var bootstrap: any;
@@ -12,12 +13,13 @@ declare var bootstrap: any;
 @Component({
   selector: 'app-admin-component',
   standalone: true,
-  imports: [HomeComponent, ServicesComponent, NgClass, ReviewsComponent, UsersComponent],
+  imports: [HomeComponent, ServicesComponent, ReviewsComponent, UsersComponent, SuperAdminPageComponent],
   templateUrl: './admin-component.component.html',
   styleUrls: ['./admin-component.component.css']
 })
 export class AdminComponentComponent implements OnInit {
   isSidebarOpen = false;
+  role:any
 
 toggleSidebar() {
   this.isSidebarOpen = !this.isSidebarOpen;
@@ -36,7 +38,7 @@ ngAfterViewInit() {
   activeTab: string = 'home';
 
   ngOnInit(): void {
-    // Add event listeners to the sidebar links (expanded state)
+    this.role=localStorage.getItem('role')|| sessionStorage.getItem('role');
     const expandedNavLinks = document.querySelectorAll('.offcanvas-body .nav-item a');
     expandedNavLinks.forEach(link => {
       link.addEventListener('click', (event) => {
@@ -56,7 +58,7 @@ ngAfterViewInit() {
       link.addEventListener('click', (event) => {
         event.preventDefault();
         // Determine the target ID based on the index of the icon
-        const targetIds = ['home', 'service', 'users', 'reviews'];
+        const targetIds = ['home', 'service', 'users', 'reviews', 'super-admin'];
         if (index < targetIds.length) {
           this.setActiveTab(targetIds[index]);
         }

@@ -1,39 +1,55 @@
 <div class="page-wrapper">
-  <h1 class="text-center">
-    Payment
-  </h1>
+  <h1 class="text-center">Payment</h1>
   <div class="line-container">
-        <div class="circle"></div>
-      </div>
+    <div class="circle"></div>
+  </div>
   <div class="payment-container">
     <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()" class="payment-box">
       <div class="payment-methods">
-        <label>Pay via:</label>
-        <label class="method-option">
-          <input type="radio" formControlName="paymentMethod" value="fawery" />
-          <img src="faw.png" alt="Fawry" />
-        </label>
-        <label class="method-option">
-          <input type="radio" formControlName="paymentMethod" value="vodafone" />
-          <img src="vod.png" alt="Vodafone" />
-        </label>
-      </div>
+  <label>Pay via:</label>
 
-      @if (paymentForm.get('paymentMethod')?.value === 'vodafone') {
-        <div class="cash-number">
-          <label class="cash-label">Vodafone Cash Number</label>
-          <div class="number-box">
-            <img src="num.png" alt="Copy" />
-            <span>01053698542</span>
-          </div>
-        </div>
-      }
+  <!-- Fawry -->
+  <label class="method-option" *ngIf="hasPaymentMethod('fawry')">
+    <input type="radio" formControlName="paymentMethod" value="fawry" />
+    <img src="faw.png" alt="Fawry" />
+  </label>
+
+  <!-- Vodafone -->
+  <label class="method-option" *ngIf="hasPaymentMethod('vodaphone')">
+    <input type="radio" formControlName="paymentMethod" value="vodaphone" />
+    <img src="vodaphone.png" alt="Vodafone" />
+  </label>
+
+  <!-- Instapay -->
+  <label class="method-option" *ngIf="hasPaymentMethod('instapay')">
+    <input type="radio" formControlName="paymentMethod" value="instapay" />
+    <img src="instapay.png" alt="Instapay" />
+  </label>
+</div>
+
+<!-- Display selected method number -->
+<div *ngIf="selectedPaymentMethod && selectedPaymentMethod.number" class="cash-number">
+  <label class="cash-label">{{ selectedPaymentMethod.name }} Number</label>
+  <div class="number-box">
+    <span>{{ selectedPaymentMethod.number }}</span>
+  </div>
+</div>
+
+
 
       <label>Full Name:</label>
-      <input type="text" formControlName="fullName" placeholder="Enter your full name" />
+      <input
+        type="text"
+        formControlName="fullName"
+        placeholder="Enter your full name"
+      />
 
       <label>Phone number:</label>
-      <input type="text" formControlName="phoneNumber" placeholder="Enter your number" />
+      <input
+        type="text"
+        formControlName="phoneNumber"
+        placeholder="Enter your number"
+      />
 
       <label>Amount:</label>
       <input type="text" formControlName="amount" placeholder="Enter amount" />
@@ -41,7 +57,9 @@
       <label>Screenshot of the transfer:</label>
       <input type="file" (change)="onFileChange($event)" />
 
-      <button type="submit" [disabled]="paymentForm.invalid || !screenshot">SEND</button>
+      <button type="submit" [disabled]="paymentForm.invalid || !screenshot">
+        SEND
+      </button>
     </form>
   </div>
 </div>

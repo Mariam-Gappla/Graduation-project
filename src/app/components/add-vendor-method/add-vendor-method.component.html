@@ -1,0 +1,78 @@
+<div class="container">
+  <h2 class="header text-center mb-5">Vendor Profile</h2>
+
+  <!-- Vendor info -->
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <h4>{{ vendor?.username }}</h4>
+      <p><strong>Email:</strong> {{ vendor?.email }}</p>
+      <p><strong>Role:</strong> {{ vendor?.role }}</p>
+    </div>
+  </div>
+
+  <!-- Existing Payment Methods -->
+  <div class="card mb-4 shadow-sm">
+  <div class="card-header">
+    <h5>Payment Methods</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li *ngFor="let method of vendor?.paymentMethods" class="list-group-item d-flex justify-content-between align-items-center">
+      <div>
+        <strong>{{ method.name }}:</strong> {{ method.number }}
+      </div>
+      <button class="btn btn-sm btn-danger" (click)="deleteMethod(method)" [hidden]="method.name == 'Cash'">
+        <i class="bi bi-trash"></i>
+      </button>
+    </li>
+    <li *ngIf="vendor?.paymentMethods.length === 0" class="list-group-item text-muted text-center">
+      No payment methods added yet.
+    </li>
+  </ul>
+</div>
+
+
+  <!-- Add new payment method form -->
+  <div class="card shadow-sm">
+    <div class="card-header">
+      <h5>Add Payment Method</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="addPaymentMethod()" #paymentForm="ngForm">
+
+        <div class="mb-3">
+          <label for="type" class="form-label">Payment Type</label>
+          <select id="type" class="form-select" [(ngModel)]="newPaymentMethod.type" name="type" required>
+            <option value="" disabled selected>Select type</option>
+            <option value="vodaphone">vodaphone</option>
+            <option value="fawry">fawry</option>
+            <option value="instapay">instapay</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="details" class="form-label">Details</label>
+          <input
+            type="text"
+            id="details"
+            class="form-control"
+            [(ngModel)]="newPaymentMethod.details"
+            name="details"
+            placeholder="Enter valid number or address"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="paymentForm.invalid">
+          Add Method
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Confirmation message -->
+  <div *ngIf="successMessage" class="alert alert-success mt-3" role="alert">
+    {{ successMessage }}
+  </div>
+
+</div>

@@ -3,10 +3,11 @@ import { OrderInterface } from '../../../models/order-interface';
 import { DatePipe, NgClass, NgIf, NgStyle, TitleCasePipe } from '@angular/common';
 import { OrderService } from '../../services/Order/order.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-my-orders',
-  imports: [HttpClientModule, DatePipe, NgStyle, NgIf],
+  imports: [HttpClientModule, DatePipe, NgStyle, NgIf, RouterModule],
   templateUrl: './my-orders.component.html',
   styleUrl: './my-orders.component.css',
   providers: [OrderService]
@@ -44,7 +45,6 @@ ngOnInit(): void {
             status: order.status || 'pending',
             method: order.method || 'N/A',
           }));
-          console.log('Loaded all vendor orders', this.orders);
         },
         error: (err) => {
           console.error('Failed to fetch orders', err);

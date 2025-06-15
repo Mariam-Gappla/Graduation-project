@@ -32,6 +32,10 @@
       <img src="customer-review.png" class="blue" alt="">
       <img src="customer-review2.png" class="white" alt="">
     </a>
+    <a class="nav-link text-dark my-3" href="#" title="super-admin" [hidden]="role != 'super_admin'">
+      <img src="admin.png" class="blue" alt="">
+      <img src="admin1.png" class="white" alt="">
+    </a>
   </div>
 </div>
 <button
@@ -85,6 +89,7 @@
           </div>
         </a>
       </li>
+
       <li class="nav-item">
         <a href="#" data-target="reviews" title="Reviews">
           <div>
@@ -94,7 +99,16 @@
           </div>
         </a>
       </li>
+<li class="nav-item" [hidden]="role != 'super_admin'">
+        <a  href="#" data-target="super-admin" title="super-admin">
+          <div>
 
+            <img src="admin.png" class="blue" alt="">
+            <img src="admin1.png" class="white" alt="">
+            <span>USERS</span>
+          </div>
+        </a>
+      </li>
     </ul>
   </div>
 </div>
@@ -118,6 +132,9 @@
   <div id="reviews" class="tab-content">
     <app-reviews></app-reviews>
     <!--  style="display:none;" -->
+  </div>
+  <div id="super-admin" class="tab-content">
+    <app-super-admin-page></app-super-admin-page>
   </div>
 
 </div>

@@ -55,7 +55,6 @@ li {
 /* Navigation links */
 .nav-link {
   margin: 0;
-  padding: 1rem;
   color: #6E6E6E !important;
   font-size: 1.2rem;
   cursor: pointer;
@@ -167,3 +166,79 @@ li {
   background-color: #E18670;
   color: #fff !important;
 } */
+/* Dropdown container for username */
+.nav-item.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown toggle (username)
+.nav-item.dropdown > .nav-link.dropdown-toggle {
+  color: #6E6E6E !important;
+  font-size: 1.2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  padding: 1rem;
+  user-select: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+} */
+
+/* Hover effect on username */
+/* .nav-item.dropdown > .nav-link.dropdown-toggle:hover {
+  color: #E18670 !important;
+  transform: scale(1.05);
+} */
+
+/* Dropdown menu */
+.dropdown-menu {
+  min-width: 180px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  padding: 0.5rem 0;
+  z-index: 1100;
+}
+
+/* Dropdown menu right alignment */
+.dropdown-menu.dropdown-menu-end {
+  right: 0;
+  left: auto;
+}
+
+/* Dropdown items */
+.dropdown-item {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #6E6E6E;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+/* Hover effect on dropdown items
+.dropdown-item:hover {
+  background-color: #E18670;
+  color: white;
+} */
+
+/* Divider in dropdown */
+.dropdown-divider {
+  height: 1px;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  background-color: #ddd;
+}
+
+/* Responsive tweaks for small screens */
+@media (max-width: 768px) {
+  .nav-item.dropdown > .nav-link.dropdown-toggle {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .dropdown-menu {
+    min-width: 150px;
+  }
+}

@@ -38,7 +38,6 @@ export class HeaderComponent implements OnInit {
       this.userService.getUserByUserId(this.id).subscribe(
         (response: any) => {
           this.user = response.data;
-          console.log('User:', this.user);
         },
         (error: any) => {
           console.error('Error fetching user:', error);
@@ -57,4 +56,12 @@ export class HeaderComponent implements OnInit {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+  logout() {
+  // Clear sessionStorage and localStorage
+  sessionStorage.clear();
+  localStorage.clear();
+
+  // Optional: redirect user to login page (or home page)
+  window.location.href = '/login';  // Change to your desired route
+}
 }

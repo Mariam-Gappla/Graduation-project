@@ -12,7 +12,7 @@
     </thead>
     <tbody>
       @for(user of users; track user){
-      <tr>
+      <tr [hidden]="user.role === 'super_admin'">
         <td>{{ user._id }}</td>
         <td>{{ user.username }}</td>
         <td>{{ user.email }}</td>
@@ -22,7 +22,9 @@
             vendor: user.role === 'Vendor',
             admin: user.role === 'Admin'
           }"
+
         >
+
           {{ user.role }}
         </td>
         <td>{{ user.orders?.length || 0 }}</td>

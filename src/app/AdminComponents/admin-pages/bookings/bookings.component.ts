@@ -12,7 +12,7 @@ import { DatePipe } from '@angular/common';
 })
 export class BookingsComponent implements OnInit {
   statuses = ['waiting', 'accepted', 'refuces']
-  Payments = ['visa', 'cash']
+  Payments = ['Online', 'cash']
   bookings: any[] = [];
   constructor(private orderService: OrderService) {}
   ngOnInit(): void {

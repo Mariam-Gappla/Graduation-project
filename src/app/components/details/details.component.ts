@@ -49,7 +49,7 @@ export class DetailsComponent {
     } else {
       this.end = this.start + 3; // كمبيوتر
     }
-   
+
   }
   next(): void {
     if (this.end < this.vendor?.serviceImage.length) {
@@ -77,7 +77,7 @@ export class DetailsComponent {
       this.reviews = res;
         console.log('Full Review Response Keys:', this.reviews);
     });
-  
+
     });
 
   }

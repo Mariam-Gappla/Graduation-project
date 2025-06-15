@@ -81,9 +81,9 @@ h2 {
   .table-body .tr {
     background-color: white;
     border-bottom:1px solid #33333342;
-    color: #333;
+    color: #333333c7;
     box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
-    font-family: 'actor', sans-serif;
+    font-family: sans-serif;
     font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 10px;
@@ -98,6 +98,8 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 200px;
+    text-align: center;
   }
 
   .actions {
@@ -114,8 +116,8 @@ h2 {
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
   }
-  button.approve-btn, button.refuse-btn, .confirmed-btn, .refused-btn, .waiting-btn {
-    font-family: 'actor', sans-serif;
+  button.approve-btn, button.refuse-btn, .confirmed-btn, .refused-btn, .waiting-btn, .details-btn, .payment-refused-btn, .accepted-btn {
+    font-family: sans-serif;
     font-size: 1.2rem;
     font-weight: 400;
     padding: 4px 8px;
@@ -125,6 +127,7 @@ h2 {
     height: 40px;
     border: none;
     transition: all 0.3s ease;
+    width: 300px;
   }
 .approve-btn{
   background-color: #4BB6AD  ;
@@ -159,10 +162,28 @@ h2 {
   background-color: #ff3535;
   cursor: pointer;
 }
-
+.details-btn{
+  background-color: #CBAACB ;
+}
+.details-btn:hover{
+  background-color: #ca91ca ;
+}
 .actions-field{
-  padding: 0 90px;
+  padding: 0 auto;
   text-align: center;
+  width: 200px;
+}
+.payment-refused-btn{
+  background-color: red;
+}
+.payment-refused-btn:hover{
+  background-color: rgb(193, 1, 1);
+}
+.accepted-btn{
+  background-color: green;
+}
+.accepted-btn:hover{
+  background-color: rgb(0, 94, 0);
 }
 /* Responsive Enhancements */
 @media (max-width: 992px) {
