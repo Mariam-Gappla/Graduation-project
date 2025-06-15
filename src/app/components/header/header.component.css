@@ -7,8 +7,6 @@
   z-index: 1000;
 }
 
-
-
 /* Logo */
 .logo-img {
   width: 70px;
@@ -34,11 +32,12 @@
   padding: 10px;
 }
 .navbar.shrink .logo-img {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
 }
 
-/* Link container */
+
+/* Reset anchor and list styles */
 a {
   margin: 0;
   padding: 0;
@@ -48,7 +47,7 @@ ul {
   background-color: #ffffff !important;
 }
 li {
-  padding-right: 34px;
+  padding-right: 34px; /* spacing between nav items */
 }
 
 /* Navigation links */
@@ -173,30 +172,63 @@ li {
   overflow: hidden;
   background-color: #ddd;
 }
-
+.navbar-nav.mx-auto .nav-item {
+  margin: 0 15px; /* Adjust this value as needed */
+}
+.navbar-brand{
+  margin-right: 205px;
+}
 /* Responsive tweaks for small screens */
 @media (max-width: 768px) {
-  .nav-item.dropdown > .nav-link.dropdown-toggle {
-    padding: 0.5rem;
-    font-size: 1rem;
+  /* Center all nav links and dropdown in mobile */
+  .navbar-collapse {
+    text-align: center;
   }
 
-  .dropdown-menu {
-    min-width: 150px;
+  .navbar-nav {
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column;
+    width: 100%;
   }
 
-  /* Adjustments for mobile view: stack items */
-  .navbar-collapse .navbar-nav {
-    width: 100%; /* Take full width */
-    justify-content: flex-start !important; /* Align left in mobile */
+  .navbar-nav .nav-item {
+    margin: 10px 0;
+    padding-right: 0 !important;
   }
 
-  .navbar-collapse .ms-auto {
-    width: 100%; /* Ensure right-aligned items also take full width in mobile */
-    justify-content: flex-start !important; /* Align left in mobile */
+  .navbar-nav .nav-link {
+    font-size: 1.1rem;
   }
 
   .sign-btns {
-    justify-content: flex-start; /* Align sign-in/up to left in mobile */
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-item.dropdown {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-menu {
+    text-align: center;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .navbar-collapse .ms-auto {
+    justify-content: center !important;
+  }
+  @media (max-width: 768px) {
+  .logo-img {
+    width: 50px;
+    height: 50px;
   }
 }
+
+}
+/* Increase space between center navbar items */
+
