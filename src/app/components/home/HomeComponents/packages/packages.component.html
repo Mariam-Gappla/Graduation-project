@@ -1,34 +1,35 @@
- <!--packages-->
-    <div class="packages">
-      <div class="mb-5">
-        <h1 class="packages-heading">PACKAGES FOR YOU</h1>
-        <div class="line-container">
-          <div class="circle"></div>
-        </div>
-      </div>
-
-      <div class="row gy-5 justify-content-center">
-        <div
-        [routerLink]="['/details', pkg.service._id]"
-          class="col-12 col-sm-12 col-md-6 col-lg-4 package-card"
-          *ngFor="let pkg of pcgs; let i = index"
-          [ngClass]="{ 'second-item': i === 1 }"
-
-        >
-          <p class="start-text">Start from</p>
-          <p class="price">{{ pkg.minPrice }} EGP</p>
-
-          <div class="package-items-scroll">
-            <div class="package-item" *ngFor="let item of pkg.packages">
-              <div class="package-item-inner">
-                <img src="check2.png" alt="" srcset="">
-                <p>{{ item.title }}</p>
-              </div>
-              <hr />
-            </div>
-          </div>
-
-          <button class="book-btn">Book Now</button>
-        </div>
-      </div>
+<!--packages-->
+<div class="packages">
+  <div class="mb-5">
+    <h1 class="packages-heading">PACKAGES FOR YOU</h1>
+    <div class="line-container">
+      <div class="circle"></div>
     </div>
+  </div>
+
+  <div class="row gy-5 justify-content-center">
+    <ng-container *ngFor="let pkg of pcgs; let i = index">
+      <div
+        *ngIf="pkg?.service"
+        [routerLink]="['/details', pkg.service._id]"
+        class="col-12 col-sm-12 col-md-6 col-lg-4 package-card"
+        [ngClass]="{ 'second-item': i === 1 }"
+      >
+        <p class="start-text">Start from</p>
+        <p class="price">{{ pkg.minPrice }} EGP</p>
+
+        <div class="package-items-scroll">
+          <div class="package-item" *ngFor="let item of pkg?.packages">
+            <div class="package-item-inner">
+              <img src="check2.png" alt="" />
+              <p>{{ item.title }}</p>
+            </div>
+            <hr />
+          </div>
+        </div>
+
+        <button class="book-btn">Book Now</button>
+      </div>
+    </ng-container>
+  </div>
+</div>

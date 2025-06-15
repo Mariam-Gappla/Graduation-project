@@ -3,10 +3,10 @@
   [class.shrink]="isScrolled"
 >
   <div class="container-fluid">
-    <!-- Logo -->
-    <img src="ZAFFA.jpg" class="logo-img" />
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img src="ZAFFA.jpg" class="logo-img" alt="Logo" />
+    </a>
 
-    <!-- Mobile toggle button -->
     <button
       class="navbar-toggler mb-1"
       type="button"
@@ -19,10 +19,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <!-- Main links -->
-      <ul class="navbar-nav ms-auto text-center">
+      <ul class="navbar-nav mx-auto text-center">
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/']">Home</a>
         </li>
@@ -43,7 +41,6 @@
           <a class="nav-link" [routerLink]="['/orders']">My Orders</a>
         </li>
 
-        <!-- Vendor Services -->
         <li
           class="nav-item"
           title="Services"
@@ -54,7 +51,6 @@
           </a>
         </li>
 
-        <!-- Order Requests -->
         <li
           class="nav-item"
           title="Booking Requests"
@@ -64,8 +60,9 @@
             <img src="book.png" alt="Order Requests" />
           </a>
         </li>
+      </ul>
 
-        <!-- Username dropdown -->
+      <ul class="navbar-nav ms-auto">
         <li
           class="nav-item dropdown"
           [hidden]="!isLogged"
@@ -87,36 +84,31 @@
             class="dropdown-menu dropdown-menu-end"
             aria-labelledby="userDropdown"
           >
-            <!-- Add Payment Method (only for Vendor) -->
             <li [hidden]="user?.role !== 'Vendor'">
               <a class="dropdown-item" [routerLink]="['/vendor-profile']">
                 Add Payment Method
               </a>
             </li>
 
-            <!-- Admin link (only for admin or super-admin) -->
             <li *ngIf="user?.role === 'admin' || user?.role === 'super_admin'">
               <a class="dropdown-item" [routerLink]="['/admin']">Admin</a>
             </li>
 
-            <!-- Logout -->
             <li>
               <hr class="dropdown-divider" />
-
               <a class="dropdown-item" (click)="logout()">Logout</a>
             </li>
           </ul>
         </li>
-      </ul>
 
-      <!-- Sign Up / Sign In links -->
-      <ul class="sign-btns" [hidden]="isLogged">
-        <li class="nav-item sign">
-          <a class="nav-link signup" [routerLink]="['/signup']">Sign Up</a>
-        </li>
-        <li class="nav-item log">
-          <a class="nav-link signin" [routerLink]="['/login']">Log In</a>
-        </li>
+        <ul class="sign-btns" [hidden]="isLogged">
+          <li class="nav-item sign">
+            <a class="nav-link signup" [routerLink]="['/signup']">Sign Up</a>
+          </li>
+          <li class="nav-item log">
+            <a class="nav-link signin" [routerLink]="['/login']">Log In</a>
+          </li>
+        </ul>
       </ul>
     </div>
   </div>

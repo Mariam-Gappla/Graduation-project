@@ -1,3 +1,14 @@
+/* General Navbar Adjustments */
+.navbar {
+  background-color: #ffffff !important;
+  transition: all 0.4s ease;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+
 /* Logo */
 .logo-img {
   width: 70px;
@@ -9,24 +20,12 @@
 .logo-img:hover {
   transform: scale(1.1);
 }
+
 @media (max-width: 768px) {
   .logo-img {
     width: 50px;
     height: 50px;
   }
-}
-
-/* Navbar */
-.navbar {
-  background-color: #FFFFFF !important;
-  transition: all 0.4s ease;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-
-  margin-bottom: 12px;
-
-  /* REMOVE this: display: flex; align-items: center; */
 }
 
 /* Shrink effect on scroll */
@@ -46,7 +45,7 @@ a {
   text-decoration: none;
 }
 ul {
-  background-color: #FFFFFF !important;
+  background-color: #ffffff !important;
 }
 li {
   padding-right: 34px;
@@ -55,7 +54,7 @@ li {
 /* Navigation links */
 .nav-link {
   margin: 0;
-  color: #6E6E6E !important;
+  color: #6e6e6e !important;
   font-size: 1.2rem;
   cursor: pointer;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -65,25 +64,8 @@ li {
 }
 
 .nav-link:hover {
-  color: #6E6E6E !important;
+  color: #6e6e6e !important;
   transform: scale(1.05);
-}
-
-/* Underline animation for text links
-.nav-link:not(:has(img))::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: #252423;
-  transition: width 0.3s ease;
-  border-radius: 2px;
-} */
-
-.nav-link:not(:has(img)):hover::after {
-  width: 100%;
 }
 
 /* Image inside nav links */
@@ -110,7 +92,7 @@ li {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0px; /* slightly better than 2px */
+  gap: 0px;
   margin: 0;
   padding: 0;
 }
@@ -133,61 +115,28 @@ li {
   line-height: 1;
   transition: all 0.3s ease;
   white-space: nowrap;
-  width: 110px;  /* same width */
+  width: 110px;
   box-sizing: border-box;
   user-select: none;
-  /* Removed transform on hover */
 }
 
 /* Sign Up = solid button */
 .nav-link.signup {
-  background-color: #E18670;
+  background-color: #e18670;
   color: #fff !important;
-  border: 2px solid #E18670;
-  border-radius: 50px 0 0 50px; /* pill shape */
+  border: 2px solid #e18670;
+  border-radius: 50px 0 0 50px;
   cursor: pointer;
 }
-
-/* .nav-link.signup:hover {
-  background-color: #e27053;
-  color: #fff !important;
-} */
 
 /* Sign In = outlined button */
 .nav-link.signin {
-  border: 2px solid #E18670;
-  color: #E18670 !important;
+  border: 2px solid #e18670;
+  color: #e18670 !important;
   background-color: transparent;
-  border-radius: 0 50px 50px 0; /* pill shape */
+  border-radius: 0 50px 50px 0;
   cursor: pointer;
 }
-/*
-.nav-link.signin:hover {
-  background-color: #E18670;
-  color: #fff !important;
-} */
-/* Dropdown container for username */
-.nav-item.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown toggle (username)
-.nav-item.dropdown > .nav-link.dropdown-toggle {
-  color: #6E6E6E !important;
-  font-size: 1.2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  cursor: pointer;
-  padding: 1rem;
-  user-select: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-} */
-
-/* Hover effect on username */
-/* .nav-item.dropdown > .nav-link.dropdown-toggle:hover {
-  color: #E18670 !important;
-  transform: scale(1.05);
-} */
 
 /* Dropdown menu */
 .dropdown-menu {
@@ -195,7 +144,7 @@ li {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   padding: 0.5rem 0;
   z-index: 1100;
 }
@@ -210,18 +159,12 @@ li {
 .dropdown-item {
   padding: 10px 20px;
   font-size: 1rem;
-  color: #6E6E6E;
+  color: #6e6e6e;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   user-select: none;
 }
-
-/* Hover effect on dropdown items
-.dropdown-item:hover {
-  background-color: #E18670;
-  color: white;
-} */
 
 /* Divider in dropdown */
 .dropdown-divider {
@@ -240,5 +183,20 @@ li {
 
   .dropdown-menu {
     min-width: 150px;
+  }
+
+  /* Adjustments for mobile view: stack items */
+  .navbar-collapse .navbar-nav {
+    width: 100%; /* Take full width */
+    justify-content: flex-start !important; /* Align left in mobile */
+  }
+
+  .navbar-collapse .ms-auto {
+    width: 100%; /* Ensure right-aligned items also take full width in mobile */
+    justify-content: flex-start !important; /* Align left in mobile */
+  }
+
+  .sign-btns {
+    justify-content: flex-start; /* Align sign-in/up to left in mobile */
   }
 }

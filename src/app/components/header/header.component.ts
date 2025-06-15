@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { UserService } from '../../services/userservices/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgIf } from '@angular/common';
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   user: any;
   isLogged = false;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.id = localStorage.getItem('id') || sessionStorage.getItem('id');
@@ -51,11 +51,25 @@ export class HeaderComponent implements OnInit {
   }
 
   scrollToSection(sectionId: string) {
+  if (this.router.url !== '/') {
+    // Navigate to home then scroll
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); // wait a bit for DOM to be ready
+    });
+  } else {
+    // Already on home, just scroll
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+}
+
   logout() {
   // Clear sessionStorage and localStorage
   sessionStorage.clear();
