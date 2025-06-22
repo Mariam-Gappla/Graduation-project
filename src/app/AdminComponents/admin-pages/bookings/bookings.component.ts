@@ -18,7 +18,6 @@ export class BookingsComponent implements OnInit {
   ngOnInit(): void {
     this.orderService.getAllOrders().subscribe((res: any) => {
       this.bookings = res.data;
-      console.log(this.bookings);
     });
   }
 

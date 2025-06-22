@@ -177,9 +177,9 @@ export class HomeComponent implements OnInit {
       const months = userGrowth.map((item: any) =>
         this.datePipe.transform(item.month + '-01', 'MMM y')
       );
-      console.log('Formatted Months for Chart:', months);
+      // // console.log('Formatted Months for Chart:', months);
       const counts = userGrowth.map((item: any) => item.count);
-      console.log('User Counts for Chart:', counts);
+      // // console.log('User Counts for Chart:', counts);
 
       // Update chart options
       this.chartOptions.xaxis.categories = months;

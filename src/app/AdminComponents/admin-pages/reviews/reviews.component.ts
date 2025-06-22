@@ -60,7 +60,7 @@ export class ReviewsComponent {
   getAllServices() {
     this.vendorservices.getAllServicesAndPackages().subscribe((data: any) => {
       this.services = data.data;
-      console.log(data);
+      // // console.log(data);
     })
   }
   ngOnInit() {

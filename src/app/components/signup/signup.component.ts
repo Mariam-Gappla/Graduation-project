@@ -52,7 +52,7 @@ ngOnInit(): void {
 
 this.userRegister.setValidators([existingEmail(this.emails), confirmPassword()]);
     this.userRegister.updateValueAndValidity();
-    console.log(this.emails);
+    // console.log(this.emails);
   });
 }
 

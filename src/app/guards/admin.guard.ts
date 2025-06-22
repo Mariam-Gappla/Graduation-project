@@ -10,12 +10,12 @@ export class userAuth{
     islogged=localStorage.getItem('token') || sessionStorage.getItem('token')|| sessionStorage.getItem('token');
     if(islogged)
     {
-      console.log("authorized")
+      // console.log("authorized")
       return true;
     }
     else
     {
-      console.log("not authorized")
+      // console.log("not authorized")
       this.router.navigate(['/'])
       return false;
     }

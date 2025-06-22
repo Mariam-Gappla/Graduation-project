@@ -47,11 +47,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   this.token = localStorage.getItem('token') || sessionStorage.getItem('token') || sessionStorage.getItem('token');
   this.reviewService.getTopRatedVendorsWithTopServiceByCategory().subscribe({
     next: (response) => {
-      // console.log('Response:', response);
+      // // console.log('Response:', response);
       if (Array.isArray(response)) {
         this.topRatedVendors = response;
         this.changeWidth(); // ✅ Call after assigning data
-        console.log('Top Rated Vendors:', this.topRatedVendors);
+        // console.log('Top Rated Vendors:', this.topRatedVendors);
       } else {
         console.error('Unexpected response format:', response);
       }

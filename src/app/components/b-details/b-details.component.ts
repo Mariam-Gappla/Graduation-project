@@ -47,12 +47,12 @@ export class BDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.serviceId = params['vendorId'];
-      console.log(this.serviceId)
+      // // console.log(this.serviceId)
       if (this.serviceId) {
-        console.log('Vendor ID received on booking details page:', this.serviceId);
+        // // console.log('Vendor ID received on booking details page:', this.serviceId);
         this.fetchVendorDetails();
       } else {
-        console.log('No Vendor ID received on booking details page.');
+        // // console.log('No Vendor ID received on booking details page.');
       }
     });
   }
@@ -62,11 +62,11 @@ export class BDetailsComponent implements OnInit {
       this.vendorservice.getVendorById(this.serviceId).subscribe((res) => {
         this.vendor = res.data;
         this.vendorId = res.data.vendorId
-        console.log('Vendor Details:', this.vendorId);
+        // console.log('Vendor Details:', this.vendorId);
         this.userservice.getUserByUserId(this.vendorId).subscribe(
           (response: any) => {
           this.paymentMethods = response.data.paymentMethods;
-          console.log(this.vendor);
+          // // console.log(this.vendor);
         },
         (error: any) => {
           console.error('Error fetching user:', error);

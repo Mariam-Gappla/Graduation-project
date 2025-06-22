@@ -29,7 +29,7 @@ export class LoginComponent {
   sendData() {
   this.userservice.loginUser(this.userLogin.value).subscribe(
     (res) => {
-      console.log('Response:', res);
+      //// console.log('Response:', res);
 
       const rememberMe = this.userLogin.get('rememberMe')?.value;
 
@@ -43,7 +43,7 @@ export class LoginComponent {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('id', res.data._id);
         localStorage.setItem('role', res.data.role);
-        console.log('Stored in localStorage');
+        //// console.log('Stored in localStorage');
       } else {
         // Clear localStorage first
         localStorage.removeItem('token');
@@ -54,7 +54,7 @@ export class LoginComponent {
         sessionStorage.setItem('token', res.data.token);
         sessionStorage.setItem('id', res.data._id);
         sessionStorage.setItem('role', res.data.role);
-        console.log('Stored in sessionStorage');
+        //// console.log('Stored in sessionStorage');
       }
 
       this.route.navigate(['/']);

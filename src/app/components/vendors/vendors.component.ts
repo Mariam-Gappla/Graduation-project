@@ -16,7 +16,7 @@ export class VendorsComponent implements OnInit{
 constructor(private vendorservice:VendorsService,private route:ActivatedRoute){}
 category:any;
 sort(order:any){
-  // console.log(order)
+  // // console.log(order)
   this.vendorservice.sortServicesByPrice(order).subscribe((res)=>{
     this.vendors=res.data;
   })
@@ -35,10 +35,10 @@ sortByNewest()
 }
 ngOnInit(): void {
 this.category=this.route.snapshot.paramMap.get('category')
-// console.log(this.category)
+// // console.log(this.category)
   this.vendorservice.getVendors(this.category).subscribe((res)=>{
     this.vendors=res.data;
-    // console.log(this.vendors)
+    // // console.log(this.vendors)
   }
   )
 

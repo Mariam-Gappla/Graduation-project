@@ -69,13 +69,13 @@ export class DetailsComponent {
     this.vendorservice.getVendorById(id).subscribe((res) => {
       this.vendor = res.data;
       this.images = this.vendor.serviceImage;
-      console.log(this.vendor);
-      // console.log(this.images);
+      // // console.log(this.vendor);
+      // // console.log(this.images);
       this.reviewService
         .getReviewsByServiceId(this.vendor._id)
         .subscribe((res) => {
           this.reviews = res;
-          // console.log('Full Review Response Keys:', this.reviews);
+          // // console.log('Full Review Response Keys:', this.reviews);
         });
     });
   }
@@ -124,7 +124,7 @@ export class DetailsComponent {
         });
 
         this.vendorservice.getVendorById(this.vendor._id).subscribe((res) => {
-          this.vendor = res.data[0];
+          this.vendor = res.data;
         });
       },
       error: (err) => {
@@ -150,20 +150,20 @@ export class DetailsComponent {
     return review._id || index;
   }
   toggleHeart() {
-    // console.log('toggle');
+    // // console.log('toggle');
     this.vendorservice
       .addLikeToService(this.vendor._id, { userId: this.userId })
       .subscribe((res) => {
-        // console.log(res);
+        // // console.log(res);
         const id = this.route.snapshot.paramMap.get('vendorId');
         this.vendorservice.getVendorById(id).subscribe((res) => {
-          this.vendor = res.data[0];
-          // console.log(this.vendor.vendorId);
+          this.vendor = res.data;
+          // // console.log(this.vendor.vendorId);
           this.reviewService
             .getReviewsByVendorId(this.vendor.vendorId)
             .subscribe((res) => {
               this.reviews = res;
-              // console.log('Full Review Response Keys:', this.reviews);
+              // // console.log('Full Review Response Keys:', this.reviews);
             });
         });
       });

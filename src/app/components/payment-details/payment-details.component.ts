@@ -36,14 +36,14 @@ export class PaymentDetailsComponent implements OnInit {
       this.paymentService.getPaymentByPatmentId(this.PaymentId).subscribe(
         (response) => {
           this.payment = response.data;
-          console.log(this.payment);
+          // // console.log(this.payment);
 
           // Now safely get user by userId
           if (this.payment?.userId) {
             this.userService.getUserByUserId(this.payment.userId).subscribe(
               (res) => {
                 this.userEmail = res.data.email;
-                console.log(this.userEmail);
+                // console.log(this.userEmail);
               },
               (error) => {
                 console.error('Error fetching user details:', error);
@@ -70,11 +70,11 @@ export class PaymentDetailsComponent implements OnInit {
 
   updatePaymentStatus(newStatus: string) {
   this.updatedStatusandNote = { status: newStatus, note: this.note };
-  console.log(this.updatedStatusandNote);
+  // console.log(this.updatedStatusandNote);
 
   this.paymentService.updatePaymentStatusAndNote(this.PaymentId, this.updatedStatusandNote).subscribe(
     (response) => {
-      console.log(response)
+      // console.log(response)
       if (this.payment) {
         this.payment.status = newStatus;
         this.payment.note = this.note;
@@ -92,7 +92,7 @@ export class PaymentDetailsComponent implements OnInit {
       // Now call order update API
       this.orderservice.updateOrderStatus(this.payment.orderId, this.orderStatus).subscribe(
         (response) => {
-          console.log('Order status updated successfully:', response);
+          // console.log('Order status updated successfully:', response);
         },
         (error) => {
           console.error('Error updating order status:', error);

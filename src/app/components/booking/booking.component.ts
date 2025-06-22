@@ -56,7 +56,7 @@ export class BookingComponent implements OnInit {
           this.userservice.getUserByUserId(this.vendorId).subscribe(
             (response: any) => {
               this.paymentMethods = response.data.paymentMethods || [];
-              console.log('Payment Methods:', this.paymentMethods);
+              // // console.log('Payment Methods:', this.paymentMethods);
             },
             (error: any) => {
               console.error('Error fetching user:', error);

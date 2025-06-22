@@ -16,16 +16,16 @@ export class ServicesComponent implements OnInit {
   vendorsservices:any;
   selectedStatus: string='All'
   constructor(private vendorservices:VendorsService){}
-  
-  
-  
+
+
+
 
   statuses = ['All', 'Accepted', 'Pending', 'Refused'];
-  
+
 
   selectStatus(status:any)
   {
-    console.log(status);
+    // // console.log(status);
     this.selectedStatus=status;
     this.filteredServices();
   }
@@ -33,25 +33,25 @@ export class ServicesComponent implements OnInit {
     if (this.selectedStatus === 'All') {
     this.vendorservices.getAllServices().subscribe((data:any)=>{
       this.vendorsservices=data.data;
-      console.log(data.data)
+      // // console.log(data.data)
     })
     }
     else
     {
       this.vendorservices.getAllServices().subscribe((data:any)=>{
         this.vendorsservices=data.data.filter((service:any)=>service.status===this.selectedStatus);
-        
+
       })
     }
   }
-  
+
   ngOnInit(): void {
     this.vendorservices.getAllServices().subscribe((data:any)=>{
       this.vendorsservices=data.data;
-      console.log(data.data)
+      // // console.log(data.data)
     })
 
-   
+
   }
-  
+
 }

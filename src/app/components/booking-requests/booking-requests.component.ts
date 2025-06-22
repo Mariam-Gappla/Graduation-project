@@ -66,7 +66,7 @@ export class BookingRequestsComponent implements OnInit {
           status: order.status || 'pending',
           method: order.method || 'N/A',
         }));
-        console.log('Loaded orders:', this.requests);
+        // // console.log('Loaded orders:', this.requests);
 
         // ✅ FIXED: After loading orders, load payments by orderId
         this.requests.forEach((order) => {

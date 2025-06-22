@@ -10,12 +10,12 @@ export class userRole{
   let  role=localStorage.getItem('role')|| sessionStorage.getItem('role');
     if(role === 'Bride/Groom')
     {
-      console.log("authorized")
+      // console.log("authorized")
       return true;
     }
     else
     {
-      console.log("not authorized")
+      // console.log("not authorized")
       this.router.navigate(['/home'])
       return false;
     }

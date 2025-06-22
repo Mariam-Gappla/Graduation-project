@@ -158,7 +158,9 @@ export class EditServiceComponent implements OnInit {
           },
           (error) => {
             this.vendorservice.deleteService(id).subscribe({
-              next: () => console.log("service deleted"),
+              next: () => {
+                //// console.log("service deleted")
+              },
               error: (delErr) => console.error("خطأ أثناء حذف الخدمة:", delErr)
             });
             this.alertFail("Error", error.error.message);

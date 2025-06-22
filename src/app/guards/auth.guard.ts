@@ -11,10 +11,10 @@ export class userAuth {
     let token = localStorage.getItem('token') || sessionStorage.getItem('token');
 
     if (token) {
-      console.log('authorized');
+      // console.log('authorized');
       return true;
     } else {
-      console.log('not authorized');
+      // console.log('not authorized');
       this.router.navigate(['/login']);
       return false;
     }

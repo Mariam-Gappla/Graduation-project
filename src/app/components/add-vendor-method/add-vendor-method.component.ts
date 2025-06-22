@@ -28,7 +28,7 @@ export class VendorPaymentMethodComponent implements OnInit {
       this.userservice.getUserByUserId(this.id).subscribe(
         (response: any) => {
           this.vendor = response.data;
-          console.log(this.vendor);
+          // // console.log(this.vendor);
         },
         (error: any) => {
           console.error('Error fetching user:', error);
@@ -60,7 +60,7 @@ export class VendorPaymentMethodComponent implements OnInit {
   // Call the API to add the payment method
   this.userservice.addPaymentMethod(this.id, this.paymentMethod).subscribe(
     (response: any) => {
-      console.log('Payment method added:', response);
+      // // console.log('Payment method added:', response);
 
       // Add the new method to the local vendor object for UI update
       this.vendor.paymentMethods.push(this.paymentMethod);
@@ -78,12 +78,12 @@ export class VendorPaymentMethodComponent implements OnInit {
   );
 
   // Optional: log what was submitted
-  console.log('Submitted payment method:', this.paymentMethod);
+  // // console.log('Submitted payment method:', this.paymentMethod);
 }
 deleteMethod(method: any) {
   this.userservice.deletePaymentMethod(this.id, method).subscribe(
     (response: any) => {
-      console.log('Payment method deleted:', response);
+      // // console.log('Payment method deleted:', response);
 
       // Update local vendor object
       this.vendor.paymentMethods = this.vendor.paymentMethods.filter(

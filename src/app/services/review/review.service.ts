@@ -27,7 +27,7 @@ export class ReviewService {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     });
-        console.log('headers', headers);
+        // console.log('headers', headers);
 
     return this.httpclient.post<ReviewResponse>(this.baseUrl, reviewContent, {headers});
   }
@@ -36,7 +36,7 @@ export class ReviewService {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
-    console.log('headers', headers);
+    // console.log('headers', headers);
     return this.httpclient.get<ReviewResponse>(`${this.baseUrl}${vendorId}`,{ headers });
   }
   getReviewsByServiceId(serviceId: string): Observable<ReviewResponse> {
@@ -51,7 +51,7 @@ export class ReviewService {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
-    // console.log('headers', token);
+    // // console.log('headers', token);
     return this.httpclient.get<ReviewResponse>(`${this.baseUrl}top-rated/category`, { headers });
   }
 }
