@@ -36,6 +36,7 @@ export class PaymentDetailsComponent implements OnInit {
       this.paymentService.getPaymentByPatmentId(this.PaymentId).subscribe(
         (response) => {
           this.payment = response.data;
+          console.log(this.payment);
 
           // Now safely get user by userId
           if (this.payment?.userId) {

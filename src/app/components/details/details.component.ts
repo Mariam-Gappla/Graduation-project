@@ -5,9 +5,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { ReviewService } from '../../services/review/review.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-details',
-  imports: [HttpClientModule, FormsModule, NgClass, NgFor],
+  imports: [HttpClientModule, FormsModule, NgClass, NgFor, NgIf],
   providers: [VendorsService, ReviewService],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css',
@@ -18,8 +19,8 @@ export class DetailsComponent {
   end: any;
   userId: any;
   reviews: any;
-  showedImages:any;
-  images:any;
+  showedImages: any;
+  images: any;
   showReviewForm = false;
   newReview = {
     rating: '',
@@ -33,11 +34,9 @@ export class DetailsComponent {
   ) {
     window.addEventListener('resize', () => {
       this.changeWidth();
-      this.start=0;
+      this.start = 0;
     });
   }
-
-
 
   changeWidth(): void {
     const width = window.innerWidth;
@@ -49,7 +48,6 @@ export class DetailsComponent {
     } else {
       this.end = this.start + 3; // كمبيوتر
     }
-
   }
   next(): void {
     if (this.end < this.vendor?.serviceImage.length) {
@@ -65,21 +63,21 @@ export class DetailsComponent {
   }
   ngOnInit(): void {
     this.userId = localStorage.getItem('id') || sessionStorage.getItem('id');
-    console.log('ts',localStorage.getItem('token') || sessionStorage.getItem('token'));
+
     this.changeWidth();
     const id = this.route.snapshot.paramMap.get('vendorId');
     this.vendorservice.getVendorById(id).subscribe((res) => {
-      this.vendor = res.data[0];
-      this.images=this.vendor.serviceImage;
+      this.vendor = res.data;
+      this.images = this.vendor.serviceImage;
       console.log(this.vendor);
-      console.log(this.images)
-    this.reviewService.getReviewsByServiceId(this.vendor._id).subscribe((res) => {
-      this.reviews = res;
-        console.log('Full Review Response Keys:', this.reviews);
+      // console.log(this.images);
+      this.reviewService
+        .getReviewsByServiceId(this.vendor._id)
+        .subscribe((res) => {
+          this.reviews = res;
+          // console.log('Full Review Response Keys:', this.reviews);
+        });
     });
-
-    });
-
   }
   bookNow(): void {
     // Assuming your booking page route is '/booking' and you want to pass the vendor's ID
@@ -95,7 +93,12 @@ export class DetailsComponent {
   }
   submitReview() {
   if (!this.userId) {
-    alert('يجب عليك تسجيل الدخول لتتمكن من إضافة مراجعة');
+    Swal.fire({
+      icon: 'warning',
+      title: 'تنبيه',
+      text: 'يجب عليك تسجيل الدخول لتتمكن من إضافة مراجعة',
+      confirmButtonText: 'حسنًا',
+    });
     return;
   }
 
@@ -108,52 +111,61 @@ export class DetailsComponent {
       userId: this.userId,
     };
 
-    console.log('Review to submit:', reviewData);
-
     this.newReview = { rating: '', content: '' };
     this.showReviewForm = false;
 
     this.reviewService.addReview(reviewData).subscribe({
       next: (res) => {
-        alert('تمت إضافة المراجعة بنجاح');
+        Swal.fire({
+          icon: 'success',
+          title: 'تمت الإضافة',
+          text: 'تمت إضافة المراجعة بنجاح',
+          confirmButtonText: 'موافق',
+        });
+
         this.vendorservice.getVendorById(this.vendor._id).subscribe((res) => {
           this.vendor = res.data[0];
         });
       },
       error: (err) => {
         console.error('Error adding review:', err);
-        alert('فشل إضافة المراجعة');
+        Swal.fire({
+          icon: 'error',
+          title: 'خطأ',
+          text: 'فشل في إضافة المراجعة',
+          confirmButtonText: 'موافق',
+        });
       },
     });
   }
 }
-// لتحويل رقم التقييم إلى مصفوفة بعدد النجوم
-getStarsArray(rate: number): number[] {
-  return Array(rate).fill(0);
-}
 
-// لتحسين الأداء باستخدام trackBy
-trackReview(index: number, review: any): any {
-  return review._id || index;
-}
-toggleHeart()
-{
-  console.log("toggle")
-  this.vendorservice.addLikeToService(this.vendor._id, {"userId": this.userId}).subscribe((res)=>{
-    console.log(res);
-     const id = this.route.snapshot.paramMap.get('vendorId');
-   this.vendorservice.getVendorById(id).subscribe((res) => {
-      this.vendor = res.data[0];
-      console.log(this.vendor.vendorId);
-    this.reviewService.getReviewsByVendorId(this.vendor.vendorId).subscribe((res) => {
-      this.reviews = res;
-console.log('Full Review Response Keys:', this.reviews);
-    });
-    });
-  });
+  // لتحويل رقم التقييم إلى مصفوفة بعدد النجوم
+  getStarsArray(rate: number): number[] {
+    return Array(rate).fill(0);
+  }
 
-
-
-}
-
+  // لتحسين الأداء باستخدام trackBy
+  trackReview(index: number, review: any): any {
+    return review._id || index;
+  }
+  toggleHeart() {
+    // console.log('toggle');
+    this.vendorservice
+      .addLikeToService(this.vendor._id, { userId: this.userId })
+      .subscribe((res) => {
+        // console.log(res);
+        const id = this.route.snapshot.paramMap.get('vendorId');
+        this.vendorservice.getVendorById(id).subscribe((res) => {
+          this.vendor = res.data[0];
+          // console.log(this.vendor.vendorId);
+          this.reviewService
+            .getReviewsByVendorId(this.vendor.vendorId)
+            .subscribe((res) => {
+              this.reviews = res;
+              // console.log('Full Review Response Keys:', this.reviews);
+            });
+        });
+      });
+  }
 }

@@ -60,8 +60,8 @@ export class BDetailsComponent implements OnInit {
   fetchVendorDetails(): void {
     if (this.serviceId) {
       this.vendorservice.getVendorById(this.serviceId).subscribe((res) => {
-        this.vendor = res.data[0];
-        this.vendorId = res.data[0].vendorId
+        this.vendor = res.data;
+        this.vendorId = res.data.vendorId
         console.log('Vendor Details:', this.vendorId);
         this.userservice.getUserByUserId(this.vendorId).subscribe(
           (response: any) => {

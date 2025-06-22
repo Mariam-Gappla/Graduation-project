@@ -2,7 +2,6 @@
   <table style="width: 100%; border-collapse: collapse" border="1">
     <thead>
       <tr>
-        <th>ID</th>
         <th>Name</th>
         <th>Email</th>
         <th>Role</th>
@@ -13,7 +12,6 @@
     <tbody>
       @for(user of users; track user){
       <tr [hidden]="user.role === 'super_admin' || user.role === 'admin'">
-        <td>{{ user._id }}</td>
         <td>{{ user.username }}</td>
         <td>{{ user.email }}</td>
         <td

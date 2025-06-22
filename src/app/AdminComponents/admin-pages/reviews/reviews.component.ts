@@ -9,7 +9,7 @@ import { error } from 'jquery';
 import { JsonPipe } from '@angular/common';
 @Component({
   selector: 'app-reviews',
-  imports: [CarouselModule, ButtonModule, TagModule, HttpClientModule, JsonPipe],
+  imports: [CarouselModule, ButtonModule, TagModule, HttpClientModule],
   providers: [VendorsService],
   templateUrl: './reviews.component.html',
   styleUrl: './reviews.component.css'
@@ -57,25 +57,25 @@ export class ReviewsComponent {
       }
     })
   }
-  ngOnInit() {
+  getAllServices() {
     this.vendorservices.getAllServicesAndPackages().subscribe((data: any) => {
       this.services = data.data;
       console.log(data);
     })
+  }
+  ngOnInit() {
+    this.getAllServices();
   }
   updateStatus(serviceId: string, status: string) {
     this.vendorservices.updatStatus(serviceId, { status: status }).subscribe(
       (res: any) => {
 
           if (status === 'Accepted') {
-            console.log("accepted");
+            this.getAllServices();
             this.alerrtSucess("Success", "Service Accepted successfully");
           } else if (status === 'Refused') {
             this.alerrtSucess("Success", "Service Refused successfully");
           }
-
-
-
       },
       (error: any) => {
         this.alertFail("Error", error.error.message)

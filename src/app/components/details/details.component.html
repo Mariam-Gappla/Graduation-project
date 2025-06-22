@@ -7,16 +7,29 @@
     />
     <h2 class="name mb-5">
       {{ vendor?.title }}
-      <span class="heart-icon" (click)="toggleHeart()">
-        <img src="hert1.png" alt="heart" />
-      </span>
+      <i class="bi bi-suit-heart-fill heart-icon" (click)="toggleHeart()"></i>
     </h2>
+   <div class="contact-info">
+  <div class="info-item">
+    <i class="bi bi-telephone-fill"></i>
+    {{ vendor?.phone || "Not provided" }}
+  </div>
+  <div class="info-item">
+    <i class="bi bi-geo-alt-fill"></i>
+    {{ vendor?.Address || "Not provided" }}
+  </div>
+  <div class="social-links">
+    <a *ngIf="vendor?.facebookLink" [href]="vendor.facebookLink" target="_blank">
+      <i class="bi bi-facebook"></i>
+    </a>
+    <a *ngIf="vendor?.instgrameLink" [href]="vendor.instgrameLink" target="_blank">
+      <i class="bi bi-instagram"></i>
+    </a>
+  </div>
+</div>
+
 
     <div class="stats mb-5">
-      <div class="stat">
-        <img src="pepole.png" alt="" />
-        <p>{{ vendor?.packages?.orders?.length ?? 0 }} Client</p>
-      </div>
       <div class="stat">
         <img src="heart.png" alt="" />
         <p>{{ vendor?.likes?.length }} Likes</p>
@@ -92,41 +105,52 @@
     </div>
   </div>
 
-  <section class="review-section">
+  <section class="section-header">
     <h2 class="review-header">User Reviews</h2>
     <div class="line-container">
       <div class="circle"></div>
     </div>
     <div class="review-container">
-  <div class="review-box" *ngFor="let review of reviews; trackBy: trackReview">
-    <div class="review-rating">
-      <span class="star" *ngFor="let i of getStarsArray(review.rate)">★</span>
+      <div
+        class="review-box"
+        *ngFor="let review of reviews; trackBy: trackReview"
+      >
+        <div class="review-rating">
+          <span class="star" *ngFor="let i of getStarsArray(review.rate)"
+            >★</span
+          >
+        </div>
+        <p class="review-content">
+          {{ review.content }}
+        </p>
+        <div class="review-user">
+          — <strong>{{ review.userId.username }}</strong>
+        </div>
+      </div>
     </div>
-    <p class="review-content">
-      {{ review.content }}
-    </p>
-    <div class="review-user">— <strong>{{review.userId.username}}</strong></div>
-  </div>
-</div>
 
     <!-- ADD REVIEW BUTTON -->
     <div
       class="add-review-btn-container"
       style="text-align: center; margin-top: 40px"
     >
-      <button class="add-review-btn" (click)="showReviewForm = !showReviewForm">Write a Review</button>
+      <button class="add-review-btn" (click)="showReviewForm = !showReviewForm">
+        Write a Review
+      </button>
     </div>
   </section>
 </div>
 <!-- REVIEW FORM -->
 
-<div [ngClass]="{'review-form': true, 'show': showReviewForm}">
+<div [ngClass]="{ 'review-form': true, show: showReviewForm }">
   <h3 class="form-header">Leave a Review</h3>
   <form (submit)="submitReview()">
     <label for="rating">Rating:</label>
     <select id="rating" [(ngModel)]="newReview.rating" name="rating" required>
       <option value="" disabled selected>Select rating</option>
-      <option *ngFor="let r of [1,2,3,4,5]" [value]="r">{{ r }} Star</option>
+      <option *ngFor="let r of [1, 2, 3, 4, 5]" [value]="r">
+        {{ r }} Star
+      </option>
     </select>
 
     <label for="content">Your Review:</label>

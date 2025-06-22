@@ -2,10 +2,11 @@ import { PackagesService } from './../../services/packages/packages.service';
 import { NgFor, NgIf } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { VendorsService } from '../../services/vendors/vendors.service';
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-edit-service',
   imports: [NgFor, NgIf, FormsModule, HttpClientModule],
@@ -23,7 +24,7 @@ export class EditServiceComponent implements OnInit {
     facebookLink: '',
     instgrameLink: '',
     Address: '',
-    profileImage: '', // ❗️ ده هيبقى اسم الصورة القديمة فقط
+    profileImage: '',
   };
 
   recievedId: any;
@@ -31,7 +32,7 @@ export class EditServiceComponent implements OnInit {
   selectedFiles: File[] = [];
   fileInputs = [{ uploaded: false }];
   Fields: { title: string; price: string }[] = [{ title: '', price: '' }];
-  newProfileImage: File | null = null; // ❗️ ده ملف الصورة الجديدة فقط
+  newProfileImage: File | null = null;
   imageSrc: string | ArrayBuffer | null = null;
 
   constructor(
@@ -41,36 +42,57 @@ export class EditServiceComponent implements OnInit {
   ) {
     this.recievedId = this.route.snapshot.paramMap.get('id');
   }
+
   alerrtSucess(title: string, text: string) {
     Swal.fire({
       icon: 'success',
       title: title,
       text: text,
-      confirmButtonText:"ok",
-      customClass: {
-    popup: 'custom-swal-popup',
+      confirmButtonText: "ok",
+      customClass: { popup: 'custom-swal-popup' }
+    });
   }
-    })
-  }
-  alertFail(title:string, text:string) {
+
+  alertFail(title: string, text: string) {
     Swal.fire({
-       icon: 'error',
+      icon: 'error',
       title: title,
       text: text,
-      confirmButtonText:"ok",
-      customClass: {
-    popup: 'custom-swal-popup',
+      confirmButtonText: "ok",
+      customClass: { popup: 'custom-swal-popup' }
+    });
   }
-    })
-  }
+
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = this.recievedId;
     if (id) {
       this.vendorservice.getVendorById(id).subscribe((res) => {
-        this.serviceData = res.data[0];
-        this.imageSrc = "http://localhost:3000/" + res.data[0].profileImage;
-        this.existingFileNames = res.data[0].serviceImage;
-        this.Fields = res.data[0].packages;
+        const data = res.data;
+
+        this.serviceData = {
+          title: data.title || '',
+          category: data.category || '',
+          exprience: data.exprience || '',
+          serviceDetails: data.serviceDetails || '',
+          phone: data.phone || '',
+          facebookLink: data.facebookLink || '',
+          instgrameLink: data.instgrameLink || '',
+          Address: data.Address || '',
+          profileImage: data.profileImage || '',
+        };
+
+        this.imageSrc = "http://localhost:3000/" + data.profileImage;
+        this.existingFileNames = data.serviceImage || [];
+
+        // Fix packages binding
+        if (Array.isArray(data.packages) && data.packages.length > 0) {
+          this.Fields = data.packages.map((pkg: any) => ({
+            title: pkg.title,
+            price: pkg.price.toString()
+          }));
+        } else {
+          this.Fields = [{ title: '', price: '' }];
+        }
       });
     }
   }
@@ -105,6 +127,7 @@ export class EditServiceComponent implements OnInit {
     const last = this.Fields[this.Fields.length - 1];
     return last.title.trim() !== '' && last.price.trim() !== '';
   }
+
   sendData() {
     const formData1 = new FormData();
 
@@ -113,24 +136,20 @@ export class EditServiceComponent implements OnInit {
     formData1.append('exprience', this.serviceData.exprience);
     formData1.append('serviceDetails', this.serviceData.serviceDetails);
     formData1.append('phone', this.serviceData.phone);
-    formData1.append('facebookLink', this.serviceData.facebookLink);
-    formData1.append('instgrameLink', this.serviceData.instgrameLink);
-    formData1.append('address', this.serviceData.Address);
+    formData1.append('facebookLink', this.serviceData.facebookLink || '');
+    formData1.append('instgrameLink', this.serviceData.instgrameLink || '');
+    formData1.append('address', this.serviceData.Address || '');
 
-    // ✅ ابعت الصورة الشخصية لو موجودة
     if (this.newProfileImage) {
       formData1.append('image', this.newProfileImage);
-      console.log("الصورة الشخصية:", this.newProfileImage);
     }
 
-    // ✅ إضافة الصور اللي المستخدم اختارها للخدمة
     this.selectedFiles.forEach((file) => {
       formData1.append('serviceimages', file);
     });
 
     this.vendorservice.addservice(formData1).subscribe(
       (res) => {
-        console.log(res);
         const id = res.data._id;
 
         this.packageservice.addPackage(id, this.Fields).subscribe(
@@ -142,51 +161,45 @@ export class EditServiceComponent implements OnInit {
               next: () => console.log("service deleted"),
               error: (delErr) => console.error("خطأ أثناء حذف الخدمة:", delErr)
             });
-            alert(error.error.message);
+            this.alertFail("Error", error.error.message);
           }
         );
       },
       (error) => {
-        console.log(error.error.message);
-        this.alertFail("error",error.error?.message );
+        this.alertFail("error", error.error?.message);
       }
     );
   }
 
   updateService() {
     const formData1 = new FormData();
+
     formData1.append('title', this.serviceData.title);
     formData1.append('category', this.serviceData.category);
     formData1.append('exprience', this.serviceData.exprience);
     formData1.append('serviceDetails', this.serviceData.serviceDetails);
     formData1.append('phone', this.serviceData.phone);
-    formData1.append('facebookLink', this.serviceData.facebookLink);
-    formData1.append('instgrameLink', this.serviceData.instgrameLink);
-    formData1.append('address', this.serviceData.Address);
+    formData1.append('facebookLink', this.serviceData.facebookLink || '');
+    formData1.append('instgrameLink', this.serviceData.instgrameLink || '');
+    formData1.append('address', this.serviceData.Address || '');
 
-    // ✅ فقط ابعت الصورة لو المستخدم اختار واحدة جديدة
     if (this.newProfileImage) {
       formData1.append('image', this.newProfileImage);
     }
 
-    // ✅ أضف الصور الجديدة
     this.selectedFiles.forEach(file => {
       formData1.append('serviceimages', file);
     });
 
-    // ✅ أضف أسماء الصور اللي لسة موجودة
     formData1.append('existingImages', JSON.stringify(this.existingFileNames));
 
     this.vendorservice.editService(this.recievedId, formData1).subscribe(
       res => {
-        console.log(res);
         this.alerrtSucess("success", res.message);
       },
       err => {
-        console.error(err);
-        this.alertFail("error",err.error.message);
-
-
+        console.error("Error updating service:", err);
+        this.alertFail("error", err.error.message);
       }
     );
   }

@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       if (Array.isArray(response)) {
         this.topRatedVendors = response;
         this.changeWidth(); // ✅ Call after assigning data
-        // console.log('Top Rated Vendors:', this.topRatedVendors);
+        console.log('Top Rated Vendors:', this.topRatedVendors);
       } else {
         console.error('Unexpected response format:', response);
       }

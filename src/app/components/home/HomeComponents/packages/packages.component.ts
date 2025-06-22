@@ -1,4 +1,4 @@
-import { NgClass, NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { PackagesService } from '../../../../services/packages/packages.service';
@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-packages',
   standalone: true,
-  imports: [NgFor, NgClass, HttpClientModule,RouterModule],
+  imports: [NgFor, NgClass, HttpClientModule,RouterModule, NgIf],
   templateUrl: './packages.component.html',
   styleUrl: './packages.component.css',
   providers: [PackagesService]

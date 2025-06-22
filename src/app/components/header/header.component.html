@@ -2,114 +2,113 @@
   class="navbar navbar-expand-lg bg-body-tertiary ps-4 pe-4"
   [class.shrink]="isScrolled"
 >
-  <div class="container-fluid">
-    <a class="navbar-brand " [routerLink]="['/']">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <a class="navbar-brand m-0 p-0" [routerLink]="['/']">
       <img src="ZAFFA.jpg" class="logo-img" alt="Logo" />
     </a>
 
+    <!-- Angular-based Toggle Button -->
     <button
       class="navbar-toggler mb-1"
       type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
-      aria-expanded="false"
+      (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed"
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+  </div>
 
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav mx-auto text-center">
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/']">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('our-services')"
-            >Services</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('about')">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="scrollToSection('contact')"
-            >Contact Us</a
-          >
-        </li>
-        <li class="nav-item" [hidden]="!isLogged">
-          <a class="nav-link" [routerLink]="['/orders']">My Orders</a>
-        </li>
+  <div
+    class="navbar-collapse"
+    [ngClass]="{ 'collapse': isCollapsed, 'show': !isCollapsed }"
+    id="navbarNavDropdown"
+  >
+    <ul class="navbar-nav mx-auto text-center">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/']" (click)="isCollapsed = true">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="scrollToSection('our-services'); isCollapsed = true">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="scrollToSection('about'); isCollapsed = true">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="scrollToSection('contact'); isCollapsed = true">Contact</a>
+      </li>
+      <li class="nav-item" [hidden]="!isLogged">
+        <a class="nav-link" [routerLink]="['/orders']" (click)="isCollapsed = true">Orders</a>
+      </li>
+    </ul>
 
-        <li
-          class="nav-item"
-          title="Services"
-          [hidden]="!isLogged || user?.role !== 'Vendor'"
+    <ul class="navbar-nav ms-auto text-center">
+      <li
+        class="nav-item"
+        title="Services"
+        [hidden]="!isLogged || user?.role !== 'Vendor'"
+      >
+        <a class="nav-link" [routerLink]="['/vendorservices', id]" (click)="isCollapsed = true">
+          <img src="vendor.png" alt="Vendor Services" />
+        </a>
+      </li>
+
+      <li
+        class="nav-item"
+        title="Booking Requests"
+        [hidden]="!isLogged || user?.role !== 'Vendor'"
+      >
+        <a class="nav-link" [routerLink]="['/orderrequest']" (click)="isCollapsed = true">
+          <img src="book.png" alt="Order Requests" />
+        </a>
+      </li>
+      
+      <li
+        class="nav-item dropdown"
+        [hidden]="!isLogged"
+        style="margin-left: 15px"
+      >
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="userDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          style="cursor: pointer"
         >
-          <a class="nav-link" [routerLink]="['/vendorservices', id]">
-            <img src="vendor.png" alt="Vendor Services" />
-          </a>
-        </li>
+          {{ user?.username }}
+        </a>
 
-        <li
-          class="nav-item"
-          title="Booking Requests"
-          [hidden]="!isLogged || user?.role !== 'Vendor'"
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="userDropdown"
         >
-          <a class="nav-link" [routerLink]="['/orderrequest']">
-            <img src="book.png" alt="Order Requests" />
-          </a>
-        </li>
-      </ul>
-
-      <ul class="navbar-nav ms-auto">
-        <li
-          class="nav-item dropdown"
-          [hidden]="!isLogged"
-          style="margin-left: 15px"
-        >
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="userDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            style="cursor: pointer"
-          >
-            {{ user?.username }}
-          </a>
-
-          <ul
-            class="dropdown-menu dropdown-menu-end"
-            aria-labelledby="userDropdown"
-          >
-            <li [hidden]="user?.role !== 'Vendor'">
-              <a class="dropdown-item" [routerLink]="['/vendor-profile']">
-                Add Payment Method
-              </a>
-            </li>
-
-            <li *ngIf="user?.role === 'admin' || user?.role === 'super_admin'">
-              <a class="dropdown-item" [routerLink]="['/admin']">Admin</a>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider" />
-              <a class="dropdown-item" (click)="logout()">Logout</a>
-            </li>
-          </ul>
-        </li>
-
-        <ul class="sign-btns" [hidden]="isLogged">
-          <li class="nav-item sign">
-            <a class="nav-link signup" [routerLink]="['/signup']">Sign Up</a>
+          <li [hidden]="user?.role !== 'Vendor'">
+            <a class="dropdown-item" [routerLink]="['/vendor-profile']" (click)="isCollapsed = true">
+              Add Payment Method
+            </a>
           </li>
-          <li class="nav-item log">
-            <a class="nav-link signin" [routerLink]="['/login']">Log In</a>
+
+          <li [hidden]="user?.role !== 'admin' && user?.role !== 'super_admin'">
+            <a class="dropdown-item" [routerLink]="['/admin']" (click)="isCollapsed = true">Admin</a>
+          </li>
+
+          <li>
+            <hr class="dropdown-divider" />
+            <a class="dropdown-item" (click)="logout()">Logout</a>
           </li>
         </ul>
+      </li>
+
+      <ul class="sign-btns" [hidden]="isLogged">
+        <li class="nav-item sign">
+          <a class="nav-link signup" [routerLink]="['/signup']" (click)="isCollapsed = true">Sign Up</a>
+        </li>
+        <li class="nav-item log">
+          <a class="nav-link signin" [routerLink]="['/login']" (click)="isCollapsed = true">Log In</a>
+        </li>
       </ul>
-    </div>
+    </ul>
   </div>
 </nav>

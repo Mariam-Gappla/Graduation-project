@@ -2,46 +2,52 @@
   display: block;
   min-height: 100vh;
   background-color: #F5F5F8;
-  padding: 30px 15px;
+  padding: 100px 15px 24px;
   font-family: var(--font-family);
 }
 .profile-container {
-    max-width: 1000px;
-    margin: auto;
+    max-width: 800px;
+    margin: 24px auto;
     padding: 20px;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #F5F5F8;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
   }
 
   .profile-info {
     text-align: center;
   }
-  .heart-icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #F74A55;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: 10px;
-    color: white;
-    cursor: pointer;
-  }
 
 
-  .heart-icon img {
-    width: 20px;
-    height: 20px;
-  }
+
+.heart-icon {
+  font-size: 28px;
+  color: #F74A55;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.heart-icon:hover {
+  color: #e02b40;
+  transform: scale(1.2);
+}
+
 
   .profile-img {
-    width: 348.51px;
-    height: 315px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid white;
-  }
+  width: 218.51px;
+  height: 218.51px;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 4px;
+  background: linear-gradient(135deg, #F74A55, #ffffff);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.02);
+}
+
 
   .name {
     font-family: 'Actor', sans-serif;
@@ -69,11 +75,11 @@
     padding: 10px 20px;
     border-radius: 10px;
     text-align: center;
-    width: 281px;
-    height: 130px;
+    width: 300px;
+    height: 110px;
     color: white;
-    font-family: 'Actor', sans-serif;
-    font-size: 20px;
+    font-family: sans-serif;
+    font-size: 1.2rem;
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
@@ -84,13 +90,8 @@
     margin-top: 10px;
   }
   .stat img{
-    width: 72px;
-    height: 72px;
-  }
-  .icon {
-    display: block;
-    font-size: 22px;
-    margin-bottom: 5px;
+    width: 44px;
+    height: 44px;
   }
 
   /* Section Headings */
@@ -349,7 +350,7 @@ button:hover i {
 
 .review-section {
   padding: 40px 20px;
-  background-color: #F7F2EC;
+  background-color: white;
   margin: 24px;
   box-shadow: 0 4px 8px rgba(128, 128, 128, 0.4);
 }
@@ -647,4 +648,56 @@ button:hover i {
     padding: 12px;
     font-size: 1.1rem;
   }
+}
+.contact-info {
+  margin-top: 25px;
+  padding: 15px 25px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  gap: 20px;
+}
+
+.contact-info .info-item {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  gap: 8px;
+  color: #444;
+  white-space: nowrap;
+}
+
+.contact-info .info-item i {
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+/* Brand colors */
+.social-links .bi-facebook {
+  color: #1877f2;
+}
+
+.social-links .bi-instagram {
+  color: #e1306c;
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
 }

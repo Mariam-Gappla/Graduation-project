@@ -16,7 +16,6 @@
     <table border="1">
       <thead>
         <tr>
-          <th>ID</th>
           <th>Name</th>
           <th>Category</th>
           <th>Experience</th>
@@ -27,7 +26,6 @@
       <tbody>
         @for(service of vendorsservices; track service) {
           <tr>
-            <td>{{ service.id }}</td>
             <td>{{ service.title }}</td>
             <td>{{ service.category }}</td>
             <td>{{ service.exprience }}</td>
@@ -39,7 +37,7 @@
               {{ service.status }}
             </td>
             <td class="text-right">
-              <a [routerLink]="['/admin/vendor',service.id]">Show Details</a>
+              <a [routerLink]="['/details',service.id]">Show Details</a>
             </td>
           </tr>
         }

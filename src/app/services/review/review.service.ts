@@ -44,7 +44,6 @@ export class ReviewService {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
-    console.log('headers', headers);
     return this.httpclient.get<ReviewResponse>(`${this.baseUrl}service/${serviceId}`,{ headers });
   }
   getTopRatedVendorsWithTopServiceByCategory(): Observable<ReviewResponse> {
